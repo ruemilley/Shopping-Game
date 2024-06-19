@@ -1,7 +1,87 @@
-[gd_scene format=3 uid="uid://ckwc0dqifo68w"]
+[gd_scene load_steps=9 format=3 uid="uid://ckwc0dqifo68w"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_bwngf"]
+[ext_resource type="Texture2D" uid="uid://csxy63roe4ry6" path="res://Assets/placeholder/female_tilesheet.png" id="2_qdoab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y07w"]
+atlas = ExtResource("2_qdoab")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxrjp"]
+atlas = ExtResource("2_qdoab")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx7s3"]
+atlas = ExtResource("2_qdoab")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5oui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y07w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxrjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx7s3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6gi0"]
+size = Vector2(73, 89)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xp350"]
+radius = 67.0075
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_bwngf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r5oui")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 11.5)
+shape = SubResource("RectangleShape2D_n6gi0")
+
+[node name="InteractionComponents" type="Node2D" parent="."]
+z_index = 20
+
+[node name="InteractionArea" type="Area2D" parent="InteractionComponents"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/InteractionArea"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_xp350")
+
+[node name="InteractLabel" type="Label" parent="InteractionComponents"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -85.0
+offset_right = 421.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
