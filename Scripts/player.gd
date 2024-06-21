@@ -75,6 +75,9 @@ func execute_interaction():
 			"print_text": 
 				print(cur_interaction.interact_value)
 			"load_scene":
+				Global.last_main_position = position
+				get_tree().change_scene_to_file(cur_interaction.interact_value)
+			"load_main":
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
 			_:
 				print("no matching interact value found.")
