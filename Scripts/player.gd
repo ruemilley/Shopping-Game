@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
-const INTERACT_TEXT = "E to"
+const INTERACT_TEXT = "E to "
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -11,9 +11,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var all_interactions = []
 @onready var interaction_label = $InteractionComponents/InteractLabel
+@onready var inventory_ui = $Inventory
 
 
 func  _ready():
+	Global.set_player_reference(self)
 	update_interactions()
 
 
@@ -79,6 +81,12 @@ func execute_interaction():
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
 			"load_main":
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
+			"item_pickup":
+				get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
 			_:
 				print("no matching interact value found.")
 			
+func _input(event):
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused

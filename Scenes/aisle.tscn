@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3p8qdlew4fhi"]
+[gd_scene load_steps=8 format=3 uid="uid://3p8qdlew4fhi"]
 
 [ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="1_23l1s"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_eqbvb"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="2_4m4ua"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_l17gg"]
+[ext_resource type="PackedScene" uid="uid://cdeawhj7ofma3" path="res://Scenes/inventory_item.tscn" id="5_cmjmr"]
+[ext_resource type="Texture2D" uid="uid://djp50g1ffkjcc" path="res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png" id="6_o3mxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfyoi"]
 size = Vector2(77, 154)
@@ -29,3 +31,15 @@ shape = SubResource("RectangleShape2D_yfyoi")
 
 [node name="Player" parent="." instance=ExtResource("1_eqbvb")]
 position = Vector2(-540, 0)
+
+[node name="InventoryItem2" parent="." instance=ExtResource("5_cmjmr")]
+position = Vector2(-118, 19)
+item_type = "Fruit"
+item_name = "Apple"
+item_texture = ExtResource("6_o3mxv")
+
+[node name="InventoryItem" parent="." instance=ExtResource("5_cmjmr")]
+position = Vector2(-367, -7)
+item_type = "Fruit"
+item_name = "Apple"
+item_texture = ExtResource("6_o3mxv")
