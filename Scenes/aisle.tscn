@@ -34,12 +34,12 @@ position = Vector2(-540, 0)
 
 [node name="InventoryItem2" parent="." instance=ExtResource("5_cmjmr")]
 position = Vector2(-118, 19)
-item_type = "Fruit"
+item_type = "fruit"
 item_name = "Apple"
 item_texture = ExtResource("6_o3mxv")
 
 [node name="InventoryItem" parent="." instance=ExtResource("5_cmjmr")]
 position = Vector2(-367, -7)
-item_type = "Fruit"
+item_type = "fruit"
 item_name = "Apple"
 item_texture = ExtResource("6_o3mxv")

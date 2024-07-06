@@ -79,10 +79,13 @@ func execute_interaction():
 			"load_scene":
 				Global.last_main_position = position
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
+				Global.update_scene_items()
 			"load_main":
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
+				Global.update_scene_items()
 			"item_pickup":
 				get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
+				Global.update_scene_items()
 			_:
 				print("no matching interact value found.")
 			

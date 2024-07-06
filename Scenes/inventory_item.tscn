@@ -15,7 +15,7 @@ scale = Vector2(0.2, 0.2)
 collision_mask = 2
 interact_label = "pick up"
 interact_type = "item_pickup"
-interact_value = ""
+interact_value = "InventoryItem"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_nntua")

@@ -7,7 +7,6 @@ var last_main_position = Vector2(0,0)
 
 var player_node: Node = null
 @onready var inventory_slot_scene = preload("res://Scenes/inventory_slot.tscn")
-@onready var scene_items = get_tree().get_nodes_in_group("items")
 
 #inventory management
 
@@ -31,11 +30,11 @@ func add_item(item):
 			inventory[i] = item
 			inventory_updated.emit()
 			return true
-		return false
+	return false
 
-func remove_item(item_type, item_name):
+func remove_item(item_name):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["type"] == item_type and inventory[i]["name"] == item_name:
+		if inventory[i] != null and inventory[i]["name"] == item_name:
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
@@ -61,13 +60,12 @@ func drop_item(item_data, drop_position):
 	var item_instance = item_scene.instantiate()
 	item_instance.set_item_data(item_data)
 	drop_position = adjust_drop_position(drop_position)
-	item_instance.position = drop_position
-	print(get_tree().get_nodes_in_group("items"))
+	item_instance.global_position = drop_position
+	get_tree().current_scene.add_child(item_instance)
 	update_scene_items()
+	
 
 func update_scene_items():
-	if scene_items.size() > 0:
-		for i in scene_items:
-			print(i)
-			i.get_node("InteractionArea").interact_value = i
+	for i in get_tree().get_nodes_in_group("items"):
+		i.get_node("InteractionArea").interact_value = i
 	

@@ -45,5 +45,5 @@ func _on_drop_button_pressed():
 		var drop_position = Global.player_node.global_position
 		var drop_offset = Vector2(0, 25)
 		Global.drop_item(item, drop_position + drop_offset)
-		Global.remove_item(item["type"], item["name"])
+		Global.remove_item(item["name"])
 		usage_panel.visible = false
