@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7bd503h2tedl"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_vptxb"]
-[ext_resource type="Texture2D" uid="uid://djp50g1ffkjcc" path="res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png" id="2_xmqi1"]
+[ext_resource type="Script" path="res://Scripts/inventory/inventory_slot.gd" id="1_xmjry"]
+[ext_resource type="Texture2D" uid="uid://djp50g1ffkjcc" path="res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png" id="2_ip7jb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnfjr"]
 
@@ -13,7 +13,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 160.0
 offset_bottom = 160.0
-script = ExtResource("1_vptxb")
+script = ExtResource("1_xmjry")
 
 [node name="OuterBorder" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,7 +42,7 @@ grow_vertical = 2
 [node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
 position = Vector2(70, 70)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_xmqi1")
+texture = ExtResource("2_ip7jb")
 
 [node name="ItemQuantity" type="Label" parent="InnerBorder"]
 layout_mode = 0
