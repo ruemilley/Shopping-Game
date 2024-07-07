@@ -37,7 +37,6 @@ func set_item(new_item):
 	quantity_label.text = str(item["quantity"])
 	item_name.text = str(item["iname"])
 	item_type.text = str(item["type"])
-	
 
 
 func _on_drop_button_pressed():
@@ -45,5 +44,5 @@ func _on_drop_button_pressed():
 		var drop_position = Global.player_node.global_position
 		var drop_offset = Vector2(0, 25)
 		Global.drop_item(item, drop_position + drop_offset)
-		Global.remove_item(item["iname"])
+		Global.remove_item(item["iname"],item["type"])
 		usage_panel.visible = false

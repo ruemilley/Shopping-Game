@@ -6,6 +6,7 @@ func _ready():
 	if Global.primary_aisle_items.size() > 0:
 		for i in Global.primary_aisle_items:
 			Global.spawn_item(i)
+		print(Global.primary_aisle_items)
 	
 	
 	#set player position if reentering scene
