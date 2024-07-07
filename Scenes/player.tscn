@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bwngf"]
 [ext_resource type="Texture2D" uid="uid://csxy63roe4ry6" path="res://Assets/placeholder/female_tilesheet.png" id="2_qdoab"]
-[ext_resource type="PackedScene" uid="uid://cpsm4c7dfob44" path="res://Scenes/inventory_ui.tscn" id="3_8u3og"]
+[ext_resource type="PackedScene" uid="uid://cpsm4c7dfob44" path="res://Scenes/inventory/inventory_ui.tscn" id="3_8u3og"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y07w"]
 atlas = ExtResource("2_qdoab")
@@ -97,7 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0791472, 0.254597, 0.211056, 1)
+color = Color(0.0784314, 0.254902, 0.211765, 0.596078)
 
 [node name="Label" type="Label" parent="Inventory/ColorRect"]
 layout_mode = 1

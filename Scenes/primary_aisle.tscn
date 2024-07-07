@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://yyrbetd7ic33"]
+
+[ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="1_c7jgt"]
+[ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
+[ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
+[ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_gckcc"]
+[ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="3_px425"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
+size = Vector2(77, 154)
+
+[node name="Primary Aisle" type="Node2D"]
+script = ExtResource("1_fkw2g")
+
+[node name="MainTileMap" parent="." instance=ExtResource("1_c7jgt")]
+position = Vector2(2, -522)
+layer_0/tile_data = PackedInt32Array(524292, 262146, 4, 524293, 262146, 4, 524294, 262146, 4, 524295, 262146, 4, 524296, 262146, 4, 524297, 262146, 4, 524298, 262146, 4, 524299, 262146, 4, 524300, 262146, 4, 524301, 262146, 4, 458765, 262146, 4, 458764, 262146, 4, 458763, 262146, 4, 458762, 262146, 4, 458761, 262146, 4, 458760, 262146, 4, 458759, 262146, 4, 458758, 262146, 4, 458757, 262146, 4, 458756, 262146, 4, 393220, 262146, 4, 393221, 262146, 4, 393222, 262146, 4, 393223, 262146, 4, 393224, 262146, 4, 393225, 262146, 4, 393226, 262146, 4, 393227, 262146, 4, 393228, 262146, 4, 393229, 262146, 4)
+layer_1/tile_data = PackedInt32Array(589828, 196610, 4, 589829, 196610, 4, 589830, 196610, 4, 589831, 196610, 4, 589832, 196610, 4, 589833, 196610, 4, 589834, 196610, 4, 589835, 196610, 4, 589836, 196610, 4, 589837, 196610, 4)
+
+[node name="AisleEntrance" parent="." instance=ExtResource("3_px425")]
+position = Vector2(684, -98)
+
+[node name="InteractionArea2" parent="AisleEntrance" instance=ExtResource("3_gckcc")]
+interact_label = "enter"
+interact_type = "load_scene"
+interact_value = "res://Scenes/aisle.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrance/InteractionArea2"]
+position = Vector2(37.5, 76)
+shape = SubResource("RectangleShape2D_ie211")
+
+[node name="Player" parent="." instance=ExtResource("1_h51un")]
+position = Vector2(601, 0)

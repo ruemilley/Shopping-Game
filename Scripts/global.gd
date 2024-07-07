@@ -6,7 +6,7 @@ var last_main_position = Vector2(0,0)
 #scene and node references
 
 var player_node: Node = null
-@onready var inventory_slot_scene = preload("res://Scenes/inventory_slot.tscn")
+@onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
 
 #inventory management
 
@@ -14,15 +14,29 @@ var inventory = []
 
 #inventory signals
 signal inventory_updated
+var spawnable_items = [
+	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png")},
+	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png")}
+]
+
+
+#arrays for items in scnees
+
+var primary_aisle_items = [
+	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "iposition": Vector2(700,0)},
+	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "iposition": Vector2(800,0)}
+]
+
 
 func _ready():
 	inventory.resize(30) #set inventory cap
-	update_scene_items()
-	
+	print(primary_aisle_items)
+
+#inventory ui functions
 
 func add_item(item):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["name"] == item["name"]:
+		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["iname"] == item["iname"]:
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
 			return true
@@ -34,7 +48,7 @@ func add_item(item):
 
 func remove_item(item_name):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["name"] == item_name:
+		if inventory[i] != null and inventory[i]["iname"] == item_name:
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
@@ -45,6 +59,7 @@ func remove_item(item_name):
 func set_player_reference(player):
 	player_node = player
 
+#dropping item
 func adjust_drop_position(position):
 	var radius = 100
 	var nearby_items = get_tree().get_nodes_in_group("items")
@@ -61,11 +76,26 @@ func drop_item(item_data, drop_position):
 	item_instance.set_item_data(item_data)
 	drop_position = adjust_drop_position(drop_position)
 	item_instance.global_position = drop_position
+	item_data.iposition = item_instance.global_position
 	get_tree().current_scene.add_child(item_instance)
 	update_scene_items()
+	match get_tree().current_scene.name:
+		"Primary Aisle":
+			primary_aisle_items.append(item_data)
+		"Aisle":
+			print("Aisle")
+		_:
+			print("no inventory to update")
 	
 
 func update_scene_items():
 	for i in get_tree().get_nodes_in_group("items"):
 		i.get_node("InteractionArea").interact_value = i
+
+func spawn_item(data):
+	var item_scene = preload("res://Scenes/inventory/inventory_item.tscn")
+	var item_instance = item_scene.instantiate()
+	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"])
+	item_instance.position = data["iposition"]
+	get_tree().current_scene.add_child(item_instance)
 	

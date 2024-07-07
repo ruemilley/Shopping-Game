@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
+const FALL_GRAVITY := 1800
 const INTERACT_TEXT = "E to "
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -22,11 +23,14 @@ func  _ready():
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += get_gravity(velocity) * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y = JUMP_VELOCITY / 4
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -44,12 +48,23 @@ func _physics_process(delta):
 	
 	if velocity.x == 0 and velocity.y == 0:
 		$AnimatedSprite2D.play("idle")
-	
+		
+		
+	#keep player from moving when screen is paused
+	if get_tree().paused == true:
+		velocity.x = 0
+		velocity.y = 0
 
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("interact"):
 		execute_interaction()
+		
+func get_gravity(velocity: Vector2):
+	if velocity.y < 0:
+		return gravity
+	else:
+		return FALL_GRAVITY
 
 
 # interaction methods: info pulled from this tutorial: https://www.youtube.com/watch?v=_57alDBagSY
@@ -79,10 +94,8 @@ func execute_interaction():
 			"load_scene":
 				Global.last_main_position = position
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
-				Global.update_scene_items()
 			"load_main":
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
-				Global.update_scene_items()
 			"item_pickup":
 				get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
 				Global.update_scene_items()

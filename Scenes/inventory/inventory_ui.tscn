@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpsm4c7dfob44"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_ui.gd" id="1_sudph"]
+[ext_resource type="Script" path="res://Scripts/inventory/inventory_ui.gd" id="1_7l5o7"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sudph")
+script = ExtResource("1_7l5o7")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1

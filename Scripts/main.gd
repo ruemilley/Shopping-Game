@@ -1,7 +1,10 @@
-extends Node2D
+extends Node
 
+@onready var first_scene = "res://Scenes/primary_aisle.tscn"
+
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	#set player position if reentering scene
-	if Global.last_main_position != Vector2(0,0): #make sure it's not the default value
-		$Player.position = Global.last_main_position
-		$Player.position.y = 0.0 #put you on the ground in case you were jumping when you went through the door
+	get_tree().change_scene_to_file(first_scene)
+
+
