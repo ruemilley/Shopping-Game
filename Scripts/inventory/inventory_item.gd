@@ -32,19 +32,23 @@ func pickup_item():
 	}
 	if Global.player_node:
 		Global.add_item(item)
+		var _current_scene_items = null
 		match get_tree().current_scene.name:
 			"Primary Aisle":
-				for i in range(Global.primary_aisle_items.size()):
-					if Global.primary_aisle_items[i]["iname"] == item["iname"] and Global.primary_aisle_items[i]["iposition"] == item["iposition"]:
-						Global.primary_aisle_items.pop_at(i)
-						break
-					else:
-						pass
+				update_item_arrays(Global.primary_aisle_items, item)
 			"Aisle":
-				print("Aisle")
+				update_item_arrays(Global.aisle_items, item)
 			_:
-				print("no inventory to update")
+				pass
 		self.queue_free()
+		
+func update_item_arrays(current_scene_items, item):
+	for i in range(current_scene_items.size()):
+		if current_scene_items[i]["iname"] == item["iname"] and current_scene_items[i]["iposition"] == item["iposition"]:
+			current_scene_items.pop_at(i)
+			break
+		else:
+			pass
 
 func set_item_data(data):
 	item_name = data["iname"]
