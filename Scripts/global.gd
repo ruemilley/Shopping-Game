@@ -1,12 +1,13 @@
 extends Node
 
-
-var last_main_position = Vector2(0,0)
-
 #scene and node references
 
+var last_main_position = Vector2(0,0)
 var player_node: Node = null
+var player_height = 0.0
+var player_direction
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
+
 
 #inventory management
 
@@ -36,6 +37,10 @@ var aisle_items = [
 
 func _ready():
 	inventory.resize(30) #set inventory cap
+	
+func _process(_delta):
+	if player_node != null:
+		player_height = player_node.position.y
 
 #inventory ui functions
 
@@ -53,9 +58,7 @@ func add_item(item):
 
 func remove_item(item_name, item_type):
 	for i in range(inventory.size()):
-		print(inventory[i])
 		if inventory[i] != null and inventory[i]["type"] == item_type and inventory[i]["iname"] == item_name:
-			print(inventory[i])
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
@@ -79,6 +82,7 @@ func adjust_drop_position(position):
 	return position
 	
 func drop_item(item_data, drop_position):
+	print(aisle_items)
 	var item_scene = load(item_data["scene_path"])
 	var item_instance = item_scene.instantiate()
 	item_instance.set_item_data(item_data)
@@ -86,14 +90,15 @@ func drop_item(item_data, drop_position):
 	item_instance.global_position = drop_position
 	item_data.iposition = item_instance.global_position
 	get_tree().current_scene.add_child(item_instance)
-	update_scene_items()
 	match get_tree().current_scene.name:
 		"Primary Aisle":
 			primary_aisle_items.append(item_data)
+			print(aisle_items)
 		"Aisle":
 			aisle_items.append(item_data)
 		_:
 			print("no inventory to update")
+	update_scene_items()
 	
 
 func update_scene_items():
@@ -104,6 +109,6 @@ func spawn_item(data):
 	var item_scene = preload("res://Scenes/inventory/inventory_item.tscn")
 	var item_instance = item_scene.instantiate()
 	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"])
-	item_instance.global_position = data["iposition"]
 	get_tree().current_scene.add_child(item_instance)
-	
+	item_instance.global_position = data["iposition"]
+	update_scene_items()
