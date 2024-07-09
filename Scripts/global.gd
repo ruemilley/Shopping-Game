@@ -81,8 +81,8 @@ func adjust_drop_position(position):
 			break
 	return position
 	
-func drop_item(item_data, drop_position):
-	print(aisle_items)
+func drop_item(_item_data, drop_position):
+	var item_data = _item_data.duplicate()
 	var item_scene = load(item_data["scene_path"])
 	var item_instance = item_scene.instantiate()
 	item_instance.set_item_data(item_data)
@@ -93,7 +93,6 @@ func drop_item(item_data, drop_position):
 	match get_tree().current_scene.name:
 		"Primary Aisle":
 			primary_aisle_items.append(item_data)
-			print(aisle_items)
 		"Aisle":
 			aisle_items.append(item_data)
 		_:

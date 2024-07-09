@@ -12,5 +12,4 @@ func _ready():
 		$Player/AnimatedSprite2D.flip_h = true
 	else:
 		$Player/AnimatedSprite2D.flip_h = false
-	print(Global.primary_aisle_items)
 	
