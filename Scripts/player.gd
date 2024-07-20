@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 600.0
+const JUMP_VELOCITY = -600.0
 const FALL_GRAVITY := 1800
 const INTERACT_TEXT = "E to "
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var direction
 
 @onready var all_interactions = []
 @onready var interaction_label = $InteractionComponents/InteractLabel
@@ -17,10 +17,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func  _ready():
 	Global.set_player_reference(self)
-	update_interactions()
 
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += get_gravity(velocity) * delta
@@ -34,7 +34,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("walk_left", "walk_right")
+	direction = Input.get_axis("walk_left", "walk_right")
 	if direction:
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.play("walk")
@@ -43,8 +43,12 @@ func _physics_process(delta):
 	
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
+		Global.player_direction = true
+		
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
+
+		Global.player_direction = false
 	
 	if velocity.x == 0 and velocity.y == 0:
 		$AnimatedSprite2D.play("idle")
