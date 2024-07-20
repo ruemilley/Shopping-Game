@@ -15,23 +15,20 @@ var inventory = []
 
 #inventory signals
 signal inventory_updated
-var spawnable_items = [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png")},
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png")}
-]
+
 
 
 #arrays for items in scnees
 
 var primary_aisle_items = [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "iposition": Vector2(700,0)},
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "iposition": Vector2(800,0)}
+	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"),"score": 300, "cost":1.50,  "iposition": Vector2(700,0)},
+	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "score": 150, "cost":1.50, "iposition": Vector2(800,0)}
 ]
 
 #placeholder for aisle
 var aisle_items = [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "iposition": Vector2(100,0)},
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "iposition": Vector2(200,0)}
+	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "score": 300, "cost":1.50, "iposition": Vector2(100,0)},
+	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "score": 150, "cost":1.50, "iposition": Vector2(200,0)}
 ]
 
 
@@ -107,7 +104,7 @@ func update_scene_items():
 func spawn_item(data):
 	var item_scene = preload("res://Scenes/inventory/inventory_item.tscn")
 	var item_instance = item_scene.instantiate()
-	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"])
+	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"], data["score"], data["cost"])
 	get_tree().current_scene.add_child(item_instance)
 	item_instance.global_position = data["iposition"]
 	update_scene_items()

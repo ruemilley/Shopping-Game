@@ -3,6 +3,8 @@ extends Node2D
 
 @export var item_type = ""
 @export var item_name = ""
+@export var item_score: int
+@export var item_cost: float
 @export var item_texture: Texture
 @export var item_position: Vector2
 
@@ -27,6 +29,8 @@ func pickup_item():
 		"type" : item_type,
 		"iname" : item_name,
 		"texture" : item_texture,
+		"score" : item_score,
+		"cost" : item_cost,
 		"scene_path" : scene_path,
 		"iposition" : item_position,
 	}
@@ -54,10 +58,14 @@ func set_item_data(data):
 	item_name = data["iname"]
 	item_type = data["type"]
 	item_texture = data["texture"]
+	item_score = data["score"]
+	item_cost = data["cost"]
 	item_position = data["iposition"]
 
-func initiate_items(type, iname, texture, iposition):
+func initiate_items(type, iname, texture, iposition, score, cost):
 	item_type = type
 	item_name = iname
 	item_texture = texture
 	item_position = iposition
+	item_score = score
+	item_cost = cost
