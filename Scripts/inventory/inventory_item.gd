@@ -37,13 +37,7 @@ func pickup_item():
 	if Global.player_node:
 		Global.add_item(item)
 		var _current_scene_items = null
-		match get_tree().current_scene.name:
-			"Primary Aisle":
-				update_item_arrays(Global.primary_aisle_items, item)
-			"Aisle":
-				update_item_arrays(Global.aisle_items, item)
-			_:
-				pass
+		update_item_arrays(Global.find_current_aisle(), item)
 		self.queue_free()
 		
 func update_item_arrays(current_scene_items, item):

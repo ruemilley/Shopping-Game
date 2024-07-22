@@ -3,10 +3,7 @@ extends Node2D
 
 func _ready():
 	#spawn item in global item array
-	if Global.primary_aisle_items.size() > 0:
-		for i in Global.primary_aisle_items:
-			Global.spawn_item(i)
-		Global.update_scene_items()
+	spawn_aisle_items()
 	
 	#set player position if reentering scene
 	if Global.last_main_position != Vector2(0,0): #make sure it's not the default value
@@ -17,3 +14,9 @@ func _ready():
 		else:
 			$Player/AnimatedSprite2D.flip_h = false
 
+func spawn_aisle_items():
+	var aisle_items = Global.find_current_aisle()
+	if aisle_items.size() > 0:
+		for i in aisle_items:
+			Global.spawn_item(i)
+		Global.update_scene_items()

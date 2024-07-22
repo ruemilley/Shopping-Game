@@ -7,10 +7,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Global.aisle_items.size() > 0:
-		for i in Global.aisle_items:
-			Global.spawn_item(i)
-		Global.update_scene_items()
+	spawn_aisle_items()
+		
 	$Player.position.y = Global.player_height
 	if Global.player_direction == true:
 		$Player/AnimatedSprite2D.flip_h = true
@@ -23,3 +21,9 @@ func _ready():
 	$Player/Camera2D.limit_bottom = camera_limit_bottom
 	
 	
+func spawn_aisle_items():
+	var aisle_items = Global.find_current_aisle()
+	if aisle_items.size() > 0:
+		for i in aisle_items:
+			Global.spawn_item(i)
+		Global.update_scene_items()

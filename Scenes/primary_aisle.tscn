@@ -125,7 +125,7 @@ metadata/_edit_group_ = true
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance" instance=ExtResource("3_gckcc")]
 interact_label = "enter"
 interact_type = "load_scene"
-interact_value = "res://Scenes/bakery_aisle.tscn"
+interact_value = "res://Scenes/produce_aisle.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrances/AisleEntrance/InteractionArea2"]
 position = Vector2(90, 182)
@@ -151,7 +151,7 @@ metadata/_edit_group_ = true
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance3" instance=ExtResource("3_gckcc")]
 interact_label = "enter"
 interact_type = "load_scene"
-interact_value = "res://Scenes/bakery_aisle.tscn"
+interact_value = "res://Scenes/dairy_aisle.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrances/AisleEntrance3/InteractionArea2"]
 position = Vector2(90, 182)
@@ -164,7 +164,7 @@ metadata/_edit_group_ = true
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance4" instance=ExtResource("3_gckcc")]
 interact_label = "enter"
 interact_type = "load_scene"
-interact_value = "res://Scenes/bakery_aisle.tscn"
+interact_value = "res://Scenes/meat_aisle.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrances/AisleEntrance4/InteractionArea2"]
 position = Vector2(90, 182)
@@ -177,7 +177,7 @@ metadata/_edit_group_ = true
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance5" instance=ExtResource("3_gckcc")]
 interact_label = "enter"
 interact_type = "load_scene"
-interact_value = "res://Scenes/bakery_aisle.tscn"
+interact_value = "res://Scenes/frozen_aisle.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrances/AisleEntrance5/InteractionArea2"]
 position = Vector2(90, 182)
@@ -190,7 +190,7 @@ metadata/_edit_group_ = true
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance6" instance=ExtResource("3_gckcc")]
 interact_label = "enter"
 interact_type = "load_scene"
-interact_value = "res://Scenes/bakery_aisle.tscn"
+interact_value = "res://Scenes/snack_aisle.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrances/AisleEntrance6/InteractionArea2"]
 position = Vector2(90, 182)
