@@ -75,3 +75,7 @@ jump={
 2d_physics/layer_1="world"
 2d_physics/layer_2="interactions"
 2d_physics/layer_3="item"
+
+[physics]
+
+2d/default_gravity=1000.0
