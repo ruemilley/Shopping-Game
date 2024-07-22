@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -600.0
+const SPEED := 600.0
+const JUMP_VELOCITY := -600.0
 const FALL_GRAVITY := 1800
-const INTERACT_TEXT = "E to "
+const INTERACT_TEXT := "E to "
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -24,6 +24,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += get_gravity(velocity) * delta
+		$AnimatedSprite2D.play("jump")
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -67,8 +68,7 @@ func _physics_process(delta):
 func get_gravity(velocity: Vector2):
 	if velocity.y < 0:
 		return gravity
-	else:
-		return FALL_GRAVITY
+	return FALL_GRAVITY
 
 
 # interaction methods: info pulled from this tutorial: https://www.youtube.com/watch?v=_57alDBagSY
