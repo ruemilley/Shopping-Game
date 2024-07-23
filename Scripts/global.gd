@@ -8,15 +8,12 @@ var player_height := 0.0
 var player_direction
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
 
-
 #inventory management
 
 var inventory := []
 
 #inventory signals
 signal inventory_updated
-
-
 
 #arrays for items in scnees
 
@@ -51,6 +48,9 @@ var snack_aisle_items := [
 	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "score": 300, "cost":1.50, "iposition": Vector2(100,0)},
 ]
 
+#HUD management
+var budget_value := 30.00
+
 
 func _ready():
 	inventory.resize(30) #set inventory cap
@@ -65,10 +65,12 @@ func add_item(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["iname"] == item["iname"]:
 			inventory[i]["quantity"] += item["quantity"]
+			get_tree().call_group("checklist_items","check_items", item)
 			inventory_updated.emit()
 			return true
 		elif inventory[i] == null:
 			inventory[i] = item
+			get_tree().call_group("checklist_items","check_items", item)
 			inventory_updated.emit()
 			return true
 	return false
@@ -77,7 +79,10 @@ func remove_item(item_name, item_type):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["type"] == item_type and inventory[i]["iname"] == item_name:
 			inventory[i]["quantity"] -= 1
+			budget_value += inventory[i]["cost"]
+			get_tree().call_group("HUD", "update_money_counter_text")
 			if inventory[i]["quantity"] <= 0:
+				get_tree().call_group("checklist_items","uncheck_items", item_name)
 				inventory[i] = null
 				inventory_updated.emit()
 			inventory_updated.emit()
@@ -141,5 +146,4 @@ func find_current_aisle():
 			return snack_aisle_items
 		_:
 			return null
-			
 

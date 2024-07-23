@@ -17,6 +17,8 @@ var direction
 
 func  _ready():
 	Global.set_player_reference(self)
+	await get_tree().create_timer(0.1).timeout
+	$Camera2D.position_smoothing_enabled = true
 
 
 func _physics_process(delta):
@@ -110,3 +112,4 @@ func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
+	

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://068afqqop6qd"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_qpwgp"]
+
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_qpwgp")
+
+[node name="MoneyCounter" type="RichTextLabel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "$30.00"

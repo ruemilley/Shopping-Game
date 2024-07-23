@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://t4ebpyfwl8nc"]
+[gd_scene load_steps=11 format=3 uid="uid://t4ebpyfwl8nc"]
 
-[ext_resource type="Script" path="res://Scenes/aisle.gd" id="1_r646b"]
+[ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_r646b"]
 [ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="2_jkdti"]
 [ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="3_s6wm8"]
 [ext_resource type="Texture2D" uid="uid://7h6ofpqo2we" path="res://Assets/background/Bakery Aisle.png" id="4_pbcmg"]
@@ -8,14 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="6_017ac"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="7_61io6"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="8_mk3kx"]
+[ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="9_6enst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfyoi"]
 size = Vector2(182, 366)
 
-[node name="SnackAisle" type="Node2D"]
+[node name="FrozenAisle" type="Node2D"]
 script = ExtResource("1_r646b")
-camera_limit_left = -1100.0
-camera_limit_right = 2000.0
+camera_limit_left = -200.0
+camera_limit_right = 2900.0
 camera_limit_top = -1000.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -76,3 +77,5 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_yfyoi")
 
 [node name="Player" parent="." instance=ExtResource("8_mk3kx")]
+
+[node name="HUD" parent="." instance=ExtResource("9_6enst")]

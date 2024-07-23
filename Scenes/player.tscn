@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckwc0dqifo68w"]
+[gd_scene load_steps=16 format=3 uid="uid://ckwc0dqifo68w"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bwngf"]
 [ext_resource type="Texture2D" uid="uid://ykn5n1h02o03" path="res://Assets/characters/player/idle/player_idle.png" id="2_c6u38"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b4e8gxlb33qe4" path="res://Assets/characters/player/walk/player_walk-6.png" id="8_c2ygv"]
 [ext_resource type="Texture2D" uid="uid://bf37va5lao1u6" path="res://Assets/characters/player/walk/player_walk-7.png" id="9_4km67"]
 [ext_resource type="Texture2D" uid="uid://c7xjk422i23jm" path="res://Assets/characters/player/walk/player_walk-8.png" id="10_p0inn"]
+[ext_resource type="PackedScene" uid="uid://v8hilwrpuc2j" path="res://Scenes/checklist.tscn" id="12_eq5hj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5oui"]
 animations = [{
@@ -63,8 +64,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6gi0"]
 size = Vector2(170, 394)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xp350"]
-radius = 175.026
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxkv0"]
+radius = 130.0
+height = 420.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 process_mode = 3
@@ -76,10 +78,9 @@ script = ExtResource("1_bwngf")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_r5oui")
 animation = &"idle"
-frame_progress = 0.639311
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 2)
+position = Vector2(22, 2)
 shape = SubResource("RectangleShape2D_n6gi0")
 
 [node name="InteractionComponents" type="Node2D" parent="."]
@@ -91,8 +92,8 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/InteractionArea"]
-position = Vector2(-1, -3)
-shape = SubResource("CircleShape2D_xp350")
+position = Vector2(-1, -5)
+shape = SubResource("CapsuleShape2D_fxkv0")
 
 [node name="InteractLabel" type="Label" parent="InteractionComponents"]
 anchors_preset = 8
@@ -112,10 +113,7 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -160)
 zoom = Vector2(0.9, 0.9)
-position_smoothing_enabled = true
 position_smoothing_speed = 3.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 drag_left_margin = 0.15
 drag_top_margin = 0.01
 drag_right_margin = 0.15
@@ -150,6 +148,8 @@ horizontal_alignment = 1
 
 [node name="InventoryUI" parent="Inventory/ColorRect" instance=ExtResource("3_8u3og")]
 layout_mode = 1
+
+[node name="Checklist" parent="Inventory" instance=ExtResource("12_eq5hj")]
 
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]

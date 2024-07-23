@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://v8hilwrpuc2j"]
+
+[ext_resource type="PackedScene" uid="uid://dgyyy34dqtob8" path="res://Scenes/checklist_item.tscn" id="1_clrvb"]
+
+[node name="Checklist" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -537.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="ChecklistTextContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ChecklistItem" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+
+[node name="ChecklistItem2" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Apple"

@@ -34,11 +34,15 @@ func pickup_item():
 		"scene_path" : scene_path,
 		"iposition" : item_position,
 	}
-	if Global.player_node:
+	if Global.player_node and item["cost"] < Global.budget_value:
 		Global.add_item(item)
 		var _current_scene_items = null
 		update_item_arrays(Global.find_current_aisle(), item)
+		Global.budget_value -= item["cost"]
+		get_tree().call_group("HUD", "update_money_counter_text")
 		self.queue_free()
+	else:
+		print("not enough money to buy this. drop something!")
 		
 func update_item_arrays(current_scene_items, item):
 	for i in range(current_scene_items.size()):

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://yyrbetd7ic33"]
+[gd_scene load_steps=8 format=3 uid="uid://yyrbetd7ic33"]
 
 [ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="1_c7jgt"]
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_gckcc"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="3_px425"]
+[ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="6_rtgsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
@@ -209,3 +210,5 @@ offset_bottom = 202.0
 
 [node name="Player" parent="." instance=ExtResource("1_h51un")]
 z_index = 1
+
+[node name="HUD" parent="." instance=ExtResource("6_rtgsx")]
