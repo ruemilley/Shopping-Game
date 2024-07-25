@@ -1,0 +1,9 @@
+~ start
+
+Shop Clerk: Ready to check out?
+- Yes
+	Shop Clerk: Okay! I'll ring you up!
+- No
+	Shop Clerk: Um, okay. Well... Don't hold up the line!
+
+=> END

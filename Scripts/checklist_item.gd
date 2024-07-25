@@ -10,7 +10,6 @@ func _ready():
 func check_items(item_name):
 	#cross off items function
 	if item_name["iname"] == text:
-		print("item checked")
 		$Crossout.visible = true
 	else:
 		pass

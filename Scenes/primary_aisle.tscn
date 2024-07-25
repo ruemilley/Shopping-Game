@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://yyrbetd7ic33"]
+[gd_scene load_steps=9 format=3 uid="uid://yyrbetd7ic33"]
 
 [ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="1_c7jgt"]
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
@@ -9,6 +9,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tk8x6"]
+radius = 148.0
+height = 948.0
 
 [node name="PrimaryAisle" type="Node2D"]
 script = ExtResource("1_fkw2g")
@@ -198,15 +202,23 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="CheckoutArea" type="Node2D" parent="."]
-position = Vector2(-1132, 4)
-metadata/_edit_group_ = true
-
-[node name="InteractionArea" parent="CheckoutArea" instance=ExtResource("3_gckcc")]
+position = Vector2(-1132, -3)
 
 [node name="ColorRect" type="ColorRect" parent="CheckoutArea"]
 offset_top = -27.0
 offset_right = 732.0
 offset_bottom = 202.0
+
+[node name="InteractionArea" parent="CheckoutArea" instance=ExtResource("3_gckcc")]
+interact_label = "to talk"
+interact_type = "dialogue"
+interact_value = "start"
+dialogue_resource = "res://Dialogue/checkout_dialogue.dialogue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckoutArea/InteractionArea"]
+position = Vector2(353, 78)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tk8x6")
 
 [node name="Player" parent="." instance=ExtResource("1_h51un")]
 z_index = 1
