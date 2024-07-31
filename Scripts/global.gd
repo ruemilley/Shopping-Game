@@ -17,35 +17,42 @@ signal inventory_updated
 
 #arrays for items in scnees
 
+#BASE TEMPLATE:
+#{"iname": "", "type": "", "texture": preload(""), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+
 var primary_aisle_items := [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"),"score": 300, "cost":1.50,  "iposition": Vector2(700,0)},
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "score": 150, "cost":1.50, "iposition": Vector2(800,0)}
 ]
 
-#bakery aisle
+#bakery/grain aisle
 var bakery_aisle_items := [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "score": 300, "cost":1.50, "iposition": Vector2(100,0)},
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "score": 150, "cost":1.50, "iposition": Vector2(200,0)}
+	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(200,100)},
+	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "score": 0, "cost":1.50, "iposition": Vector2(300,100)},
+	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "score": 0, "cost":1.50, "iposition": Vector2(250,100)},
+	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(100,0)},
+	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "score": 0, "cost":1.50, "iposition": Vector2(30,200)},
+	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(300,110)},
+	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "score": 0, "cost":1.50, "iposition": Vector2(500,0)},
+	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(400,100)},
 ]
 
+#dairy aisle
 var dairy_aisle_items := [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "score": 300, "cost":1.50, "iposition": Vector2(100,0)},
 ]
 
+#produce aisle
 var produce_aisle_items := [
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "score": 150, "cost":1.50, "iposition": Vector2(200,0)}
 ]
 
+#meat
 var meat_aisle_items := [
-	{"type": "Fruit", "iname": "Apple", "texture": preload("res://Assets/placeholder/pngtree-fresh-apple-fruit-red-png-image_10203073.png"), "score": 150, "cost":1.50, "iposition": Vector2(200,0)}
 ]
 
+#frozen
 var frozen_aisle_items := [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "score": 300, "cost":1.50, "iposition": Vector2(100,0)},
 ]
 
+#snack aisle
 var snack_aisle_items := [
-	{"type": "Fruit", "iname": "Orange", "texture": preload("res://Assets/placeholder/orange-1218158_960_720.png"), "score": 300, "cost":1.50, "iposition": Vector2(100,0)},
 ]
 
 #HUD management
