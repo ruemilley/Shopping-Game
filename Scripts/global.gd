@@ -72,12 +72,10 @@ func add_item(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["iname"] == item["iname"]:
 			inventory[i]["quantity"] += item["quantity"]
-			get_tree().call_group("checklist_items","check_items", item)
 			inventory_updated.emit()
 			return true
 		elif inventory[i] == null:
 			inventory[i] = item
-			get_tree().call_group("checklist_items","check_items", item)
 			inventory_updated.emit()
 			return true
 	return false
@@ -89,7 +87,6 @@ func remove_item(item_name, item_type):
 			budget_value += inventory[i]["cost"]
 			get_tree().call_group("HUD", "update_money_counter_text")
 			if inventory[i]["quantity"] <= 0:
-				get_tree().call_group("checklist_items","uncheck_items", item_name)
 				inventory[i] = null
 				inventory_updated.emit()
 			inventory_updated.emit()

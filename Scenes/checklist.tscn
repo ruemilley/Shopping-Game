@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://v8hilwrpuc2j"]
+[gd_scene load_steps=3 format=3 uid="uid://v8hilwrpuc2j"]
 
 [ext_resource type="PackedScene" uid="uid://dgyyy34dqtob8" path="res://Scenes/checklist_item.tscn" id="1_clrvb"]
+[ext_resource type="Script" path="res://Scripts/checklist.gd" id="1_h2nq1"]
 
 [node name="Checklist" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 offset_left = -537.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("1_h2nq1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
