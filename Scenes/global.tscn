@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnnuq6su8v0ck"]
+
+[ext_resource type="Script" path="res://Scripts/global.gd" id="1_8l56n"]
+[ext_resource type="PackedScene" uid="uid://cpsm4c7dfob44" path="res://Scenes/inventory/inventory_ui.tscn" id="2_6udvm"]
+[ext_resource type="PackedScene" uid="uid://v8hilwrpuc2j" path="res://Scenes/checklist.tscn" id="3_qdt3i"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_8l56n")
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Inventory"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.254902, 0.211765, 0.596078)
+
+[node name="Label" type="Label" parent="Inventory/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 20.0
+offset_right = 37.5
+offset_bottom = 43.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="InventoryUI" parent="Inventory/ColorRect" instance=ExtResource("2_6udvm")]
+layout_mode = 1
+
+[node name="Checklist" parent="Inventory" instance=ExtResource("3_qdt3i")]

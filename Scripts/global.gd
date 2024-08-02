@@ -4,9 +4,11 @@ extends Node
 
 var last_main_position := Vector2(0,0)
 var player_node: Node = null
+var checklist_node: Node = null
 var player_height := 0.0
 var player_direction
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
+
 
 #inventory management
 
@@ -14,6 +16,13 @@ var inventory := []
 
 #inventory signals
 signal inventory_updated
+
+#array updating checklist status
+
+var checklist_items := [
+	{"text": "Apple", "visible": false},
+	{"text": "Orange", "visible": false},
+]
 
 #arrays for items in scnees
 
@@ -61,6 +70,8 @@ var budget_value := 30.00
 
 func _ready():
 	inventory.resize(30) #set inventory cap
+	#connect signals
+	Events.checklist_status_update.connect(_on_checklist_status_update)
 	
 func _process(_delta):
 	if player_node != null:
@@ -95,6 +106,9 @@ func remove_item(item_name, item_type):
 	
 func set_player_reference(player):
 	player_node = player
+	
+func set_checklist_reference(checklist):
+	checklist_node = checklist
 
 #dropping item
 func adjust_drop_position(position):
@@ -151,3 +165,15 @@ func find_current_aisle():
 		_:
 			return null
 
+func update_checklist_items(checklist_item):
+	for i in range(checklist_items.size()):
+		if checklist_items[i]["text"] == checklist_item.text:
+			checklist_item.crossout.visible = checklist_items[i]["visible"]
+
+#signal receivers
+
+#update the visibility of the checklist item crossout
+func _on_checklist_status_update(visibility, text):
+	for i in range(checklist_items.size()):
+		if checklist_items[i]["text"] == text:
+			checklist_items[i]["visible"] = visibility
