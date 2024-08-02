@@ -17,11 +17,9 @@ var inventory := []
 #inventory signals
 signal inventory_updated
 
-#array updating checklist status
+#array updating checklist status. starts empty because it will append the item
 
 var checklist_items := [
-	{"text": "Apple", "visible": false},
-	{"text": "Orange", "visible": false},
 ]
 
 #arrays for items in scnees
@@ -34,14 +32,14 @@ var primary_aisle_items := [
 
 #bakery/grain aisle
 var bakery_aisle_items := [
-	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(200,100)},
-	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "score": 0, "cost":1.50, "iposition": Vector2(300,100)},
-	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "score": 0, "cost":1.50, "iposition": Vector2(250,100)},
-	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(100,0)},
-	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "score": 0, "cost":1.50, "iposition": Vector2(30,200)},
-	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(300,110)},
-	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "score": 0, "cost":1.50, "iposition": Vector2(500,0)},
-	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(400,100)},
+	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(200,-435)},
+	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "score": 0, "cost":1.50, "iposition": Vector2(2200,60)},
+	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "score": 0, "cost":1.50, "iposition": Vector2(2100,60)},
+	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(550,-435)},
+	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "score": 0, "cost":1.50, "iposition": Vector2(1950,60)},
+	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(700,-130)},
+	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "score": 0, "cost":1.50, "iposition": Vector2(1400,-130)},
+	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(920,-300)},
 ]
 
 #dairy aisle
@@ -174,6 +172,10 @@ func update_checklist_items(checklist_item):
 
 #update the visibility of the checklist item crossout
 func _on_checklist_status_update(visibility, text):
-	for i in range(checklist_items.size()):
-		if checklist_items[i]["text"] == text:
-			checklist_items[i]["visible"] = visibility
+	if checklist_items.size() > 0:
+		for i in range(checklist_items.size()):
+			if checklist_items[i]["text"] == text:
+				checklist_items[i]["visible"] = visibility
+	var new_entry = {"text": text, "visible": visibility}
+	if new_entry not in checklist_items:
+		checklist_items.append(new_entry)

@@ -44,3 +44,7 @@ layout_mode = 2
 [node name="ChecklistItem2" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
 text = "Apple"
+
+[node name="ChecklistItem3" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Cereal"
