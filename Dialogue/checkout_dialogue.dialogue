@@ -1,9 +1,11 @@
 ~ start
-
-Shop Clerk: Ready to check out?
-- Yes
-	Shop Clerk: Okay! I'll ring you up!
-- No
-	Shop Clerk: Um, okay. Well... Don't hold up the line!
-
+if has_checked_out == false:
+	Shop Clerk: Ready to check out?
+- 	Yes
+		Shop Clerk: Okay! I'll ring you up!
+		set has_checked_out = true
+- 	No
+		Shop Clerk: Um, okay. Well... Don't hold up the line!
+else:
+	Shop Clerk: Have a good day!
 => END

@@ -13,3 +13,13 @@ offset_left = -52.0
 offset_bottom = 40.0
 grow_horizontal = 0
 text = "$30.00"
+
+[node name="CartCounter" type="RichTextLabel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+text = "$0.00"

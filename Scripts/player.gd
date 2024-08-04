@@ -29,7 +29,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("jump")
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and Global.dialogue_active == false:
 		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_just_released("jump") and velocity.y < 0:
@@ -38,17 +38,17 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("walk_left", "walk_right")
-	if direction:
+	if direction and Global.dialogue_active == false:
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if velocity.x < 0:
+	if velocity.x < 0 and Global.dialogue_active == false:
 		$AnimatedSprite2D.flip_h = true
 		Global.player_direction = true
 		
-	if velocity.x > 0:
+	if velocity.x > 0 and Global.dialogue_active == false:
 		$AnimatedSprite2D.flip_h = false
 
 		Global.player_direction = false
@@ -59,8 +59,12 @@ func _physics_process(delta):
 		
 	#keep player from moving when screen is paused
 	if get_tree().paused == true:
+		$AnimatedSprite2D.play("idle")
 		velocity.x = 0
 		velocity.y = 0
+	
+	if Global.dialogue_active == true:
+		velocity.x = 0
 
 	move_and_slide()
 	
@@ -92,7 +96,7 @@ func update_interactions():
 		
 
 func execute_interaction():
-	if all_interactions:
+	if all_interactions and Global.dialogue_active == false:
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
 			"print_text": 
@@ -107,6 +111,7 @@ func execute_interaction():
 				Global.update_scene_items()
 			"dialogue":
 				var resource = load(cur_interaction.dialogue_resource)
+				Global.dialogue_active = true
 				DialogueManager.show_dialogue_balloon(resource, cur_interaction.interact_value)
 			_:
 				print("no matching interact value found.")

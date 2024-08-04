@@ -24,6 +24,7 @@ Events="*res://Scripts/events.gd"
 [dialogue_manager]
 
 general/balloon_path="res://Dialogue_Balloon/balloon.tscn"
+general/states=["Global"]
 
 [display]
 

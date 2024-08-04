@@ -64,6 +64,12 @@ var snack_aisle_items := [
 
 #HUD management
 var budget_value := 30.00
+var cart_value := 00.00
+
+#variables for checking out/endings/dialogue
+
+var dialogue_active := false
+var has_checked_out := false
 
 
 func _ready():
@@ -93,8 +99,7 @@ func remove_item(item_name, item_type):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["type"] == item_type and inventory[i]["iname"] == item_name:
 			inventory[i]["quantity"] -= 1
-			budget_value += inventory[i]["cost"]
-			get_tree().call_group("HUD", "update_money_counter_text")
+			cart_value -= inventory[i]["cost"]
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
 				inventory_updated.emit()

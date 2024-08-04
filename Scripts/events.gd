@@ -1,3 +1,4 @@
 extends Node
 
 signal checklist_status_update
+signal cart_counter_update
