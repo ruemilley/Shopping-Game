@@ -100,6 +100,7 @@ func remove_item(item_name, item_type):
 		if inventory[i] != null and inventory[i]["type"] == item_type and inventory[i]["iname"] == item_name:
 			inventory[i]["quantity"] -= 1
 			cart_value -= inventory[i]["cost"]
+			get_tree().call_group("HUD", "update_money_counter_text", Global.cart_value)
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
 				inventory_updated.emit()
@@ -184,3 +185,7 @@ func _on_checklist_status_update(visibility, text):
 	var new_entry = {"text": text, "visible": visibility}
 	if new_entry not in checklist_items:
 		checklist_items.append(new_entry)
+		
+func update_budget_costs():
+	get_tree().call_group("HUD", "update_money_counter_text", budget_value)
+	get_tree().call_group("HUD", "update_money_counter_text", cart_value)
