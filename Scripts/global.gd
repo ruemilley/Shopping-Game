@@ -70,6 +70,7 @@ var cart_value := 00.00
 
 var dialogue_active := false
 var has_checked_out := false
+var ending_state := "bad"
 
 
 func _ready():
@@ -174,6 +175,10 @@ func update_checklist_items(checklist_item):
 		if checklist_items[i]["text"] == checklist_item.text:
 			checklist_item.crossout.visible = checklist_items[i]["visible"]
 
+func update_budget_costs():
+	get_tree().call_group("HUD", "update_money_counter_text", budget_value)
+	get_tree().call_group("HUD", "update_money_counter_text", cart_value)
+
 #signal receivers
 
 #update the visibility of the checklist item crossout
@@ -185,7 +190,3 @@ func _on_checklist_status_update(visibility, text):
 	var new_entry = {"text": text, "visible": visibility}
 	if new_entry not in checklist_items:
 		checklist_items.append(new_entry)
-		
-func update_budget_costs():
-	get_tree().call_group("HUD", "update_money_counter_text", budget_value)
-	get_tree().call_group("HUD", "update_money_counter_text", cart_value)

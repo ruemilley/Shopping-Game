@@ -1,18 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://yyrbetd7ic33"]
+[gd_scene load_steps=11 format=3 uid="uid://yyrbetd7ic33"]
 
 [ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="1_c7jgt"]
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
+[ext_resource type="Script" path="res://Scripts/store_entrance.gd" id="2_tb72o"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_gckcc"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="3_px425"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="6_rtgsx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu0e8"]
+size = Vector2(601, 1203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tk8x6"]
 radius = 148.0
-height = 948.0
+height = 818.0
 
 [node name="PrimaryAisle" type="Node2D"]
 script = ExtResource("1_fkw2g")
@@ -25,6 +29,17 @@ offset_top = -990.0
 offset_right = -1235.0
 offset_bottom = 206.0
 color = Color(0.504991, 0.994542, 0.89242, 1)
+script = ExtResource("2_tb72o")
+
+[node name="InteractionArea" parent="PlaceholderBG/StoreEntrance" instance=ExtResource("3_gckcc")]
+interact_label = "to exit store"
+interact_type = "dialogue"
+interact_value = "start"
+dialogue_resource = "res://Dialogue/exit_dialogue.dialogue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderBG/StoreEntrance/InteractionArea"]
+position = Vector2(290.5, 591.5)
+shape = SubResource("RectangleShape2D_yu0e8")
 
 [node name="AisleSide" type="ColorRect" parent="PlaceholderBG"]
 offset_left = 383.0
@@ -216,7 +231,7 @@ interact_value = "start"
 dialogue_resource = "res://Dialogue/checkout_dialogue.dialogue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckoutArea/InteractionArea"]
-position = Vector2(353, 78)
+position = Vector2(387, 78)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tk8x6")
 
