@@ -25,21 +25,21 @@ var checklist_items := [
 #arrays for items in scnees
 
 #BASE TEMPLATE:
-#{"iname": "", "type": "", "texture": preload(""), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+#{"iname": "", "type": "", "texture": preload(""), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 
 var primary_aisle_items := [
 ]
 
 #bakery/grain aisle
 var bakery_aisle_items := [
-	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(200,-435)},
-	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "score": 0, "cost":1.50, "iposition": Vector2(2200,60)},
-	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "score": 0, "cost":1.50, "iposition": Vector2(2100,60)},
-	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(550,-435)},
-	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "score": 0, "cost":1.50, "iposition": Vector2(1950,60)},
-	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(700,-130)},
-	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "score": 0, "cost":1.50, "iposition": Vector2(1400,-130)},
-	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(920,-300)},
+	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(200,-435)},
+	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":1.50, "iposition": Vector2(2200,60)},
+	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.50, "iposition": Vector2(2100,60)},
+	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(550,-435)},
+	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":1.50, "iposition": Vector2(1950,60)},
+	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(700,-130)},
+	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":1.50, "iposition": Vector2(1400,-130)},
+	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(920,-300)},
 ]
 
 #dairy aisle
@@ -146,7 +146,7 @@ func update_scene_items():
 func spawn_item(data):
 	var item_scene = preload("res://Scenes/inventory/inventory_item.tscn")
 	var item_instance = item_scene.instantiate()
-	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"], data["score"], data["cost"])
+	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"], data["paid"], data["cost"])
 	get_tree().current_scene.add_child(item_instance)
 	item_instance.global_position = data["iposition"]
 	update_scene_items()
@@ -175,7 +175,12 @@ func update_checklist_items(checklist_item):
 		if checklist_items[i]["text"] == checklist_item.text:
 			checklist_item.crossout.visible = checklist_items[i]["visible"]
 
-func update_budget_costs():
+func cart_checkout():
+	for i in range(inventory.size()):
+		if inventory[i] != null:
+			inventory[i]["paid"] = true
+			
+	print(inventory)
 	get_tree().call_group("HUD", "update_money_counter_text", budget_value)
 	get_tree().call_group("HUD", "update_money_counter_text", cart_value)
 
@@ -190,3 +195,14 @@ func _on_checklist_status_update(visibility, text):
 	var new_entry = {"text": text, "visible": visibility}
 	if new_entry not in checklist_items:
 		checklist_items.append(new_entry)
+
+#initialize ending
+
+func init_ending():
+	#check if you're stealing from the store
+	for i in range(inventory.size()):
+		if inventory[i] != null and inventory[i]["paid"] == false:
+			ending_state = "theft"
+			print(inventory[i])
+			break
+	get_tree().change_scene_to_file("res://Scenes/ending.tscn")

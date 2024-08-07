@@ -2,7 +2,7 @@
 
 Ready to exit?
 - Yes
-	You exited
+	do Global.init_ending()
 - No
 
 => END

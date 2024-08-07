@@ -6,7 +6,7 @@ if has_checked_out == false:
 		Shop Clerk: Okay! I'll ring you up!
 		set has_checked_out = true
 		set budget_value -= cart_value
-		do update_budget_costs()
+		do cart_checkout()
 	else:
 		Shop Clerk: It looks like you don't have enough money.. You'll have to put some things back.
 - 	No

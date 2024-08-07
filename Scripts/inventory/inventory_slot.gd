@@ -37,6 +37,7 @@ func set_item(new_item):
 	quantity_label.text = str(item["quantity"])
 	item_name.text = str(item["iname"])
 	item_type.text = str(item["type"])
+	
 
 
 func _on_drop_button_pressed():

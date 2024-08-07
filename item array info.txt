@@ -2,40 +2,40 @@
 
 var all_items := [
 	#Dairy
-	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
     #Frozen
-    {"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
     #Grains
-    {"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
     #Meat
-    {"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
     #Produce
-    {"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
     #Snack
-    {"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
-    {"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "score": 0, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+    {"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 ]
 
 
@@ -44,14 +44,14 @@ var primary_aisle_items := [
 
 #bakery/grain aisle
 var bakery_aisle_items := [
-    {"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(200,100)},
-    {"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "score": 0, "cost":1.50, "iposition": Vector2(300,100)},
-    {"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "score": 0, "cost":1.50, "iposition": Vector2(250,100)},
-    {"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "score": 0, "cost":1.50, "iposition": Vector2(100,0)},
-    {"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "score": 0, "cost":1.50, "iposition": Vector2(30,200)},
-    {"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(300,110)},
-    {"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "score": 0, "cost":1.50, "iposition": Vector2(500,0)},
-    {"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "score": 0, "cost":1.50, "iposition": Vector2(400,100)},
+    {"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(200,100)},
+    {"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":1.50, "iposition": Vector2(300,100)},
+    {"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.50, "iposition": Vector2(250,100)},
+    {"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(100,0)},
+    {"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":1.50, "iposition": Vector2(30,200)},
+    {"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(300,110)},
+    {"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":1.50, "iposition": Vector2(500,0)},
+    {"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(400,100)},
 ]
 
 #dairy aisle
