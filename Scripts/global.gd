@@ -199,10 +199,18 @@ func _on_checklist_status_update(visibility, text):
 #initialize ending
 
 func init_ending():
-	#check if you're stealing from the store
+	#check if inventory is empty
+	if inventory.all(return_inventory_val) == true:
+		ending_state = "empty"
+		get_tree().change_scene_to_file("res://Scenes/ending.tscn")
+		return
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["paid"] == false:
-			ending_state = "theft"
-			print(inventory[i])
-			break
+		if inventory[i] != null:
+			#check if you're stealing from the store
+			if inventory[i]["paid"] == false:
+				ending_state = "theft"
+				break
 	get_tree().change_scene_to_file("res://Scenes/ending.tscn")
+
+func return_inventory_val(i):
+	return i == null
