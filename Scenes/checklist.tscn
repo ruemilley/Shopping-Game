@@ -40,11 +40,36 @@ theme_override_constants/separation = 10
 
 [node name="ChecklistItem" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
+text = "Eggs"
 
 [node name="ChecklistItem2" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
-text = "Apple"
+text = "Milk"
 
 [node name="ChecklistItem3" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
 text = "Cereal"
+
+[node name="ChecklistItem4" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Chicken"
+
+[node name="ChecklistItem5" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Bread"
+
+[node name="ChecklistItem6" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Onion"
+
+[node name="ChecklistItem9" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Fruit"
+
+[node name="ChecklistItem7" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Pasta"
+
+[node name="ChecklistItem8" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
+layout_mode = 2
+text = "Treat for meeeeee"

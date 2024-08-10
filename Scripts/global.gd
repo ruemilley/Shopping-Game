@@ -44,22 +44,43 @@ var bakery_aisle_items := [
 
 #dairy aisle
 var dairy_aisle_items := [
+	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 ]
 
 #produce aisle
 var produce_aisle_items := [
+	{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 ]
 
 #meat
 var meat_aisle_items := [
+	{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 ]
 
 #frozen
 var frozen_aisle_items := [
+	{"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 ]
 
 #snack aisle
 var snack_aisle_items := [
+	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
 ]
 
 #HUD management
@@ -71,6 +92,29 @@ var cart_value := 00.00
 var dialogue_active := false
 var has_checked_out := false
 var ending_state := "bad"
+var ending_checklist := {
+	"eggs" : false,
+	"milk" : false,
+	"cereal" : false,
+	"protein" : false,
+	"bread" : false,
+	"fruit" : false,
+	"onion" : false,
+	"grain" : false,
+	"treat" : false,
+}
+var ending_checklist_count := {
+	"eggs" : 0,
+	"milk" : 0,
+	"cereal" : 0,
+	"protein" : 0,
+	"bread" : 0,
+	"fruit" : 0,
+	"onion" : 0,
+	"grain" : 0,
+	"treat" : 0,
+}
+	
 
 
 func _ready():
@@ -179,8 +223,6 @@ func cart_checkout():
 	for i in range(inventory.size()):
 		if inventory[i] != null:
 			inventory[i]["paid"] = true
-			
-	print(inventory)
 	get_tree().call_group("HUD", "update_money_counter_text", budget_value)
 	get_tree().call_group("HUD", "update_money_counter_text", cart_value)
 
@@ -210,6 +252,53 @@ func init_ending():
 			if inventory[i]["paid"] == false:
 				ending_state = "theft"
 				break
+			#check if you have eggs
+			if inventory[i]["iname"] == "Eggs" or inventory[i]["iname"] == "Fancy Eggs":
+				ending_checklist["eggs"] = true
+				ending_checklist_count["eggs"] += 1
+			#check if you have milk
+			elif inventory[i]["iname"] == "Oat Milk" or inventory[i]["iname"] == "Organic Milk" or inventory[i]["iname"] == "Whole Milk":
+				ending_checklist["milk"] = true
+				ending_checklist_count["milk"] += 1
+			#check cereal
+			elif inventory[i]["iname"] == "Color-O's Cereal" or inventory[i]["iname"] == "Health Nuts Cereal":
+				ending_checklist["cereal"] = true
+				ending_checklist_count["cereal"] += 1
+			#check chicken/protein
+			elif inventory[i]["iname"] == "Frozen Chicken Nuggets" or inventory[i]["iname"] == "Frozen Chicken" or inventory[i]["iname"] == "Chicken Breasts" or inventory[i]["iname"] == "Ground Beef" or inventory[i]["iname"] == "Salmon Filet" or inventory[i]["iname"] == "Tofu":
+				ending_checklist["protein"] = true
+				ending_checklist_count["protein"] += 1
+			#bread
+			elif inventory[i]["iname"] == "Whole Wheat Bread" or inventory[i]["iname"] == "White Bread":
+				ending_checklist["bread"] = true
+				ending_checklist_count["bread"] += 1
+			#fruit
+			elif inventory[i]["iname"] == "Apple" or inventory[i]["iname"] == "Orange":
+				ending_checklist["fruit"] = true
+				ending_checklist_count["fruit"] += 1
+			#vegetable
+			elif inventory[i]["iname"] == "Red Onion" or inventory[i]["iname"] == "White Onion":
+				ending_checklist["onion"] = true
+				ending_checklist_count["onion"] += 1
+			#grain
+			elif inventory[i]["iname"] == "Farfalle" or inventory[i]["iname"] == "Fettuccine" or inventory[i]["iname"] == "Spaghetti" or inventory[i]["iname"] == "White Rice":
+				ending_checklist["grain"] = true
+				ending_checklist_count["grain"] += 1
+			#treat
+			elif inventory[i]["iname"] == "Vanilla Ice Cream" or inventory[i]["iname"] == "Boring Chips" or inventory[i]["iname"] == "Chipz" or inventory[i]["iname"] == "Choco Bar" or inventory[i]["iname"] == "Soda":
+				ending_checklist["treat"] = true
+				ending_checklist_count["treat"] += 1
+	var ending_balance := 0
+	var ending_balance_cap : float = ending_checklist.size()
+	for i in ending_checklist.values():
+		if i == true:
+			ending_balance += 1
+	if ending_balance <= ending_balance_cap / 2:
+		ending_state = "bad"
+	if ending_balance < ending_balance_cap and ending_balance > ending_balance_cap / 2 :
+		ending_state = "okay"
+	if ending_balance >= ending_balance_cap:
+		ending_state = "good"
 	get_tree().change_scene_to_file("res://Scenes/ending.tscn")
 
 func return_inventory_val(i):
