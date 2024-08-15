@@ -110,9 +110,8 @@ func execute_interaction():
 				get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
 				Global.update_scene_items()
 			"dialogue":
-				var resource = load(cur_interaction.dialogue_resource)
 				Global.dialogue_active = true
-				DialogueManager.show_dialogue_balloon(resource, cur_interaction.interact_value)
+				DialogueManager.show_dialogue_balloon(load(cur_interaction.dialogue_resource), cur_interaction.interact_value)
 			_:
 				print("no matching interact value found.")
 			
