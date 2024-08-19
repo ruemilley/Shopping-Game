@@ -1,6 +1,6 @@
 ~ start
 
-Ready to exit?
+Ready to leave?
 - Yes
 	do Global.init_ending()
 - No
