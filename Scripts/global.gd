@@ -7,6 +7,7 @@ var player_node: Node = null
 var checklist_node: Node = null
 var player_height := 0.0
 var player_direction
+var is_running := false
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
 
 

@@ -31,18 +31,7 @@ func  _ready():
 
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += get_gravity(velocity) * delta
-		animated_sprite.play("jump")
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and Global.dialogue_active == false:
-		velocity.y = JUMP_VELOCITY
-		
-	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y = JUMP_VELOCITY / 4
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	direction = Input.get_axis("walk_left", "walk_right")
 	if direction and Global.dialogue_active == false:
@@ -50,14 +39,33 @@ func _physics_process(delta):
 		animated_sprite.play("walk")
 		if Input.is_action_pressed("run") and is_on_floor():
 			velocity.x = direction * RUN_SPEED
-		if Input.is_action_pressed("jump") and Input.is_action_pressed("run"):
-			velocity.x = direction * RUN_SPEED
+			Global.is_running = true
 		if is_on_floor() and !walk_sound.playing:
 			walk_sound.pitch_scale = randf_range(.9, 1.1)
 			walk_sound.play()
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		walk_sound.stop()
+	# Add the gravity.
+	
+	#check if actively running
+	if Input.is_action_just_released("run"):
+		Global.is_running = false
+	
+	#check speed for movement in air
+	if not is_on_floor():
+		velocity.y += get_gravity(velocity) * delta
+		animated_sprite.play("jump")
+		if Global.is_running == true:
+			velocity.x = direction * RUN_SPEED
+
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor() and Global.dialogue_active == false:
+		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y = JUMP_VELOCITY / 4
 	
 	if velocity.x < 0 and Global.dialogue_active == false:
 		animated_sprite.flip_h = true
