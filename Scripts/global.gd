@@ -45,11 +45,11 @@ var bakery_aisle_items := [
 
 #dairy aisle
 var dairy_aisle_items := [
-	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,-120)},
+	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(2300,-620)},
+	{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(400,-300)},
+	{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,50)},
+	{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,-290)},
 ]
 
 #produce aisle
