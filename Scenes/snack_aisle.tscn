@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_6wxrm"]
 [ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="2_cdome"]
 [ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="3_d7fbr"]
-[ext_resource type="Texture2D" uid="uid://7h6ofpqo2we" path="res://Assets/background/Bakery Aisle.png" id="4_7oy1h"]
+[ext_resource type="Texture2D" uid="uid://c7pq7qpb6vxd" path="res://Assets/background/Snack Aisle.png" id="4_wybgn"]
 [ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="5_dqloc"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="6_usdyt"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="7_kyujs"]
@@ -16,7 +16,7 @@ size = Vector2(182, 366)
 [node name="SnackAisle" type="Node2D"]
 script = ExtResource("1_6wxrm")
 camera_limit_left = -1100.0
-camera_limit_right = 2000.0
+camera_limit_right = 2900.0
 camera_limit_top = -1000.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -57,7 +57,7 @@ texture_scale = 6.5
 [node name="BakeryAisle" type="Sprite2D" parent="."]
 position = Vector2(1349, -239)
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("4_7oy1h")
+texture = ExtResource("4_wybgn")
 
 [node name="MainTileMap" parent="." instance=ExtResource("5_dqloc")]
 position = Vector2(915, 10.5)

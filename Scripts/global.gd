@@ -78,10 +78,10 @@ var frozen_aisle_items := [
 
 #snack aisle
 var snack_aisle_items := [
-	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":1.50, "iposition": Vector2(750,-280)},
+	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":1.50, "iposition": Vector2(380,50)},
+	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":1.50, "iposition": Vector2(1900,-420)},
+	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70)},
 ]
 
 #HUD management
