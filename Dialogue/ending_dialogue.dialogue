@@ -18,12 +18,67 @@ Mom: Wow. This is bad.
 
 ~ theft
 
-Mom: You stole! Grounded forever!
+You did it. The big crime.
+You can never go home again.
+Or else Mom would kick your ass.
+She doesn't understand that petty theft is actually super cool, which you know because you read that online.
+So just ride, baby. Into the sunset. Never look back.
+With the random groceries that you stole.
+...What did you grab, anyway?
+{{Global.inventory}} 
+#TODO, write function to grab some random stuff from your inventory??
+Yeah that was worth it for sure.
+Enjoy your new life on the lam. It's all you have now.
+ROLL CREDITS.
+do roll_credits()
 
 => END
 
 ~ empty
 
-Mom: girl where is my shit
+Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
+Mom: ...
+Mom: ......
+Mom: .............
+Mom: So.
+Mom: You just didn't get... Anything?
+Mom: I'm honestly shocked.
+Mom: Like is this better or worse than if you just wasted all my money on junk? I'm not sure.
+Mom: Do you have anything to say for yourself?
+- I panicked. The lights were so blinding.
+	Mom: Well.. I can't say I've never been there. The place is pretty fluorescent.
+	Mom: But I DO need you to be able to go to the grocery store. Otherwise I worry about you as an adult.
+	Mom: Hmm...
+	Mom: Well, I guess it's up to you. Do you want to give it another try?
+	- Yes
+		Mom: That's the spirit. Get back out there, kiddo.
+		do reset_game_state()
+	- No
+		Mom: That's fair. Can't conquer everything in one go.
+		Mom: ...
+		Mom: Not sure how to proceed now.
+		Mom: ...
+		Mom: Well, whatever. Roll credits!
+		do roll_credits()
+- The store was out of every single item.
+	Mom: That seems... Unlikely.
+	Mom: Maybe not impossible.
+	Mom: But unlikely.
+	Mom: ...Are you sure they were out? Of every single item?
+	- Yeah that was a lie.
+		Mom: Yeah I know it was a lie. 
+		Mom: Go back there.
+		do reset_game_state()
+	- It was a wasteland in there. The apocalypse might be happening.
+		Mom: Wow. The apocalypse, huh.
+		Mom: Well, if the apocalypse is happening then I think it's even more important we stock up on essentials.
+		Mom: So you're gonna go to a different grocery store.
+		Mom: Scram.
+		do reset_game_state()
+- Just kinda wanted to see what you would do, honestly.
+	Mom: Well, this will shock you. But I am going to send you back to the store.
+	Mom: Scram.
+	do reset_game_state()
+
 
 => END

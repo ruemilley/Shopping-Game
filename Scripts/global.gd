@@ -92,7 +92,7 @@ var cart_value := 00.00
 
 var dialogue_active := false
 var has_checked_out := false
-var ending_state := "bad"
+var ending_state := "empty"
 var ending_checklist := {
 	"eggs" : false,
 	"milk" : false,
@@ -304,3 +304,11 @@ func init_ending():
 
 func return_inventory_val(i):
 	return i == null
+
+func reset_game_state():
+	pass
+	#TODO: write function resetting all the values in the game to default for a new run
+	
+func roll_credits():
+	pass
+	#TODO: make credits scene

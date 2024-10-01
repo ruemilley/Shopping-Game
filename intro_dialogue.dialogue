@@ -1,0 +1,42 @@
+~ intro
+
+Mom: Kiddo. I need you to go to the store for me.
+- Aw man. Do I gotta?
+	Mom: You do gotta.
+- Yes sir. I love going to the store. I live for going to the store.
+	Mom: Okay, enough with the sass.
+Mom: I'll give you a list and some cash.
+Mom: You know how stores work, right? Do you need some advice? Like a tutorial or something?
+- I've never been to the store. Please tell me what to do.
+	Mom: Kids these days. 
+	Mom: Actually, I guess this is explicitly my fault because you're MY kid. Huh. That's something to ruminate on later.
+	- I also don't know what ruminate means.
+		Mom: Get a dictionary. Use your google phone. What am I, your mother? Don't answer that. => tutorial
+	- Please tell me how to go to the store. => tutorial
+- Psh. I know how to go to the store. I'm cool and experienced.
+	Mom: Suit yourself, kiddo. Just don't come crying to me if you don't know what to do when you get there.
+	- Actually I lied. I know nothing about stores. Please help me. => tutorial
+	- Crying is for babies which I am not.
+		Mom: All right, All right. Just get outta here already. Don't forget to check the list. => END
+	
+~ tutorial
+
+Mom: Okay, pretty simple. You'll move around using WASD. Like you do everywhere, right.
+Mom: You can press Shift to run, but try not to tear around the store and run into everyone. Be polite.
+Mom: You can press Space to jump. Like if you can't reach something off a high shelf.
+Mom: Then you'll pick up items by pressing E. 
+Mom: Remember not to just grab whatever garbage you want, though. I'm sending you there to get SPECIFIC. ITEMS.
+Mom: If you want to check the list and see what you've already picked up, press I. For inventory. Easy to remember that way, right?
+Mom: You can also drop stuff you've already picked up from your inventory. Just hover over the item with your mouse to drop it.
+Mom: When you've got everything, you can go to checkout. Just talk to the cashier and she'll ring you up.
+Mom: Make sure you're not goin' over budget, though. If you look at the top right corner you can see how much money you got and how much you've got in your cart to spend.
+Mom: ...I'm gonna assume you know how money works and not get into that. It's math, okay.
+Mom: Once you're all done you can hit the road and I'll tell ya how you did.
+Mom: You got all that?
+- I got none of it.
+	Mom: Geez, kiddo. Try to listen this time. => tutorial
+- I got all of it.
+	Mom: All right, good stuff. Make me proud. => END
+
+
+=> END
