@@ -11,12 +11,12 @@ var is_running := false
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
 
 
+#inventory signals
+signal inventory_updated
+
 #inventory management
 
 var inventory := []
-
-#inventory signals
-signal inventory_updated
 
 #array updating checklist status. starts empty because it will append the item
 
@@ -306,9 +306,103 @@ func return_inventory_val(i):
 	return i == null
 
 func reset_game_state():
-	pass
-	#TODO: write function resetting all the values in the game to default for a new run
+	#inventory management
+	inventory = []
+#array updating checklist status. starts empty because it will append the item
+	checklist_items = [
+	]
+#arrays for items in scnees
+	primary_aisle_items = [
+	]
+
+#bakery/grain aisle
+	bakery_aisle_items = [
+		{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(200,-435)},
+		{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":1.50, "iposition": Vector2(2200,60)},
+		{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.50, "iposition": Vector2(2100,60)},
+		{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":1.50, "iposition": Vector2(550,-435)},
+		{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":1.50, "iposition": Vector2(1950,60)},
+		{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(700,-130)},
+		{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":1.50, "iposition": Vector2(1400,-130)},
+		{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":1.50, "iposition": Vector2(920,-300)},
+	]
+
+	#dairy aisle
+	dairy_aisle_items = [
+		{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,-120)},
+		{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":1.50, "iposition": Vector2(2300,-620)},
+		{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(400,-300)},
+		{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,50)},
+		{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,-290)},
+	]
+
+	#produce aisle
+	produce_aisle_items = [
+		{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	]
+
+#meat
+	meat_aisle_items = [
+		{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	]
+
+#frozen
+	frozen_aisle_items = [
+		{"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+		{"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	]
+	
+#snack aisle
+	snack_aisle_items = [
+		{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":1.50, "iposition": Vector2(750,-280)},
+		{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":1.50, "iposition": Vector2(380,50)},
+		{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":1.50, "iposition": Vector2(1900,-420)},
+		{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70)},
+	]
+
+#HUD management
+	budget_value = 30.00
+	cart_value = 00.00
+
+#variables for checking out/endings/dialogue
+
+	dialogue_active = false
+	has_checked_out = false
+	ending_state = "empty"
+	ending_checklist = {
+		"eggs" : false,
+		"milk" : false,
+		"cereal" : false,
+		"protein" : false,
+		"bread" : false,
+		"fruit" : false,
+		"onion" : false,
+		"grain" : false,
+		"treat" : false,
+	}
+	ending_checklist_count = {
+		"eggs" : 0,
+		"milk" : 0,
+		"cereal" : 0,
+		"protein" : 0,
+		"bread" : 0,
+		"fruit" : 0,
+		"onion" : 0,
+		"grain" : 0,
+		"treat" : 0,
+	}
+
+func main_scene_return():
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	
 func roll_credits():
-	pass
-	#TODO: make credits scene
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+
