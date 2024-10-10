@@ -1,18 +1,241 @@
+~ rating_parse
+
+Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
+Mom: Let's start at the top.
+if ending_checklist["eggs"] == true:
+	Mom: Eggs\: [[check|got it|here|yep]].
+else:
+	Mom: Eggs\: [[nope|don't see it|nada|not present]].
+if ending_checklist["milk"] == true:
+	Mom: Milk\: [[check|got it|here|yep]].
+else:
+	Mom: Milk\: [[nope|don't see it|nada|not present]].
+if ending_checklist["cereal"] == true:
+	Mom: Cereal\: [[check|got it|here|yep]].
+else:
+	Mom: Cereal\: nope.
+if ending_checklist["protein"] == true:
+	Mom: Some kinda protein\: [[check|got it|here|yep]].
+else:
+	Mom: Some kinda protein\: [[nope|don't see it|nada|not present]].
+if ending_checklist["bread"] == true:
+	Mom: Bread\: [[check|got it|here|yep]].
+else:
+	Mom: Bread\: [[nope|don't see it|nada|not present]].
+if ending_checklist["fruit"] == true:
+	Mom: Fruit\: [[check|got it|here|yep]].
+else:
+	Mom: Fruit\: [[nope|don't see it|nada|not present]].
+if ending_checklist["onion"] == true:
+	Mom: Onion\: [[check|got it|here|yep]].
+else:
+	Mom: Onion\: [[nope|don't see it|nada|not present]].
+if ending_checklist["grain"] == true:
+	Mom: Grain\: [[check|got it|here|yep]].
+else:
+	Mom: Grain\: [[nope|don't see it|nada|not present]].
+if ending_checklist["treat"] == true:
+	Mom: Lil' something for you: [[check|got it|here|yep]].
+else:
+	Mom: Lil' something for you: [[nope|don't see it|nada|not present]].
+if ending_state == "good":
+	=> good
+if ending_state == "okay":
+	=> okay
+if ending_state == "bad":
+	=> bad
+
 ~ good
 
-Mom: Wow. This is good.
+Mom: Hey, that's everything, kiddo! I'm proud of you.
+Mom: How was it? Must have been pretty easy for you, I guess.
+- I am a grocery getting natural.
+	Mom: Hey, keep saying stuff like that and I'm going to start making you go to the grocery store more often.
+	Mom: Then I'm guessing if I asked you to start going to the grocery store more often, then the answer would be...
+	- Yes
+		Mom: Great! My little grocery warrior. => good_cont
+	- No
+		Mom: Yeah, that figures. Well I won't bug you too often... But sometimes we do gotta go to the store, kiddo. => good_cont
+- It was a journey full of pain and suffering but I persevered.
+	Mom: Then I'm guessing if I asked you to start going to the grocery store more often, then the answer would be...
+	- Yes
+		Mom: Great! My little grocery warrior. => good_cont
+	- No
+		Mom: Yeah, that figures. Well I won't bug you too often... But sometimes we do gotta go to the store, kiddo. => good_cont
+	
+
+=> END
+
+~ good_cont
+
+Mom: Well, guess that's everything. Guess I'll start making dinner.
+Mom: Unless you want to help me with that? No, I'll leave you alone for now.
+Mom: Thanks again, kiddo.
+Mom: Roll credits!
+do call_deferred("roll_credits")
 
 => END
 
 ~ okay
 
-Mom: Wow. This is okay.
+Mom: ...Well... I mean you got SOME of the things.
+Mom: I guess I can't ask for more?
+Mom: Actually I could ask for more.
+if ending_checklist["eggs"] == true:
+	Mom: I am glad you got the eggs. That's a good staple.
+else:
+	Mom: ...We did really need some more eggs... Well, we needed everything on the list.
+if ending_checklist["cereal"] == true and ending_checklist["milk"] == false:
+	Mom: Cereal but no milk? Guess you're eating it dry, huh.  
+if ending_checklist["cereal"] == false and ending_checklist["milk"] == true:
+	Mom: Milk but no cereal? You don't even like milk, kiddo. Last I checked at least.
+if ending_checklist["cereal"] == true and ending_checklist["milk"] == true:
+	Mom: Glad you got the cereal and milk combo. Kinda need one for the other.  
+if ending_checklist["bread"] == true:
+	Mom: Good job snagging the bread. Toast. Sandwiches. You know what bread is for.
+else:
+	Mom: No bread? Can't make you sandwiches for lunch then.
+	Mom: No, that doesn't mean I'm buying you something good. Nice try.
+if ending_checklist["protein"] == true:
+	Mom: Let's see, what else... Okay, got something to cook for dinner.
+	if tofu == true and ending_checklist_count["protein"] == 1:
+		Mom: ...I mean, I've never cooked tofu before, but we can give it a try. Are you on a little vegetarian kick or something?
+	if nuggy == true and ending_checklist_count["protein"] == 1:
+		Mom: ...Kind of wish it was something more nutritious than chicken nuggets, but, well. You did it.
+else:
+	Mom: Aaand nothing for dinner tonight either. 
+	Mom: We will not be ordering pizza. We will be eating... Something else I have not figured out yet.
+if ending_checklist["grain"] == true and ending_checklist["protein"] == true:
+	Mom: And you got a carb to go with the thing to cook for dinner. We won't starve tonight. Good work.
+if ending_checklist["grain"] == false and ending_checklist["protein"] == true:
+	Mom: ...Would have been nice if you had picked up a pasta or something. We're sorta sideless at the moment.
+if ending_checklist["grain"] == false and ending_checklist["protein"] == false:
+	Mom: ...Not a side either. 
+	Mom: ...maybe we WILL be ordering pizza... You didn't hear that.
+if ending_checklist["fruit"] == true:
+	Mom: But you got us some fruit, nice. Good vitamins in all that.
+else:
+	Mom: No fruit... So I guess we're getting scurvy. I tried my best.
+if ending_checklist["onion"] == true:
+	if red == true and white == true:
+		Mom: Onion... Got both kinds to be safe? Thanks.
+	elif white == true:
+		Mom: Okay, onion. ...I didn't specify the type of onion. That's on me. This'll work, though. Thanks.
+	elif red == true
+		Mom: Okay, onion. Got the right kind! Good job, kiddo.
+else:
+	Mom: No onion... Not my fault if my cooking lacks flavor without it.
+if ending_checklist["treat"] == true:
+	Mom: ...I see you got yourself something good for yourself, huh. That was a priority.
+	if ending_checklist_count["treat"] > 1:
+		Mom: Multiple somethings, I see. Hm.
+if spinach == true:
+	Mom: ...Why spinach? 
+	Mom: I didn't ask for spinach.
+	Mom: Wellll it's not bad to have a veggie.
+else:
+	Mom: ...I'm kinda surprised you didn't get yourself anything. Nothing sound good? Just couldn't make the budget work?
+	Mom: Feel a bit bad for chewing you out a little bit... But we do still NEED groceries.
+Mom: Now what do we do.
+Mom: I guess I could send you back there... Give it another try? What do you think?
+- Yeah
+	Mom: That's the spirit. Get back at it, kiddo.
+	do reset_game_state()
+	do call_deferred("main_scene_return")
+- Nah
+	Mom: Nah?
+	Mom: NAH????
+	Mom: ...
+	Mom: Well I raised you too leniently. But we'll figure that out later.
+	Mom: Thanks for the okay job.
+	Mom: Roll credits!
+	do call_deferred("roll_credits")
 
 => END
 
 ~ bad
 
-Mom: Wow. This is bad.
+Mom: Wow.
+Mom: I can't lie, kiddo. This is pretty bad.
+Mom: You didn't get hardly ANYTHING that we needed.
+Mom: Did you lose the list or something?
+- Yeah
+	Mom: I actively see it in your pocket.
+	Mom: What, you don't even respect me enough to lie good?
+- Nah
+	Mom: Well what DID happen? Geez kid.
+if ending_checklist["eggs"] == true:
+	Mom: Okay, eggs at least. Good staple.
+else:
+	Mom: No eggs. There are so many eggs in a grocery store.
+if ending_checklist["cereal"] == true and ending_checklist["milk"] == false:
+	Mom: Why would you get cereal but no milk?? 
+	Mom: I know you like snacking on it sometimes but it is MEANT. To have MILK on it.
+if ending_checklist["cereal"] == false and ending_checklist["milk"] == true:
+	Mom: Milk, but we really only needed the milk to go with your cereal. So this is kinda useless.
+if ending_checklist["cereal"] == true and ending_checklist["milk"] == true:
+	Mom: ...And okay, got milk and cereal. That's something...
+if ending_checklist["bread"] == true:
+	Mom: There's bread. Okay. Regrouping.
+else:
+	Mom: No bread? No sandwich. Simple as that.
+	Mom: And that's kind of the only thing I know how to make for lunch, so good luck on that.
+if ending_checklist["protein"] == true:
+	Mom: Let's see, what else... Okay, got something to cook for dinner.
+	if tofu == true and ending_checklist_count["protein"] == 1:
+		Mom: ...It's tofu. Why tofu? You've never HAD tofu.
+	if nuggy == true and ending_checklist_count["protein"] == 1:
+		Mom: ...Aaaand it's chicken nuggets. You're setting me up for failure as a mother, you know that?
+else:
+	Mom: No main for dinner. I'm gonna have to get creative, and nobody wants that.
+if ending_checklist["grain"] == true and ending_checklist["protein"] == true:
+	Mom: And you got a carb to go with the thing to cook for dinner. We won't starve tonight. Fine. 
+if ending_checklist["grain"] == false and ending_checklist["protein"] == true:
+	Mom: ...Would have been nice if you had picked up a pasta or something. We're sorta sideless at the moment.
+if ending_checklist["grain"] == false and ending_checklist["protein"] == false:
+	Mom: ...Nothing to go with this dinner either. You're really testing the limits of my cooking.
+if ending_checklist["fruit"] == true:
+	Mom: ...At least there's fruit. That's good for you. Okay.
+else:
+	Mom: No fruit, no vitamins. We're gonna get scurvy and die at sea. All because of you.
+if ending_checklist["onion"] == true:
+	if red == true and white == true:
+		Mom: Onion... Got both kinds to be safe? Thanks. Wish you had been more thorough with the REST of the grocery shopping... But fine.
+	elif white == true:
+		Mom: Okay, onion. ...I didn't specify the type of onion. I will admit to that being on me.
+	elif red == true
+		Mom: Okay, onion. Got the right kind. Thanks...
+else:
+	Mom: No onion. Just because YOU don't like onions doesn't mean you don't grab one if I ask for it, kiddo.
+if ending_checklist["treat"] == true:
+	Mom: And after all that.
+	Mom: All the things you didn't get.
+	Mom: You managed to get a little something for yourself.
+	if ending_checklist_count["treat"] > 1:
+		Mom: MULTIPLE somethings. Ah, kid. 
+else:
+	Mom: ...I'm kinda surprised you didn't get yourself anything. Nothing sound good? Just couldn't make the budget work?
+	Mom: Feel a bit bad for chewing you out a little bit... But we do still NEED groceries.
+if spinach == true:
+	Mom: And why SPINACH? 
+	Mom: IT WASN'T EVEN ON THE LIST.
+Mom: GAH.
+Mom: ...Sorry, kiddo. I guess I shouldn't yell at you.
+Mom: It's just frustrating, you know? I want you to do good. Am I not setting you up for success or something?
+Mom: ...How about this.
+Mom: Give it another go? We'll just wipe the slate clean.
+Mom: I'm probably being too harsh anyway. Things take a few tries to get the hang of.
+Mom: What do you say?
+- Yeah
+	Mom: Thanks, kid. I believe in you. You got this this time.
+	do reset_game_state()
+	do call_deferred("main_scene_return")
+- Nah
+	Mom: Okay so you're grounded now.
+	Mom: Grounded is what happens now.
+	Mom: SIGH.
+	Mom: Roll credits.
+	do call_deferred("roll_credits")
 
 => END
 
@@ -24,13 +247,10 @@ Or else Mom would kick your ass.
 She doesn't understand that petty theft is actually super cool, which you know because you read that online.
 So just ride, baby. Into the sunset. Never look back.
 With the random groceries that you stole.
-...What did you grab, anyway?
-{{Global.inventory}} 
-#TODO, write function to grab some random stuff from your inventory??
-Yeah that was worth it for sure.
+Yeah this was worth it for sure.
 Enjoy your new life on the lam. It's all you have now.
 ROLL CREDITS.
-do roll_credits()
+do call_deferred("roll_credits")
 
 => END
 
@@ -53,14 +273,14 @@ Mom: Do you have anything to say for yourself?
 	- Yes
 		Mom: That's the spirit. Get back out there, kiddo.
 		do reset_game_state()
-		do main_scene_return()
+		do call_deferred("main_scene_return")
 	- No
 		Mom: That's fair. Can't conquer everything in one go.
 		Mom: ...
 		Mom: Not sure how to proceed now.
 		Mom: ...
 		Mom: Well, whatever. Roll credits!
-		do roll_credits()
+		do call_deferred("roll_credits")
 - The store was out of every single item.
 	Mom: That seems... Unlikely.
 	Mom: Maybe not impossible.
@@ -70,19 +290,19 @@ Mom: Do you have anything to say for yourself?
 		Mom: Yeah I know it was a lie. 
 		Mom: Go back there.
 		do reset_game_state()
-		do main_scene_return()
+		do call_deferred("main_scene_return")
 	- It was a wasteland in there. The apocalypse might be happening.
 		Mom: Wow. The apocalypse, huh.
 		Mom: Well, if the apocalypse is happening then I think it's even more important we stock up on essentials.
 		Mom: So you're gonna go to a different grocery store.
 		Mom: Scram.
 		do reset_game_state()
-		do main_scene_return()
+		do call_deferred("main_scene_return")
 - Just kinda wanted to see what you would do, honestly.
 	Mom: Well, this will shock you. But I am going to send you back to the store.
 	Mom: Scram.
 	do reset_game_state()
-	do main_scene_return()
+	do call_deferred("main_scene_return")
 
 
 => END

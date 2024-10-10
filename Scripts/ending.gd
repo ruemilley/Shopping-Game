@@ -4,5 +4,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var resource = load("res://Dialogue/ending_dialogue.dialogue")
-	DialogueManager.show_dialogue_balloon(resource, Global.ending_state)
+	if Global.ending_state == "empty" or Global.ending_state == "theft":
+		DialogueManager.show_dialogue_balloon(resource, Global.ending_state)
+	else:
+		DialogueManager.show_dialogue_balloon(resource, "rating_parse")
 

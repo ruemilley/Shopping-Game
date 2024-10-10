@@ -115,7 +115,11 @@ var ending_checklist_count := {
 	"grain" : 0,
 	"treat" : 0,
 }
-	
+var nuggy := false
+var tofu := false
+var spinach := false
+var white := false
+var red := false
 
 
 func _ready():
@@ -269,6 +273,10 @@ func init_ending():
 			elif inventory[i]["iname"] == "Frozen Chicken Nuggets" or inventory[i]["iname"] == "Frozen Chicken" or inventory[i]["iname"] == "Chicken Breasts" or inventory[i]["iname"] == "Ground Beef" or inventory[i]["iname"] == "Salmon Filet" or inventory[i]["iname"] == "Tofu":
 				ending_checklist["protein"] = true
 				ending_checklist_count["protein"] += 1
+				if inventory[i]["iname"] == "Frozen Chicken Nuggets":
+					nuggy = true
+				if inventory[i]["iname"] == "Tofu":
+					tofu = true
 			#bread
 			elif inventory[i]["iname"] == "Whole Wheat Bread" or inventory[i]["iname"] == "White Bread":
 				ending_checklist["bread"] = true
@@ -281,6 +289,10 @@ func init_ending():
 			elif inventory[i]["iname"] == "Red Onion" or inventory[i]["iname"] == "White Onion":
 				ending_checklist["onion"] = true
 				ending_checklist_count["onion"] += 1
+				if inventory[i]["iname"] == "Red Onion":
+					red = true
+				else: 
+					white = true
 			#grain
 			elif inventory[i]["iname"] == "Farfalle" or inventory[i]["iname"] == "Fettuccine" or inventory[i]["iname"] == "Spaghetti" or inventory[i]["iname"] == "White Rice":
 				ending_checklist["grain"] = true
@@ -289,6 +301,8 @@ func init_ending():
 			elif inventory[i]["iname"] == "Vanilla Ice Cream" or inventory[i]["iname"] == "Boring Chips" or inventory[i]["iname"] == "Chipz" or inventory[i]["iname"] == "Choco Bar" or inventory[i]["iname"] == "Soda":
 				ending_checklist["treat"] = true
 				ending_checklist_count["treat"] += 1
+			elif inventory[i]["iname"] == "Spinach":
+				spinach = true
 	var ending_balance := 0
 	var ending_balance_cap : float = ending_checklist.size()
 	for i in ending_checklist.values():
@@ -399,6 +413,12 @@ func reset_game_state():
 		"grain" : 0,
 		"treat" : 0,
 	}
+	
+	nuggy = false
+	tofu = false
+	spinach = false
+	white = false
+	red = false
 
 func main_scene_return():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
