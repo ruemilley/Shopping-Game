@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ckwc0dqifo68w"]
+[gd_scene load_steps=18 format=3 uid="uid://ckwc0dqifo68w"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bwngf"]
 [ext_resource type="Texture2D" uid="uid://ykn5n1h02o03" path="res://Assets/characters/player/idle/player_idle.png" id="2_c6u38"]
 [ext_resource type="PackedScene" uid="uid://cpsm4c7dfob44" path="res://Scenes/inventory/inventory_ui.tscn" id="3_8u3og"]
+[ext_resource type="Texture2D" uid="uid://lp2ng5g4kc2l" path="res://Assets/characters/player/jump/player_jump.png" id="3_87pl2"]
 [ext_resource type="Texture2D" uid="uid://bc44nlww3pqsp" path="res://Assets/characters/player/walk/player_walk-1.png" id="3_ibxgc"]
 [ext_resource type="Texture2D" uid="uid://3n2xbpktdiv5" path="res://Assets/characters/player/walk/player_walk-2.png" id="4_is3fl"]
 [ext_resource type="Texture2D" uid="uid://cad0cmkibxwvw" path="res://Assets/characters/player/walk/player_walk-3.png" id="5_47r4n"]
@@ -26,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_c6u38")
+"texture": ExtResource("3_87pl2")
 }],
 "loop": true,
 "name": &"jump",
