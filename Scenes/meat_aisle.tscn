@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_hejjm"]
 [ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="2_d5rw0"]
 [ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="3_qu6lv"]
-[ext_resource type="Texture2D" uid="uid://7h6ofpqo2we" path="res://Assets/background/Bakery Aisle.png" id="4_j4dui"]
+[ext_resource type="Texture2D" uid="uid://cdid8r45lf635" path="res://Assets/background/Meat Aisle.png" id="4_ps801"]
 [ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="5_blju6"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="6_d2exw"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="7_bm0jb"]
@@ -57,7 +57,7 @@ texture_scale = 6.5
 [node name="BakeryAisle" type="Sprite2D" parent="."]
 position = Vector2(1349, -239)
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("4_j4dui")
+texture = ExtResource("4_ps801")
 
 [node name="MainTileMap" parent="." instance=ExtResource("5_blju6")]
 position = Vector2(915, 10.5)

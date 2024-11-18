@@ -63,10 +63,10 @@ var produce_aisle_items := [
 
 #meat
 var meat_aisle_items := [
-	{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
-	{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":1.50, "iposition": Vector2(0,0)},
+	{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":1.50, "iposition": Vector2(1500,-280)},
+	{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":1.50, "iposition": Vector2(300,-280)},
+	{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":1.50, "iposition": Vector2(2150,-280)},
+	{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":1.50, "iposition": Vector2(2700,-580)},
 ]
 
 #frozen

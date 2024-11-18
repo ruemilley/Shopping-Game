@@ -31,23 +31,26 @@ func  _ready():
 
 
 func _physics_process(delta):
-	
 	# Get the input direction and handle the movement/deceleration.
 	direction = Input.get_axis("walk_left", "walk_right")
 	if direction and Global.dialogue_active == false:
 		velocity.x = direction * SPEED
-		animated_sprite.play("walk")
 		if Input.is_action_pressed("run") and is_on_floor():
 			velocity.x = direction * RUN_SPEED
 			Global.is_running = true
 		if is_on_floor() and !walk_sound.playing:
 			walk_sound.pitch_scale = randf_range(.9, 1.1)
-			walk_sound.play()
-			
+			#walk_sound.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		walk_sound.stop()
 	# Add the gravity.
+	
+	#control animation
+	if velocity.x != 0 and Global.is_running != true:
+		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("run")
 	
 	#check if actively running
 	if Input.is_action_just_released("run"):
