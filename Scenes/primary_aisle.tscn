@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/store_entrance.gd" id="2_tb72o"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_gckcc"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="3_px425"]
+[ext_resource type="PackedScene" uid="uid://c7i5gdov1iwru" path="res://Scenes/checkout_area.tscn" id="6_h2h7a"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="6_rtgsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu0e8"]
@@ -13,10 +14,6 @@ size = Vector2(601, 1203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tk8x6"]
-radius = 148.0
-height = 818.0
 
 [node name="PrimaryAisle" type="Node2D"]
 script = ExtResource("1_fkw2g")
@@ -216,24 +213,9 @@ interact_value = "res://Scenes/snack_aisle.tscn"
 position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
-[node name="CheckoutArea" type="Node2D" parent="."]
-position = Vector2(-1132, 2)
-
-[node name="ColorRect" type="ColorRect" parent="CheckoutArea"]
-offset_top = -27.0
-offset_right = 732.0
-offset_bottom = 202.0
-
-[node name="InteractionArea" parent="CheckoutArea" instance=ExtResource("3_gckcc")]
-interact_label = "to talk"
-interact_type = "dialogue"
-interact_value = "start"
-dialogue_resource = "res://Dialogue/checkout_dialogue.dialogue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckoutArea/InteractionArea"]
-position = Vector2(387, 78)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_tk8x6")
+[node name="CheckoutArea" parent="." instance=ExtResource("6_h2h7a")]
+position = Vector2(-1135, 65)
+scale = Vector2(0.6, 0.6)
 
 [node name="Player" parent="." instance=ExtResource("1_h51un")]
 z_index = 1
