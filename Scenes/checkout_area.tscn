@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="1_0r4mv"]
 [ext_resource type="Texture2D" uid="uid://721r7ciigm2k" path="res://Assets/characters/cashier/idle/cashier_idle-1.png" id="1_fpgg6"]
-[ext_resource type="Script" path="res://Scenes/checkout_area.gd" id="1_jnam6"]
+[ext_resource type="Script" path="res://Scripts/checkout_area.gd" id="1_jnam6"]
 [ext_resource type="Texture2D" uid="uid://cmjrl5u2uwny8" path="res://Assets/characters/cashier/idle/cashier_idle-3.png" id="2_4ml5g"]
 [ext_resource type="Texture2D" uid="uid://ps43ojsynf27" path="res://Assets/characters/cashier/idle/cashier_idle-2.png" id="3_cefrm"]
 [ext_resource type="Texture2D" uid="uid://dwaumwksieh4b" path="res://Assets/characters/cashier/idle/cashier_idle-5.png" id="4_msx6h"]
