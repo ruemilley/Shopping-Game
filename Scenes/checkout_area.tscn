@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://c7i5gdov1iwru"]
+
+[ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="1_0r4mv"]
+[ext_resource type="Texture2D" uid="uid://721r7ciigm2k" path="res://Assets/characters/cashier/idle/cashier_idle-1.png" id="1_fpgg6"]
+[ext_resource type="Script" path="res://Scenes/checkout_area.gd" id="1_jnam6"]
+[ext_resource type="Texture2D" uid="uid://cmjrl5u2uwny8" path="res://Assets/characters/cashier/idle/cashier_idle-3.png" id="2_4ml5g"]
+[ext_resource type="Texture2D" uid="uid://ps43ojsynf27" path="res://Assets/characters/cashier/idle/cashier_idle-2.png" id="3_cefrm"]
+[ext_resource type="Texture2D" uid="uid://dwaumwksieh4b" path="res://Assets/characters/cashier/idle/cashier_idle-5.png" id="4_msx6h"]
+[ext_resource type="Texture2D" uid="uid://bnypbg8mgys5a" path="res://Assets/characters/cashier/idle/cashier_idle-4.png" id="5_cb2t4"]
+[ext_resource type="Texture2D" uid="uid://u7iljomsb04y" path="res://Assets/characters/cashier/idle/cashier_idle-6.png" id="6_vn7g0"]
+[ext_resource type="Texture2D" uid="uid://bc5x6a2bu4wui" path="res://Assets/characters/cashier/talk/cashier_talk-1.png" id="7_si7nd"]
+[ext_resource type="Texture2D" uid="uid://cymb3anvah3ck" path="res://Assets/characters/cashier/talk/cashier_talk-2.png" id="8_qxub7"]
+[ext_resource type="Texture2D" uid="uid://dnnt100j2rgnc" path="res://Assets/characters/cashier/talk/cashier_talk-3.png" id="9_tsswp"]
+[ext_resource type="Texture2D" uid="uid://b3c4jaqm2380a" path="res://Assets/characters/cashier/talk/cashier_talk-4.png" id="10_2ncg6"]
+[ext_resource type="Texture2D" uid="uid://bsoit1ifljnjw" path="res://Assets/background/background item assets/cash register.png" id="11_o3vg1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu5eh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fpgg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cefrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4ml5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cb2t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_msx6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vn7g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_fpgg6")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fpgg6")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_si7nd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qxub7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tsswp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2ncg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tsswp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qxub7")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tk8x6"]
+radius = 148.0
+height = 818.0
+
+[node name="CheckoutArea" type="Node2D"]
+position = Vector2(-1132, 2)
+script = ExtResource("1_jnam6")
+
+[node name="Cashier" type="AnimatedSprite2D" parent="."]
+position = Vector2(189, -102.816)
+scale = Vector2(0.88114, 0.88114)
+sprite_frames = SubResource("SpriteFrames_pu5eh")
+animation = &"blink"
+frame = 6
+frame_progress = 1.0
+
+[node name="RaycastLeft" type="RayCast2D" parent="Cashier"]
+target_position = Vector2(-779.672, -5.88379)
+
+[node name="RaycastRight" type="RayCast2D" parent="Cashier"]
+target_position = Vector2(733.141, -4.74889)
+
+[node name="CashRegister" type="Sprite2D" parent="."]
+position = Vector2(437, -169)
+texture = ExtResource("11_o3vg1")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_0r4mv")]
+interact_label = "to talk"
+interact_type = "dialogue"
+interact_value = "start"
+dialogue_resource = "res://Dialogue/checkout_dialogue.dialogue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(387, 78)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tk8x6")
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]
