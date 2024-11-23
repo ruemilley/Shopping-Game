@@ -2,3 +2,5 @@ extends Node
 
 signal checklist_status_update
 signal cart_counter_update
+signal finished_talking
+signal started_talking

@@ -60,8 +60,10 @@ var dialogue_line: DialogueLine:
 
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
+			Events.started_talking.emit()
 			dialogue_label.type_out()
 			await dialogue_label.finished_typing
+			Events.finished_talking.emit()
 
 		# Wait for input
 		if dialogue_line.responses.size() > 0:

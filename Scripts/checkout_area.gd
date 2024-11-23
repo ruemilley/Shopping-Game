@@ -3,9 +3,10 @@ extends Node2D
 @onready var cashier = $Cashier
 @onready var blink_timer = $BlinkTimer
 
-func connect_dialogue_ended():
-	var dialogue_label = %DialogueLabel
-	dialogue_label.finished_typing.connect(end_cashier_talking)
+func _ready():
+	Events.started_talking.connect(_on_started_talking)
+	Events.finished_talking.connect(_on_finished_talking)
+	
 	
 func _process(delta):
 	if Global.player_pos.x < -1135:
@@ -19,10 +20,11 @@ func _on_blink_timer_timeout():
 
 #function that is called when dialogue is triggered, need to figure out how to implement this
 
-func cashier_talking():
+func _on_started_talking():
 	blink_timer.paused = true
 	cashier.play("talk")
 	
-func end_cashier_talking(_resource: DialogueResource):
+func _on_finished_talking():
+	await cashier.animation_looped
 	cashier.play("idle")
 	blink_timer.paused = false
