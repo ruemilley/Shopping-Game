@@ -5,10 +5,12 @@ const SPEED := 600.0
 const RUN_SPEED := 1000.0
 const JUMP_VELOCITY := -600.0
 const FALL_GRAVITY := 1800
+const RUN_JUMP_VELOCITY := -900.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction
+
 
 #interactions
 const INTERACT_TEXT := "E to "
@@ -62,10 +64,14 @@ func _physics_process(delta):
 		animated_sprite.play("jump")
 		if Global.is_running == true:
 			velocity.x = direction * RUN_SPEED
+			
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and Global.dialogue_active == false:
-		velocity.y = JUMP_VELOCITY
+		if Global.is_running == true:
+			velocity.y = RUN_JUMP_VELOCITY
+		else:
+			velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = JUMP_VELOCITY / 4

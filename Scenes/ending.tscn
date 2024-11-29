@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvcf4t3i73je5"]
+[gd_scene load_steps=3 format=3 uid="uid://dvcf4t3i73je5"]
 
 [ext_resource type="Script" path="res://Scripts/ending.gd" id="1_mdny7"]
+[ext_resource type="PackedScene" uid="uid://igy5pu53qsr3" path="res://Scenes/mom.tscn" id="2_j3r4o"]
 
 [node name="Ending" type="Node2D"]
 script = ExtResource("1_mdny7")
+
+[node name="Mom" parent="." instance=ExtResource("2_j3r4o")]
+position = Vector2(411, 679)

@@ -1,6 +1,7 @@
 ~ rating_parse
 
 Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
+do mom.look_up()
 Mom: Let's start at the top.
 if ending_checklist["eggs"] == true:
 	Mom: Eggs\: [[check|got it|here|yep]].
@@ -257,6 +258,7 @@ do call_deferred("roll_credits")
 ~ empty
 
 Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
+do mom.look_up()
 Mom: ...
 Mom: ......
 Mom: .............

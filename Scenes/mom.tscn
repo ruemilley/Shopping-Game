@@ -1,0 +1,179 @@
+[gd_scene load_steps=27 format=3 uid="uid://igy5pu53qsr3"]
+
+[ext_resource type="Script" path="res://Scripts/mom.gd" id="1_eo4vr"]
+[ext_resource type="Texture2D" uid="uid://dr0m368d3bxx4" path="res://Assets/characters/mom/look down/mom_look down base.png" id="1_kdjpn"]
+[ext_resource type="Texture2D" uid="uid://d3w5lieeq25v7" path="res://Assets/characters/mom/look down/blink/mom_blink_ld-1.png" id="2_rauix"]
+[ext_resource type="Texture2D" uid="uid://on6xawgf7lr2" path="res://Assets/characters/mom/look down/blink/mom_blink_ld-2.png" id="3_uos3o"]
+[ext_resource type="Texture2D" uid="uid://bnce44e68fxab" path="res://Assets/characters/mom/look down/blink/mom_blink_ld-3.png" id="4_46hfe"]
+[ext_resource type="Texture2D" uid="uid://cigr8rlcmqw85" path="res://Assets/characters/mom/look down/blink/mom_blink_ld-4.png" id="5_q4ya7"]
+[ext_resource type="Texture2D" uid="uid://c1lsejdxlo8s5" path="res://Assets/characters/mom/look down/talk/mom_talk_mouth_ld-1.png" id="6_0gc74"]
+[ext_resource type="Texture2D" uid="uid://10waco7ldsu" path="res://Assets/characters/mom/look up/blink/mom_blink_lu-1.png" id="7_j5idm"]
+[ext_resource type="Texture2D" uid="uid://cl6x6dh488a4" path="res://Assets/characters/mom/look down/talk/mom_talk_mouth_ld-2.png" id="7_w676i"]
+[ext_resource type="Texture2D" uid="uid://d04clrp3hjtl1" path="res://Assets/characters/mom/look up/blink/mom_blink_lu-2.png" id="8_ay1ak"]
+[ext_resource type="Texture2D" uid="uid://cyts0wdnkr724" path="res://Assets/characters/mom/look down/talk/mom_talk_mouth_ld-3.png" id="8_woeqg"]
+[ext_resource type="Texture2D" uid="uid://2lmcc65l842k" path="res://Assets/characters/mom/look down/talk/mom_talk_mouth_ld-4.png" id="9_0iqkc"]
+[ext_resource type="Texture2D" uid="uid://ea2w5eovuqnj" path="res://Assets/characters/mom/look up/blink/mom_blink_lu-3.png" id="9_5nqv3"]
+[ext_resource type="Texture2D" uid="uid://dsqgcb42wl2m6" path="res://Assets/characters/mom/look up/blink/mom_blink_lu-4.png" id="10_y4hkm"]
+[ext_resource type="Texture2D" uid="uid://c7djgm303q8o8" path="res://Assets/characters/mom/look up/look up animation/mom_look_up-1.png" id="11_40nuh"]
+[ext_resource type="Texture2D" uid="uid://bs4roohof8w8r" path="res://Assets/characters/mom/look up/look up animation/mom_look_up-2.png" id="12_v8n2q"]
+[ext_resource type="Texture2D" uid="uid://c263dbvpxkhft" path="res://Assets/characters/mom/look up/look up animation/mom_look_up-3.png" id="13_1dt3u"]
+[ext_resource type="Texture2D" uid="uid://bdo5u3sqceldd" path="res://Assets/characters/mom/look up/look up animation/mom_look_up-4.png" id="14_3mlfg"]
+[ext_resource type="Texture2D" uid="uid://yqbevg6ufc27" path="res://Assets/characters/mom/look up/look up animation/mom_look_up-5.png" id="15_eoixp"]
+[ext_resource type="Texture2D" uid="uid://bj73nkpv2ooyk" path="res://Assets/characters/mom/look up/talk/mom_talk_mouth_lu-1.png" id="15_ibyqx"]
+[ext_resource type="Texture2D" uid="uid://shosqyeqotbd" path="res://Assets/characters/mom/look up/talk/mom_talk_mouth_lu-2.png" id="16_6wf5p"]
+[ext_resource type="Texture2D" uid="uid://jm4d55nu1rm4" path="res://Assets/characters/mom/look up/talk/mom_talk_mouth_lu-3.png" id="17_dnhkn"]
+[ext_resource type="Texture2D" uid="uid://xrde6d3q1kij" path="res://Assets/characters/mom/look up/talk/mom_talk_mouth_lu-4.png" id="18_ql8jw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7px4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rauix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uos3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_46hfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q4ya7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_46hfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uos3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rauix")
+}],
+"loop": false,
+"name": &"blink_ld",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_j5idm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ay1ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5nqv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y4hkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5nqv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ay1ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j5idm")
+}],
+"loop": false,
+"name": &"blink_lu",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2w4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0gc74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w676i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_woeqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0iqkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_woeqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w676i")
+}],
+"loop": true,
+"name": &"talk_ld",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ibyqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6wf5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dnhkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ql8jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dnhkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6wf5p")
+}],
+"loop": true,
+"name": &"talk_lu",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2tv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_40nuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v8n2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1dt3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3mlfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eoixp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Mom" type="Node2D"]
+script = ExtResource("1_eo4vr")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_kdjpn")
+
+[node name="Blink" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s7px4")
+animation = &"blink_ld"
+
+[node name="Talk" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q2w4w")
+animation = &"talk_ld"
+
+[node name="LookUpAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_b2tv5")
+frame = 4
+frame_progress = 1.0
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="animation_finished" from="LookUpAnimation" to="." method="_on_look_up_animation_animation_finished"]
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]
