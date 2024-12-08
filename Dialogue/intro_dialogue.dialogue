@@ -1,5 +1,5 @@
 ~ intro
-
+do mom.look_up()
 Mom: Kiddo. I need you to go to the store for me.
 - Aw man. Do I gotta?
 	Mom: You do gotta.
@@ -33,10 +33,10 @@ Mom: Make sure you're not goin' over budget, though. If you look at the top righ
 Mom: ...I'm gonna assume you know how money works and not get into that. It's math, okay.
 Mom: Once you're all done you can hit the road and I'll tell ya how you did.
 Mom: You got all that?
-- I got none of it.
-	Mom: Geez, kiddo. Try to listen this time. => tutorial
 - I got all of it.
 	Mom: All right, good stuff. Make me proud. => END
+- I got none of it.
+	Mom: Geez, kiddo. Try to listen this time. => tutorial
 
 
 => END

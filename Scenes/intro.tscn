@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct37h7lskdq37"]
+
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_0i357"]
+[ext_resource type="Texture2D" uid="uid://dkf83xyh08rq4" path="res://Assets/background/Mom House BG.jpg" id="2_nevps"]
+[ext_resource type="PackedScene" uid="uid://igy5pu53qsr3" path="res://Scenes/mom.tscn" id="3_hn2ik"]
+[ext_resource type="Texture2D" uid="uid://ykn5n1h02o03" path="res://Assets/characters/player/idle/player_idle.png" id="4_fp3i5"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_0i357")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(992, 547)
+texture = ExtResource("2_nevps")
+
+[node name="Mom" parent="." instance=ExtResource("3_hn2ik")]
+position = Vector2(357, 748)
+scale = Vector2(0.65, 0.65)
+
+[node name="PlayerSpriteOnly" type="Sprite2D" parent="."]
+position = Vector2(1528, 765)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_fp3i5")
+flip_h = true
