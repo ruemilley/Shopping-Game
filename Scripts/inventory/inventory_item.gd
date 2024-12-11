@@ -1,6 +1,8 @@
 @tool
 extends Node2D
 
+@onready var sprite = $Sprite2D
+
 @export var item_type = ""
 @export var item_name = ""
 @export var item_cost: float
@@ -9,13 +11,13 @@ extends Node2D
 @export var item_paid: bool
 
 var scene_path: String = "res://Scenes/inventory/inventory_item.tscn"
+var tween
 
 @onready var item_sprite = $Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if not Engine.is_editor_hint():
 		item_sprite.texture = item_texture
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,3 +67,24 @@ func initiate_items(type, iname, texture, iposition, paid, cost):
 	item_position = iposition
 	item_paid = paid
 	item_cost = cost
+
+func spin():
+	tween = create_tween()
+	if $InteractionArea.get_overlapping_bodies().size() >= 1:	
+		tween.tween_property(sprite, "rotation", 0.25, 0.25)
+		tween.tween_property(sprite, "rotation", -0.25, 0.5)
+		tween.tween_property(sprite, "rotation", 0, 0.25)
+		tween.finished.connect(func(): spin())	
+	else:
+		tween.kill()
+
+func stop_spin():
+	tween.kill()
+	tween = create_tween()
+	tween.tween_property(sprite, "rotation", 0, 0.25)
+
+func _on_interaction_area_body_entered(body):
+	spin()
+
+func _on_interaction_area_body_exited(body):
+	stop_spin()
