@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://3y8yk7mnwus3"]
+
+[sub_resource type="Gradient" id="Gradient_1p007"]
+offsets = PackedFloat32Array(0, 0.8854)
+colors = PackedColorArray(0.599014, 0.614835, 0.575468, 1, 0.757933, 0.780821, 0.757908, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qyf0a"]
+gradient = SubResource("Gradient_1p007")
+
+[node name="BGScene" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2856.0
+offset_top = 872.0
+offset_right = 18.0
+offset_bottom = 7574.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 4.71239
+texture = SubResource("GradientTexture2D_qyf0a")

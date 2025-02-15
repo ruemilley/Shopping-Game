@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var camera_limit_left = -10000000.0
-@export var camera_limit_right = 10000000.0
+@export var camera_limit_right = -400.0
 @export var camera_limit_top = -10000000.0
-@export var camera_limit_bottom = 10000000.0
+@export var camera_limit_bottom = 400.0
 @onready var checkout_area = $CheckoutArea
 
 func _ready():
@@ -24,7 +24,7 @@ func _ready():
 	$Player/Camera2D.limit_top = camera_limit_top
 	$Player/Camera2D.limit_bottom = camera_limit_bottom
 	
-func _process(delta):
+func _process(_delta):
 	Global.player_pos = $Player.position
 
 func spawn_aisle_items():

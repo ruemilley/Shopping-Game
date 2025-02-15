@@ -111,7 +111,10 @@ func get_gravity(velocity: Vector2):
 
 func _on_interaction_area_area_entered(area):
 	all_interactions.insert(0, area)
+	var cur_interaction = all_interactions[0]
 	update_interactions()
+	if cur_interaction.auto_interaction == true:
+		call_deferred("execute_interaction")
 
 
 func _on_interaction_area_area_exited(area):

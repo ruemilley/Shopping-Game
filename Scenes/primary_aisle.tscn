@@ -1,142 +1,184 @@
-[gd_scene load_steps=11 format=3 uid="uid://yyrbetd7ic33"]
+[gd_scene load_steps=27 format=3 uid="uid://yyrbetd7ic33"]
 
-[ext_resource type="PackedScene" uid="uid://iqqsumm1c1b" path="res://Scenes/main_tile_map.tscn" id="1_c7jgt"]
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
-[ext_resource type="Script" path="res://Scripts/store_entrance.gd" id="2_tb72o"]
+[ext_resource type="Texture2D" uid="uid://bpb07qebmp3u0" path="res://Assets/background/main aisle elements/grocery sign.png" id="2_8mqfk"]
+[ext_resource type="Texture2D" uid="uid://bg2p14hw36wqs" path="res://Assets/items/grains/white bread.png" id="3_4ej48"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_gckcc"]
+[ext_resource type="Texture2D" uid="uid://bdmwilk4wdtyd" path="res://Assets/background/main aisle elements/produce_endcap.png" id="3_h2jmu"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="3_px425"]
+[ext_resource type="Texture2D" uid="uid://mpw63yj881tv" path="res://Assets/background/main aisle elements/caution sign.png" id="4_53816"]
+[ext_resource type="Texture2D" uid="uid://bb5i5gbdf5hrv" path="res://Assets/background/main aisle elements/bread_endcap.png" id="4_it203"]
+[ext_resource type="Texture2D" uid="uid://x6x1d324vnup" path="res://Assets/items/dairy/whole milk.png" id="4_w1o2n"]
+[ext_resource type="Texture2D" uid="uid://blb8jc5dxcnp6" path="res://Assets/items/snack/chipz.png" id="5_ekwc0"]
+[ext_resource type="Texture2D" uid="uid://dlvpj4dtksdt7" path="res://Assets/background/main aisle elements/dairy_endcap.png" id="5_yddi8"]
+[ext_resource type="Texture2D" uid="uid://upsmlqfl03kp" path="res://Assets/items/meat/salmon filet.png" id="6_4wggy"]
 [ext_resource type="PackedScene" uid="uid://c7i5gdov1iwru" path="res://Scenes/checkout_area.tscn" id="6_h2h7a"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="6_rtgsx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu0e8"]
-size = Vector2(601, 1203)
+[ext_resource type="Texture2D" uid="uid://cgstttflvfdh6" path="res://Assets/background/main aisle elements/frozen_endcap.png" id="6_xmyxl"]
+[ext_resource type="Texture2D" uid="uid://bunurynftp2rw" path="res://Assets/background/main aisle elements/snack_endcap.png" id="7_388v2"]
+[ext_resource type="Texture2D" uid="uid://brc0hc08hjgh7" path="res://Assets/items/frozen/vanilla ice cream.png" id="7_gt3fo"]
+[ext_resource type="Texture2D" uid="uid://dwsihlxfj830u" path="res://Assets/items/produce/apple.png" id="8_k6c2c"]
+[ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="9_b5mhd"]
+[ext_resource type="PackedScene" uid="uid://dctruws6sjnf6" path="res://Scenes/aisle_end.tscn" id="9_g8ru1"]
+[ext_resource type="Texture2D" uid="uid://c0ay71l2teksx" path="res://Assets/background/main aisle elements/entrance front.png" id="13_qrse5"]
+[ext_resource type="Texture2D" uid="uid://cmfc2iol8aeca" path="res://Assets/background/main aisle elements/entrance back.png" id="14_5kye1"]
+[ext_resource type="PackedScene" uid="uid://3y8yk7mnwus3" path="res://Scenes/bg_scene.tscn" id="15_tgynj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu0e8"]
+size = Vector2(424, 1203)
+
 [node name="PrimaryAisle" type="Node2D"]
 script = ExtResource("1_fkw2g")
+camera_limit_left = -1980.0
+camera_limit_right = 3330.0
+camera_limit_top = -5000.0
 
-[node name="PlaceholderBG" type="Node" parent="."]
+[node name="BGElements" type="Node" parent="."]
 
-[node name="StoreEntrance" type="ColorRect" parent="PlaceholderBG"]
-offset_left = -1813.0
-offset_top = -990.0
-offset_right = -1235.0
-offset_bottom = 206.0
-color = Color(0.504991, 0.994542, 0.89242, 1)
-script = ExtResource("2_tb72o")
+[node name="Signs" type="Node" parent="BGElements"]
 
-[node name="InteractionArea" parent="PlaceholderBG/StoreEntrance" instance=ExtResource("3_gckcc")]
-interact_label = "to exit store"
-interact_type = "dialogue"
-interact_value = "start"
-dialogue_resource = "res://Dialogue/exit_dialogue.dialogue"
+[node name="GrocerySign" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(-88, -904)
+texture = ExtResource("2_8mqfk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderBG/StoreEntrance/InteractionArea"]
-position = Vector2(290.5, 591.5)
-shape = SubResource("RectangleShape2D_yu0e8")
-
-[node name="AisleSide" type="ColorRect" parent="PlaceholderBG"]
-offset_left = 383.0
-offset_top = -411.0
-offset_right = 680.0
-offset_bottom = 205.0
-color = Color(0.262745, 0.337255, 0.454902, 1)
-
-[node name="AisleSide2" type="ColorRect" parent="PlaceholderBG"]
-offset_left = 863.0
-offset_top = -411.0
-offset_right = 1160.0
-offset_bottom = 205.0
-color = Color(0.262745, 0.337255, 0.454902, 1)
-
-[node name="AisleSide3" type="ColorRect" parent="PlaceholderBG"]
-offset_left = 1339.0
-offset_top = -407.0
-offset_right = 1636.0
-offset_bottom = 209.0
-color = Color(0.262745, 0.337255, 0.454902, 1)
-
-[node name="AisleSide4" type="ColorRect" parent="PlaceholderBG"]
-offset_left = 1818.0
-offset_top = -407.0
-offset_right = 2115.0
-offset_bottom = 209.0
-color = Color(0.262745, 0.337255, 0.454902, 1)
-
-[node name="AisleSide5" type="ColorRect" parent="PlaceholderBG"]
-offset_left = 2300.0
-offset_top = -407.0
-offset_right = 2597.0
-offset_bottom = 209.0
-color = Color(0.262745, 0.337255, 0.454902, 1)
-
-[node name="BathroomMaybe" type="ColorRect" parent="PlaceholderBG"]
-offset_left = 2828.0
-offset_top = -438.0
-offset_right = 3276.0
-offset_bottom = 201.0
-
-[node name="AisleLabel" type="TextEdit" parent="PlaceholderBG"]
-offset_left = 203.0
-offset_top = -231.0
-offset_right = 374.0
-offset_bottom = -192.0
+[node name="AisleLabel" type="TextEdit" parent="BGElements/Signs"]
+offset_left = -200.0
+offset_top = -487.0
+offset_right = -29.0
+offset_bottom = -448.0
 text = "produce aisle"
 
-[node name="AisleLabel2" type="TextEdit" parent="PlaceholderBG"]
-offset_left = 688.0
-offset_top = -231.0
-offset_right = 859.0
-offset_bottom = -192.0
+[node name="GrocerySign2" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(512, -904)
+texture = ExtResource("2_8mqfk")
+
+[node name="AisleLabel2" type="TextEdit" parent="BGElements/Signs"]
+offset_left = 400.0
+offset_top = -489.0
+offset_right = 571.0
+offset_bottom = -450.0
 text = "bakery aisle"
 
-[node name="AisleLabel3" type="TextEdit" parent="PlaceholderBG"]
-offset_left = 1164.0
-offset_top = -231.0
-offset_right = 1335.0
-offset_bottom = -192.0
+[node name="GrocerySign3" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(1088, -904)
+texture = ExtResource("2_8mqfk")
+
+[node name="AisleLabel3" type="TextEdit" parent="BGElements/Signs"]
+offset_left = 970.0
+offset_top = -485.0
+offset_right = 1141.0
+offset_bottom = -446.0
 text = "dairy aisle"
 
-[node name="AisleLabel4" type="TextEdit" parent="PlaceholderBG"]
-offset_left = 1644.0
-offset_top = -231.0
-offset_right = 1815.0
-offset_bottom = -192.0
+[node name="GrocerySign4" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(1664, -904)
+texture = ExtResource("2_8mqfk")
+
+[node name="AisleLabel4" type="TextEdit" parent="BGElements/Signs"]
+offset_left = 1560.0
+offset_top = -489.0
+offset_right = 1731.0
+offset_bottom = -450.0
 text = "meat aisle"
 
-[node name="AisleLabel5" type="TextEdit" parent="PlaceholderBG"]
+[node name="GrocerySign5" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(2232, -904)
+texture = ExtResource("2_8mqfk")
+
+[node name="AisleLabel5" type="TextEdit" parent="BGElements/Signs"]
 offset_left = 2124.0
-offset_top = -231.0
+offset_top = -487.0
 offset_right = 2295.0
-offset_bottom = -192.0
+offset_bottom = -448.0
 text = "frozen aisle"
 
-[node name="AisleLabel6" type="TextEdit" parent="PlaceholderBG"]
-offset_left = 2607.0
-offset_top = -231.0
-offset_right = 2778.0
-offset_bottom = -192.0
+[node name="GrocerySign6" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(2824, -904)
+texture = ExtResource("2_8mqfk")
+
+[node name="AisleLabel6" type="TextEdit" parent="BGElements/Signs"]
+offset_left = 2720.0
+offset_top = -487.0
+offset_right = 2891.0
+offset_bottom = -448.0
 text = "snack food aisle"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -2107.0
-offset_top = -1521.0
-offset_right = 3800.0
-offset_bottom = 1399.0
-color = Color(0.698039, 0.705882, 0.666667, 1)
+[node name="WhiteBread" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(483.5, -729)
+scale = Vector2(0.087963, 0.087963)
+texture = ExtResource("3_4ej48")
 
-[node name="MainTileMap" parent="." instance=ExtResource("1_c7jgt")]
-position = Vector2(2, -308)
-layer_1/tile_data = PackedInt32Array(589828, 196610, 4, 589829, 196610, 4, 589830, 196610, 4, 589831, 196610, 4, 589832, 196610, 4, 589833, 196610, 4, 589834, 196610, 4, 589835, 196610, 4, 589836, 196610, 4, 589837, 196610, 4, 589791, 196610, 4, 655327, 196610, 4, 720863, 196610, 4, 786399, 196610, 4, 851935, 196610, 4, 589792, 196610, 4, 655328, 196610, 4, 720864, 196610, 4, 786400, 196610, 4, 851936, 196610, 4, 589793, 196610, 4, 655329, 196610, 4, 720865, 196610, 4, 786401, 196610, 4, 851937, 196610, 4, 589794, 196610, 4, 655330, 196610, 4, 720866, 196610, 4, 786402, 196610, 4, 851938, 196610, 4, 589795, 196610, 4, 655331, 196610, 4, 720867, 196610, 4, 786403, 196610, 4, 851939, 196610, 4, 589796, 196610, 4, 655332, 196610, 4, 720868, 196610, 4, 786404, 196610, 4, 851940, 196610, 4, 589797, 196610, 4, 655333, 196610, 4, 720869, 196610, 4, 786405, 196610, 4, 851941, 196610, 4, 589798, 196610, 4, 655334, 196610, 4, 720870, 196610, 4, 786406, 196610, 4, 851942, 196610, 4, 589799, 196610, 4, 655335, 196610, 4, 720871, 196610, 4, 786407, 196610, 4, 851943, 196610, 4, 589800, 196610, 4, 655336, 196610, 4, 720872, 196610, 4, 786408, 196610, 4, 851944, 196610, 4, 589801, 196610, 4, 655337, 196610, 4, 720873, 196610, 4, 786409, 196610, 4, 851945, 196610, 4, 589802, 196610, 4, 655338, 196610, 4, 720874, 196610, 4, 786410, 196610, 4, 851946, 196610, 4, 589803, 196610, 4, 655339, 196610, 4, 720875, 196610, 4, 786411, 196610, 4, 851947, 196610, 4, 589804, 196610, 4, 655340, 196610, 4, 720876, 196610, 4, 786412, 196610, 4, 851948, 196610, 4, 589805, 196610, 4, 655341, 196610, 4, 720877, 196610, 4, 786413, 196610, 4, 851949, 196610, 4, 589806, 196610, 4, 655342, 196610, 4, 720878, 196610, 4, 786414, 196610, 4, 851950, 196610, 4, 589807, 196610, 4, 655343, 196610, 4, 720879, 196610, 4, 786415, 196610, 4, 851951, 196610, 4, 589808, 196610, 4, 655344, 196610, 4, 720880, 196610, 4, 786416, 196610, 4, 851952, 196610, 4, 589809, 196610, 4, 655345, 196610, 4, 720881, 196610, 4, 786417, 196610, 4, 851953, 196610, 4, 589810, 196610, 4, 655346, 196610, 4, 720882, 196610, 4, 786418, 196610, 4, 851954, 196610, 4, 589811, 196610, 4, 655347, 196610, 4, 720883, 196610, 4, 786419, 196610, 4, 851955, 196610, 4, 589812, 196610, 4, 655348, 196610, 4, 720884, 196610, 4, 786420, 196610, 4, 851956, 196610, 4, 589813, 196610, 4, 655349, 196610, 4, 720885, 196610, 4, 786421, 196610, 4, 851957, 196610, 4, 589814, 196610, 4, 655350, 196610, 4, 720886, 196610, 4, 786422, 196610, 4, 851958, 196610, 4, 589815, 196610, 4, 655351, 196610, 4, 720887, 196610, 4, 786423, 196610, 4, 851959, 196610, 4, 589816, 196610, 4, 655352, 196610, 4, 720888, 196610, 4, 786424, 196610, 4, 851960, 196610, 4, 589817, 196610, 4, 655353, 196610, 4, 720889, 196610, 4, 786425, 196610, 4, 851961, 196610, 4, 589818, 196610, 4, 655354, 196610, 4, 720890, 196610, 4, 786426, 196610, 4, 851962, 196610, 4, 589819, 196610, 4, 655355, 196610, 4, 720891, 196610, 4, 786427, 196610, 4, 851963, 196610, 4, 589820, 196610, 4, 655356, 196610, 4, 720892, 196610, 4, 786428, 196610, 4, 851964, 196610, 4, 589821, 196610, 4, 655357, 196610, 4, 720893, 196610, 4, 786429, 196610, 4, 851965, 196610, 4, 589822, 196610, 4, 655358, 196610, 4, 720894, 196610, 4, 786430, 196610, 4, 851966, 196610, 4, 589823, 196610, 4, 655359, 196610, 4, 720895, 196610, 4, 786431, 196610, 4, 851967, 196610, 4, 524288, 196610, 4, 589824, 196610, 4, 655360, 196610, 4, 720896, 196610, 4, 786432, 196610, 4, 524289, 196610, 4, 589825, 196610, 4, 655361, 196610, 4, 720897, 196610, 4, 786433, 196610, 4, 524290, 196610, 4, 589826, 196610, 4, 655362, 196610, 4, 720898, 196610, 4, 786434, 196610, 4, 524291, 196610, 4, 589827, 196610, 4, 655363, 196610, 4, 720899, 196610, 4, 786435, 196610, 4, 524292, 196610, 4, 655364, 196610, 4, 720900, 196610, 4, 786436, 196610, 4, 524293, 196610, 4, 655365, 196610, 4, 720901, 196610, 4, 786437, 196610, 4, 524294, 196610, 4, 655366, 196610, 4, 720902, 196610, 4, 786438, 196610, 4, 524295, 196610, 4, 655367, 196610, 4, 720903, 196610, 4, 786439, 196610, 4, 524296, 196610, 4, 655368, 196610, 4, 720904, 196610, 4, 786440, 196610, 4, 524297, 196610, 4, 655369, 196610, 4, 720905, 196610, 4, 786441, 196610, 4, 524298, 196610, 4, 655370, 196610, 4, 720906, 196610, 4, 786442, 196610, 4, 524299, 196610, 4, 655371, 196610, 4, 720907, 196610, 4, 786443, 196610, 4, 524300, 196610, 4, 655372, 196610, 4, 720908, 196610, 4, 786444, 196610, 4, 524301, 196610, 4, 655373, 196610, 4, 720909, 196610, 4, 786445, 196610, 4, 524302, 196610, 4, 589838, 196610, 4, 655374, 196610, 4, 720910, 196610, 4, 786446, 196610, 4, 524303, 196610, 4, 589839, 196610, 4, 655375, 196610, 4, 720911, 196610, 4, 786447, 196610, 4, 524304, 196610, 4, 589840, 196610, 4, 655376, 196610, 4, 720912, 196610, 4, 786448, 196610, 4, 524305, 196610, 4, 589841, 196610, 4, 655377, 196610, 4, 720913, 196610, 4, 786449, 196610, 4, 524306, 196610, 4, 589842, 196610, 4, 655378, 196610, 4, 720914, 196610, 4, 786450, 196610, 4, 524307, 196610, 4, 589843, 196610, 4, 655379, 196610, 4, 720915, 196610, 4, 786451, 196610, 4, 524308, 196610, 4, 589844, 196610, 4, 655380, 196610, 4, 720916, 196610, 4, 786452, 196610, 4, 524309, 196610, 4, 589845, 196610, 4, 655381, 196610, 4, 720917, 196610, 4, 786453, 196610, 4, 524310, 196610, 4, 589846, 196610, 4, 655382, 196610, 4, 720918, 196610, 4, 786454, 196610, 4, 524311, 196610, 4, 589847, 196610, 4, 655383, 196610, 4, 720919, 196610, 4, 786455, 196610, 4, 524312, 196610, 4, 589848, 196610, 4, 655384, 196610, 4, 720920, 196610, 4, 786456, 196610, 4, 917471, 196610, 4, 983007, 196610, 4, 917472, 196610, 4, 983008, 196610, 4, 917473, 196610, 4, 983009, 196610, 4, 917474, 196610, 4, 983010, 196610, 4, 917475, 196610, 4, 983011, 196610, 4, 917476, 196610, 4, 983012, 196610, 4, 917477, 196610, 4, 983013, 196610, 4, 917478, 196610, 4, 983014, 196610, 4, 917479, 196610, 4, 983015, 196610, 4, 917480, 196610, 4, 983016, 196610, 4, 917481, 196610, 4, 983017, 196610, 4, 917482, 196610, 4, 983018, 196610, 4, 917483, 196610, 4, 983019, 196610, 4, 917484, 196610, 4, 983020, 196610, 4, 917485, 196610, 4, 983021, 196610, 4, 917486, 196610, 4, 983022, 196610, 4, 917487, 196610, 4, 983023, 196610, 4, 917488, 196610, 4, 983024, 196610, 4, 917489, 196610, 4, 983025, 196610, 4, 917490, 196610, 4, 983026, 196610, 4, 917491, 196610, 4, 983027, 196610, 4, 917492, 196610, 4, 983028, 196610, 4, 917493, 196610, 4, 983029, 196610, 4, 917494, 196610, 4, 983030, 196610, 4, 917495, 196610, 4, 983031, 196610, 4, 917496, 196610, 4, 983032, 196610, 4, 917497, 196610, 4, 983033, 196610, 4, 917498, 196610, 4, 983034, 196610, 4, 917499, 196610, 4, 983035, 196610, 4, 917500, 196610, 4, 983036, 196610, 4, 917501, 196610, 4, 983037, 196610, 4, 917502, 196610, 4, 983038, 196610, 4, 917503, 196610, 4, 983039, 196610, 4, 851968, 196610, 4, 917504, 196610, 4, 851969, 196610, 4, 917505, 196610, 4, 851970, 196610, 4, 917506, 196610, 4, 851971, 196610, 4, 917507, 196610, 4, 851972, 196610, 4, 917508, 196610, 4, 851973, 196610, 4, 917509, 196610, 4, 851974, 196610, 4, 917510, 196610, 4, 851975, 196610, 4, 917511, 196610, 4, 851976, 196610, 4, 917512, 196610, 4, 851977, 196610, 4, 917513, 196610, 4, 851978, 196610, 4, 917514, 196610, 4, 851979, 196610, 4, 917515, 196610, 4, 851980, 196610, 4, 917516, 196610, 4, 851981, 196610, 4, 917517, 196610, 4, 851982, 196610, 4, 917518, 196610, 4, 851983, 196610, 4, 917519, 196610, 4, 851984, 196610, 4, 917520, 196610, 4, 851985, 196610, 4, 917521, 196610, 4, 851986, 196610, 4, 917522, 196610, 4, 851987, 196610, 4, 917523, 196610, 4, 851988, 196610, 4, 917524, 196610, 4, 851989, 196610, 4, 917525, 196610, 4, 851990, 196610, 4, 917526, 196610, 4, 851991, 196610, 4, 917527, 196610, 4, 851992, 196610, 4, 917528, 196610, 4, 524313, 196610, 4, 589849, 196610, 4, 655385, 196610, 4, 720921, 196610, 4, 786457, 196610, 4, 851993, 196610, 4, 917529, 196610, 4, 524314, 196610, 4, 589850, 196610, 4, 655386, 196610, 4, 720922, 196610, 4, 786458, 196610, 4, 851994, 196610, 4, 917530, 196610, 4, 524315, 196610, 4, 589851, 196610, 4, 655387, 196610, 4, 720923, 196610, 4, 786459, 196610, 4, 851995, 196610, 4, 917531, 196610, 4, 524316, 196610, 4, 589852, 196610, 4, 655388, 196610, 4, 720924, 196610, 4, 786460, 196610, 4, 851996, 196610, 4, 917532, 196610, 4, 524317, 196610, 4, 589853, 196610, 4, 655389, 196610, 4, 720925, 196610, 4, 786461, 196610, 4, 851997, 196610, 4, 917533, 196610, 4, 524318, 196610, 4, 589854, 196610, 4, 655390, 196610, 4, 720926, 196610, 4, 786462, 196610, 4, 851998, 196610, 4, 917534, 196610, 4, 524319, 196610, 4, 589855, 196610, 4, 655391, 196610, 4, 720927, 196610, 4, 786463, 196610, 4, 851999, 196610, 4, 917535, 196610, 4, 524320, 196610, 4, 589856, 196610, 4, 655392, 196610, 4, 720928, 196610, 4, 786464, 196610, 4, 852000, 196610, 4, 917536, 196610, 4, 524321, 196610, 4, 589857, 196610, 4, 655393, 196610, 4, 720929, 196610, 4, 786465, 196610, 4, 852001, 196610, 4, 917537, 196610, 4, 524322, 196610, 4, 589858, 196610, 4, 655394, 196610, 4, 720930, 196610, 4, 786466, 196610, 4, 852002, 196610, 4, 917538, 196610, 4, 524323, 196610, 4, 589859, 196610, 4, 655395, 196610, 4, 720931, 196610, 4, 786467, 196610, 4, 852003, 196610, 4, 917539, 196610, 4, 524324, 196610, 4, 589860, 196610, 4, 655396, 196610, 4, 720932, 196610, 4, 786468, 196610, 4, 852004, 196610, 4, 917540, 196610, 4, 524325, 196610, 4, 589861, 196610, 4, 655397, 196610, 4, 720933, 196610, 4, 786469, 196610, 4, 852005, 196610, 4, 917541, 196610, 4, 524326, 196610, 4, 589862, 196610, 4, 655398, 196610, 4, 720934, 196610, 4, 786470, 196610, 4, 852006, 196610, 4, 917542, 196610, 4, 524327, 196610, 4, 589863, 196610, 4, 655399, 196610, 4, 720935, 196610, 4, 786471, 196610, 4, 852007, 196610, 4, 917543, 196610, 4, 524328, 196610, 4, 589864, 196610, 4, 655400, 196610, 4, 720936, 196610, 4, 786472, 196610, 4, 852008, 196610, 4, 917544, 196610, 4, 524329, 196610, 4, 589865, 196610, 4, 655401, 196610, 4, 720937, 196610, 4, 786473, 196610, 4, 852009, 196610, 4, 917545, 196610, 4, 524330, 196610, 4, 589866, 196610, 4, 655402, 196610, 4, 720938, 196610, 4, 786474, 196610, 4, 852010, 196610, 4, 917546, 196610, 4, 524331, 196610, 4, 589867, 196610, 4, 655403, 196610, 4, 720939, 196610, 4, 786475, 196610, 4, 852011, 196610, 4, 917547, 196610, 4, 524332, 196610, 4, 589868, 196610, 4, 655404, 196610, 4, 720940, 196610, 4, 786476, 196610, 4, 852012, 196610, 4, 917548, 196610, 4, 524333, 196610, 4, 852013, 196610, 4, 917549, 196610, 4, 589869, 196610, 4, 655405, 196610, 4, 720941, 196610, 4, 786477, 196610, 4, 524334, 196610, 4, 589870, 196610, 4, 655406, 196610, 4, 720942, 196610, 4, 786478, 196610, 4, 852014, 196610, 4, 917550, 196610, 4, 524335, 196610, 4, 589871, 196610, 4, 655407, 196610, 4, 720943, 196610, 4, 786479, 196610, 4, 852015, 196610, 4, 917551, 196610, 4, 524336, 196610, 4, 589872, 196610, 4, 655408, 196610, 4, 720944, 196610, 4, 786480, 196610, 4, 852016, 196610, 4, 917552, 196610, 4, 524337, 196610, 4, 589873, 196610, 4, 655409, 196610, 4, 720945, 196610, 4, 786481, 196610, 4, 852017, 196610, 4, 917553, 196610, 4, 524338, 196610, 4, 589874, 196610, 4, 655410, 196610, 4, 720946, 196610, 4, 786482, 196610, 4, 852018, 196610, 4, 917554, 196610, 4, 524339, 196610, 4, 589875, 196610, 4, 655411, 196610, 4, 720947, 196610, 4, 786483, 196610, 4, 852019, 196610, 4, 917555, 196610, 4, 524340, 196610, 4, 589876, 196610, 4, 655412, 196610, 4, 720948, 196610, 4, 786484, 196610, 4, 852020, 196610, 4, 917556, 196610, 4, 524341, 196610, 4, 589877, 196610, 4, 655413, 196610, 4, 720949, 196610, 4, 786485, 196610, 4, 852021, 196610, 4, 917557, 196610, 4, -131020, 196610, 4, -65484, 196610, 4, 52, 196610, 4, 65588, 196610, 4, 131124, 196610, 4, 196660, 196610, 4, 262196, 196610, 4, 327732, 196610, 4, 393268, 196610, 4, 458804, 196610, 4, -131019, 196610, 4, -65483, 196610, 4, 53, 196610, 4, 65589, 196610, 4, 131125, 196610, 4, 196661, 196610, 4, 262197, 196610, 4, 327733, 196610, 4, 393269, 196610, 4, 458805, 196610, 4, -393249, 196610, 4, -327713, 196610, 4, -262177, 196610, 4, -196641, 196610, 4, -131105, 196610, 4, -65569, 196610, 4, -33, 196610, 4, 65503, 196610, 4, 131039, 196610, 4, 196575, 196610, 4, 262111, 196610, 4, 327647, 196610, 4, 393183, 196610, 4, 458719, 196610, 4, 524255, 196610, 4, -393248, 196610, 4, -327712, 196610, 4, -262176, 196610, 4, -196640, 196610, 4, -131104, 196610, 4, -65568, 196610, 4, -32, 196610, 4, 65504, 196610, 4, 131040, 196610, 4, 196576, 196610, 4, 262112, 196610, 4, 327648, 196610, 4, 393184, 196610, 4, 458720, 196610, 4, 524256, 196610, 4)
+[node name="WholeMilk" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(1064, -720)
+scale = Vector2(0.109722, 0.109722)
+texture = ExtResource("4_w1o2n")
+
+[node name="Chipz" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(2798, -720)
+scale = Vector2(0.0791665, 0.0791665)
+texture = ExtResource("5_ekwc0")
+
+[node name="SalmonFilet" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(1640, -728)
+scale = Vector2(0.108796, 0.108796)
+texture = ExtResource("6_4wggy")
+
+[node name="VanillaIceCream" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(2207, -724)
+scale = Vector2(0.0962963, 0.0962963)
+texture = ExtResource("7_gt3fo")
+
+[node name="Apple" type="Sprite2D" parent="BGElements/Signs"]
+position = Vector2(-115.75, -724.25)
+scale = Vector2(0.106019, 0.106019)
+texture = ExtResource("8_k6c2c")
+
+[node name="AisleEndcaps" type="Node" parent="BGElements"]
+
+[node name="AisleEndcap" type="Sprite2D" parent="BGElements/AisleEndcaps"]
+position = Vector2(200, -197)
+texture = ExtResource("3_h2jmu")
+
+[node name="AisleEndcap2" type="Sprite2D" parent="BGElements/AisleEndcaps"]
+position = Vector2(776, -197)
+texture = ExtResource("4_it203")
+
+[node name="AisleEndcap3" type="Sprite2D" parent="BGElements/AisleEndcaps"]
+position = Vector2(1352, -197)
+texture = ExtResource("5_yddi8")
+
+[node name="AisleEndcap4" type="Sprite2D" parent="BGElements/AisleEndcaps"]
+position = Vector2(1928, -197)
+texture = ExtResource("6_xmyxl")
+
+[node name="AisleEndcap5" type="Sprite2D" parent="BGElements/AisleEndcaps"]
+position = Vector2(2504, -197)
+texture = ExtResource("7_388v2")
+
+[node name="CautionSign" type="Sprite2D" parent="BGElements"]
+position = Vector2(3104, 29)
+texture = ExtResource("4_53816")
+
+[node name="BGScene" parent="." instance=ExtResource("15_tgynj")]
+
+[node name="BGSky" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = -2152.0
+offset_top = -672.0
+offset_right = -1328.0
+offset_bottom = 206.0
+color = Color(0.757805, 0.940105, 0.973832, 1)
 
 [node name="AisleEntrances" type="Node2D" parent="."]
 position = Vector2(0, 214)
 
 [node name="AisleEntrance" parent="AisleEntrances" instance=ExtResource("3_px425")]
-position = Vector2(202, -370)
+position = Vector2(-270, -560)
+scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance" instance=ExtResource("3_gckcc")]
@@ -149,7 +191,8 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="AisleEntrance2" parent="AisleEntrances" instance=ExtResource("3_px425")]
-position = Vector2(681, -370)
+position = Vector2(312, -560)
+scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance2" instance=ExtResource("3_gckcc")]
@@ -162,7 +205,8 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="AisleEntrance3" parent="AisleEntrances" instance=ExtResource("3_px425")]
-position = Vector2(1154, -370)
+position = Vector2(888, -560)
+scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance3" instance=ExtResource("3_gckcc")]
@@ -175,7 +219,8 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="AisleEntrance4" parent="AisleEntrances" instance=ExtResource("3_px425")]
-position = Vector2(1636, -370)
+position = Vector2(1448, -560)
+scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance4" instance=ExtResource("3_gckcc")]
@@ -188,7 +233,8 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="AisleEntrance5" parent="AisleEntrances" instance=ExtResource("3_px425")]
-position = Vector2(2117, -370)
+position = Vector2(2024, -560)
+scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance5" instance=ExtResource("3_gckcc")]
@@ -201,7 +247,8 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="AisleEntrance6" parent="AisleEntrances" instance=ExtResource("3_px425")]
-position = Vector2(2601, -370)
+position = Vector2(2592, -560)
+scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="InteractionArea2" parent="AisleEntrances/AisleEntrance6" instance=ExtResource("3_gckcc")]
@@ -214,11 +261,40 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_ie211")
 
 [node name="CheckoutArea" parent="." instance=ExtResource("6_h2h7a")]
-position = Vector2(-1135, 65)
+position = Vector2(-936, 65)
 scale = Vector2(0.6, 0.6)
+
+[node name="AisleEnd" parent="." instance=ExtResource("9_g8ru1")]
+position = Vector2(3632, -200)
+
+[node name="AisleEnd2" parent="." instance=ExtResource("9_g8ru1")]
+position = Vector2(-2088, -232)
+
+[node name="EntranceBack" type="Sprite2D" parent="."]
+position = Vector2(-1495, -249.5)
+texture = ExtResource("14_5kye1")
+
+[node name="InteractionArea" parent="EntranceBack" instance=ExtResource("3_gckcc")]
+position = Vector2(-317, -729)
+interact_label = "to exit store"
+interact_type = "dialogue"
+interact_value = "start"
+dialogue_resource = "res://Dialogue/exit_dialogue.dialogue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntranceBack/InteractionArea"]
+position = Vector2(312, 591.5)
+shape = SubResource("RectangleShape2D_yu0e8")
+
+[node name="EntranceFront" type="Sprite2D" parent="."]
+z_index = 100
+position = Vector2(-1943, -249.5)
+texture = ExtResource("13_qrse5")
+
+[node name="Floor" parent="." instance=ExtResource("9_b5mhd")]
+position = Vector2(-1528, -6)
 
 [node name="Player" parent="." instance=ExtResource("1_h51un")]
 z_index = 1
-position = Vector2(0, 5)
+position = Vector2(-1088, 0)
 
 [node name="HUD" parent="." instance=ExtResource("6_rtgsx")]
