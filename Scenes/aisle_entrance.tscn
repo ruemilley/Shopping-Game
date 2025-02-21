@@ -1,10 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5pcvphqr82sg"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0usly"]
+[gd_scene format=3 uid="uid://b5pcvphqr82sg"]
 
 [node name="AisleEntrance" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(90.75, 182.596)
 scale = Vector2(182.5, 366.193)
-texture = SubResource("PlaceholderTexture2D_0usly")

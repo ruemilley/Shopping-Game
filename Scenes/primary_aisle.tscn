@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
-[ext_resource type="Texture2D" uid="uid://bpb07qebmp3u0" path="res://Assets/background/main aisle elements/grocery sign.png" id="2_8mqfk"]
+[ext_resource type="PackedScene" uid="uid://8ekm4emait6h" path="res://Scenes/grocery_sign.tscn" id="2_5ry6s"]
 [ext_resource type="Texture2D" uid="uid://bg2p14hw36wqs" path="res://Assets/items/grains/white bread.png" id="3_4ej48"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="3_gckcc"]
 [ext_resource type="Texture2D" uid="uid://bdmwilk4wdtyd" path="res://Assets/background/main aisle elements/produce_endcap.png" id="3_h2jmu"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://x6x1d324vnup" path="res://Assets/items/dairy/whole milk.png" id="4_w1o2n"]
 [ext_resource type="Texture2D" uid="uid://blb8jc5dxcnp6" path="res://Assets/items/snack/chipz.png" id="5_ekwc0"]
 [ext_resource type="Texture2D" uid="uid://dlvpj4dtksdt7" path="res://Assets/background/main aisle elements/dairy_endcap.png" id="5_yddi8"]
-[ext_resource type="Texture2D" uid="uid://upsmlqfl03kp" path="res://Assets/items/meat/salmon filet.png" id="6_4wggy"]
 [ext_resource type="PackedScene" uid="uid://c7i5gdov1iwru" path="res://Scenes/checkout_area.tscn" id="6_h2h7a"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="6_rtgsx"]
 [ext_resource type="Texture2D" uid="uid://cgstttflvfdh6" path="res://Assets/background/main aisle elements/frozen_endcap.png" id="6_xmyxl"]
@@ -20,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://brc0hc08hjgh7" path="res://Assets/items/frozen/vanilla ice cream.png" id="7_gt3fo"]
 [ext_resource type="Texture2D" uid="uid://dwsihlxfj830u" path="res://Assets/items/produce/apple.png" id="8_k6c2c"]
 [ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="9_b5mhd"]
+[ext_resource type="Texture2D" uid="uid://vhkqt2dnr6hr" path="res://Assets/items/meat/chicken breasts.png" id="9_ekcl7"]
 [ext_resource type="PackedScene" uid="uid://dctruws6sjnf6" path="res://Scenes/aisle_end.tscn" id="9_g8ru1"]
 [ext_resource type="Texture2D" uid="uid://c0ay71l2teksx" path="res://Assets/background/main aisle elements/entrance front.png" id="13_qrse5"]
 [ext_resource type="Texture2D" uid="uid://cmfc2iol8aeca" path="res://Assets/background/main aisle elements/entrance back.png" id="14_5kye1"]
@@ -41,101 +41,53 @@ camera_limit_top = -5000.0
 
 [node name="Signs" type="Node" parent="BGElements"]
 
-[node name="GrocerySign" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(-88, -904)
-texture = ExtResource("2_8mqfk")
+[node name="GrocerySign7" parent="BGElements/Signs" instance=ExtResource("2_5ry6s")]
+position = Vector2(-85.7462, -900.769)
+grocery_icon_texture = ExtResource("8_k6c2c")
+text_line_1 = "Fruits"
+text_line_2 = "Vegetables"
+grocery_icon_position = Vector2(-26, 179.75)
 
-[node name="AisleLabel" type="TextEdit" parent="BGElements/Signs"]
-offset_left = -200.0
-offset_top = -487.0
-offset_right = -29.0
-offset_bottom = -448.0
-text = "produce aisle"
+[node name="GrocerySign8" parent="BGElements/Signs" instance=ExtResource("2_5ry6s")]
+position = Vector2(501.254, -900.769)
+grocery_icon_texture = ExtResource("3_4ej48")
+text_line_1 = "Bread"
+text_line_2 = "Rice"
+text_line_3 = "Pasta"
+grocery_icon_position = Vector2(-26, 175)
+grocery_icon_scale = Vector2(0.08, 0.08)
 
-[node name="GrocerySign2" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(512, -904)
-texture = ExtResource("2_8mqfk")
+[node name="GrocerySign9" parent="BGElements/Signs" instance=ExtResource("2_5ry6s")]
+position = Vector2(1088, -900.769)
+grocery_icon_texture = ExtResource("4_w1o2n")
+text_line_1 = "Dairy"
+text_line_2 = "Milk"
+text_line_3 = "Cheese"
+grocery_icon_position = Vector2(-24, 188)
 
-[node name="AisleLabel2" type="TextEdit" parent="BGElements/Signs"]
-offset_left = 400.0
-offset_top = -489.0
-offset_right = 571.0
-offset_bottom = -450.0
-text = "bakery aisle"
+[node name="GrocerySign10" parent="BGElements/Signs" instance=ExtResource("2_5ry6s")]
+position = Vector2(1661, -900.769)
+grocery_icon_texture = ExtResource("9_ekcl7")
+text_line_1 = "Meat"
+text_line_2 = "Poultry"
+text_line_3 = "Seafood"
 
-[node name="GrocerySign3" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(1088, -904)
-texture = ExtResource("2_8mqfk")
+[node name="GrocerySign11" parent="BGElements/Signs" instance=ExtResource("2_5ry6s")]
+position = Vector2(2232, -900.769)
+grocery_icon_texture = ExtResource("7_gt3fo")
+text_line_1 = "Frozen"
+text_line_2 = "Meals"
+text_line_3 = "Treats"
+grocery_icon_position = Vector2(-25, 179.75)
 
-[node name="AisleLabel3" type="TextEdit" parent="BGElements/Signs"]
-offset_left = 970.0
-offset_top = -485.0
-offset_right = 1141.0
-offset_bottom = -446.0
-text = "dairy aisle"
-
-[node name="GrocerySign4" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(1664, -904)
-texture = ExtResource("2_8mqfk")
-
-[node name="AisleLabel4" type="TextEdit" parent="BGElements/Signs"]
-offset_left = 1560.0
-offset_top = -489.0
-offset_right = 1731.0
-offset_bottom = -450.0
-text = "meat aisle"
-
-[node name="GrocerySign5" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(2232, -904)
-texture = ExtResource("2_8mqfk")
-
-[node name="AisleLabel5" type="TextEdit" parent="BGElements/Signs"]
-offset_left = 2124.0
-offset_top = -487.0
-offset_right = 2295.0
-offset_bottom = -448.0
-text = "frozen aisle"
-
-[node name="GrocerySign6" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(2824, -904)
-texture = ExtResource("2_8mqfk")
-
-[node name="AisleLabel6" type="TextEdit" parent="BGElements/Signs"]
-offset_left = 2720.0
-offset_top = -487.0
-offset_right = 2891.0
-offset_bottom = -448.0
-text = "snack food aisle"
-
-[node name="WhiteBread" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(483.5, -729)
-scale = Vector2(0.087963, 0.087963)
-texture = ExtResource("3_4ej48")
-
-[node name="WholeMilk" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(1064, -720)
-scale = Vector2(0.109722, 0.109722)
-texture = ExtResource("4_w1o2n")
-
-[node name="Chipz" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(2798, -720)
-scale = Vector2(0.0791665, 0.0791665)
-texture = ExtResource("5_ekwc0")
-
-[node name="SalmonFilet" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(1640, -728)
-scale = Vector2(0.108796, 0.108796)
-texture = ExtResource("6_4wggy")
-
-[node name="VanillaIceCream" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(2207, -724)
-scale = Vector2(0.0962963, 0.0962963)
-texture = ExtResource("7_gt3fo")
-
-[node name="Apple" type="Sprite2D" parent="BGElements/Signs"]
-position = Vector2(-115.75, -724.25)
-scale = Vector2(0.106019, 0.106019)
-texture = ExtResource("8_k6c2c")
+[node name="GrocerySign12" parent="BGElements/Signs" instance=ExtResource("2_5ry6s")]
+position = Vector2(2824, -900.769)
+grocery_icon_texture = ExtResource("5_ekwc0")
+text_line_1 = "Snacks"
+text_line_2 = "Soda"
+text_line_3 = "Candy"
+grocery_icon_position = Vector2(-26, 186)
+grocery_icon_scale = Vector2(0.1, 0.106)
 
 [node name="AisleEndcaps" type="Node" parent="BGElements"]
 
@@ -164,6 +116,9 @@ position = Vector2(3104, 29)
 texture = ExtResource("4_53816")
 
 [node name="BGScene" parent="." instance=ExtResource("15_tgynj")]
+offset_left = -1856.0
+offset_right = 1018.0
+metadata/_edit_lock_ = true
 
 [node name="BGSky" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(100, 100)

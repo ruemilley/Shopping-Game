@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://8ekm4emait6h"]
+
+[ext_resource type="Texture2D" uid="uid://bpb07qebmp3u0" path="res://Assets/background/main aisle elements/grocery sign.png" id="1_i8yta"]
+[ext_resource type="Script" path="res://Scripts/grocery_sign.gd" id="2_5e1f5"]
+[ext_resource type="Texture2D" uid="uid://dwsihlxfj830u" path="res://Assets/items/produce/apple.png" id="2_xfr7s"]
+[ext_resource type="Theme" uid="uid://cna443aml1fu" path="res://Themes/aisle_label.tres" id="4_sb8mh"]
+
+[node name="GrocerySign" type="Sprite2D"]
+texture = ExtResource("1_i8yta")
+script = ExtResource("2_5e1f5")
+
+[node name="GroceryIcon" type="Sprite2D" parent="."]
+position = Vector2(-27.75, 179.75)
+scale = Vector2(0.106019, 0.106019)
+texture = ExtResource("2_xfr7s")
+
+[node name="AisleLabel3" type="RichTextLabel" parent="."]
+offset_left = -125.0
+offset_top = 356.0
+offset_right = 75.0
+offset_bottom = 400.0
+theme = ExtResource("4_sb8mh")
+bbcode_enabled = true
+text = "[center]Fruits[/center]"
+
+[node name="AisleLabel2" type="RichTextLabel" parent="."]
+offset_left = -125.0
+offset_top = 303.0
+offset_right = 75.0
+offset_bottom = 347.0
+theme = ExtResource("4_sb8mh")
+bbcode_enabled = true
+text = "[center]Fruits[/center]"
+
+[node name="AisleLabel" type="RichTextLabel" parent="."]
+offset_left = -125.0
+offset_top = 252.0
+offset_right = 75.0
+offset_bottom = 296.0
+theme = ExtResource("4_sb8mh")
+bbcode_enabled = true
+text = "[center]Fruits[/center]"
