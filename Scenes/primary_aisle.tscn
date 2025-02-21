@@ -295,6 +295,6 @@ position = Vector2(-1528, -6)
 
 [node name="Player" parent="." instance=ExtResource("1_h51un")]
 z_index = 1
-position = Vector2(-1088, 0)
+position = Vector2(-1088, -8)
 
 [node name="HUD" parent="." instance=ExtResource("6_rtgsx")]

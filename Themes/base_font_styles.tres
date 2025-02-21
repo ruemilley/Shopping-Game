@@ -1,0 +1,91 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cnijpvvboopqv"]
+
+[ext_resource type="FontFile" uid="uid://6o3x53dr3mqq" path="res://Assets/Nunito/Nunito-VariableFont_wght.ttf" id="1_lq5bl"]
+[ext_resource type="FontFile" uid="uid://bn448tgacoyyr" path="res://Assets/Nunito/Nunito-Italic-VariableFont_wght.ttf" id="2_7q8pi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.988235, 0.984314, 0.941176, 0.705882)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.956374, 0.940646, 0.788318, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.988235, 0.984314, 0.941176, 1)
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
+bg_color = Color(0.988235, 0.984314, 0.941176, 1)
+corner_radius_top_left = 140
+corner_radius_top_right = 140
+corner_radius_bottom_right = 140
+corner_radius_bottom_left = 140
+
+[sub_resource type="FontVariation" id="FontVariation_7fklh"]
+base_font = ExtResource("1_lq5bl")
+variation_opentype = {
+2003265652: 800
+}
+
+[sub_resource type="FontVariation" id="FontVariation_bf0gd"]
+base_font = ExtResource("2_7q8pi")
+variation_opentype = {
+2003265652: 800
+}
+
+[sub_resource type="FontVariation" id="FontVariation_plgoh"]
+base_font = ExtResource("2_7q8pi")
+variation_opentype = {
+2003265652: 600
+}
+
+[sub_resource type="FontVariation" id="FontVariation_4d32n"]
+base_font = ExtResource("1_lq5bl")
+variation_opentype = {
+2003265652: 600
+}
+
+[resource]
+default_font = SubResource("FontVariation_4d32n")
+default_font_size = 28
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.705882)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+MarginContainer/constants/margin_bottom = 60
+MarginContainer/constants/margin_left = 100
+MarginContainer/constants/margin_right = 100
+MarginContainer/constants/margin_top = 60
+Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_7fklh")
+RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_bf0gd")
+RichTextLabel/fonts/italics_font = SubResource("FontVariation_plgoh")

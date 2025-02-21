@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ckwc0dqifo68w"]
+[gd_scene load_steps=30 format=3 uid="uid://ckwc0dqifo68w"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bwngf"]
 [ext_resource type="Texture2D" uid="uid://ykn5n1h02o03" path="res://Assets/characters/player/idle/player_idle.png" id="2_c6u38"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://c5y2dy3d3tcjr" path="res://Assets/Sound/SFX/step.ogg" id="13_cda77"]
 [ext_resource type="Texture2D" uid="uid://carbwq0nxe8k4" path="res://Assets/characters/player/run/player_run-10.png" id="13_t1x7f"]
 [ext_resource type="Texture2D" uid="uid://dksfryf0tuy4y" path="res://Assets/characters/player/run/player_run-11.png" id="14_utsli"]
+[ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="23_j1c27"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5oui"]
 animations = [{
@@ -153,12 +154,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -230.0
-offset_right = 421.0
-offset_bottom = -207.0
+offset_left = -400.0
+offset_top = -268.0
+offset_right = 441.0
+offset_bottom = -229.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("23_j1c27")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 

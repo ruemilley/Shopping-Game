@@ -1,73 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=5 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://Dialogue_Balloon/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_vbtb6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
-content_margin_left = 8.0
-content_margin_top = 4.0
-content_margin_right = 8.0
-content_margin_bottom = 4.0
-bg_color = Color(0.988235, 0.984314, 0.941176, 0.705882)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
-content_margin_left = 8.0
-content_margin_top = 4.0
-content_margin_right = 8.0
-content_margin_bottom = 4.0
-bg_color = Color(0.956374, 0.940646, 0.788318, 1)
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
-content_margin_left = 8.0
-content_margin_top = 4.0
-content_margin_right = 8.0
-content_margin_bottom = 4.0
-bg_color = Color(0.988235, 0.984314, 0.941176, 1)
-border_color = Color(0.6, 0.6, 0.6, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
-bg_color = Color(0.988235, 0.984314, 0.941176, 1)
-corner_radius_top_left = 140
-corner_radius_top_right = 140
-corner_radius_bottom_right = 140
-corner_radius_bottom_left = 140
-
-[sub_resource type="Theme" id="Theme_qq3yp"]
-default_font_size = 20
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 0.705882)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 22
-Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
-Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
-Button/styles/hover = SubResource("StyleBoxFlat_ri4m3")
-Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
-MarginContainer/constants/margin_bottom = 60
-MarginContainer/constants/margin_left = 100
-MarginContainer/constants/margin_right = 100
-MarginContainer/constants/margin_top = 60
-Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
-RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
-RichTextLabel/font_sizes/bold_font_size = 22
-RichTextLabel/font_sizes/bold_italics_font_size = 22
-RichTextLabel/font_sizes/italics_font_size = 22
-RichTextLabel/font_sizes/mono_font_size = 22
-RichTextLabel/font_sizes/normal_font_size = 22
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -81,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_qq3yp")
+theme = ExtResource("2_vbtb6")
 
 [node name="Panel" type="Panel" parent="Balloon"]
 clip_children = 2
@@ -117,7 +53,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-text = "Dialogue..."
+text = "Dialogue... [b]testing bold[/b] [i]testing italics[/i] [b][i]testing bold italics[/i][/b]"
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
