@@ -19,6 +19,7 @@ const INTERACT_TEXT := "E to "
 
 #inventory
 @onready var inventory_ui = $Inventory
+@onready var checklist = $Inventory/Checklist
 
 #other misc variables
 @onready var animated_sprite = $AnimatedSprite2D
@@ -28,8 +29,8 @@ const INTERACT_TEXT := "E to "
 
 func  _ready():
 	Global.set_player_reference(self)
-	await get_tree().create_timer(0.1).timeout
-	$Camera2D.position_smoothing_enabled = true
+	Events.inventory_close_button_pressed.connect(_on_inventory_close_button_pressed)
+	Events.my_checklist_button_pressed.connect(_on_my_checklist_button_pressed)
 
 
 func _physics_process(delta):
@@ -60,7 +61,7 @@ func _physics_process(delta):
 	
 	#check speed for movement in air
 	if not is_on_floor():
-		velocity.y += get_gravity(velocity) * delta
+		velocity.y += get_grav(velocity) * delta
 		animated_sprite.play("jump")
 		if Global.is_running == true:
 			velocity.x = direction * RUN_SPEED
@@ -101,7 +102,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		execute_interaction()
 		
-func get_gravity(velocity: Vector2):
+@warning_ignore("shadowed_variable_base_class")
+func get_grav(velocity: Vector2):
 	if velocity.y < 0:
 		return gravity
 	return FALL_GRAVITY
@@ -136,8 +138,10 @@ func execute_interaction():
 				print(cur_interaction.interact_value)
 			"load_scene":
 				Global.last_main_position = position
+				$Camera2D.position_smoothing_enabled = false
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
-			"load_main":
+			"load_main":	
+				$Camera2D.position_smoothing_enabled = false
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
 			"item_pickup":
 				get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
@@ -154,3 +158,13 @@ func _input(event):
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
 	
+func _on_inventory_close_button_pressed():
+	inventory_ui.visible = !inventory_ui.visible
+	get_tree().paused = !get_tree().paused
+	if inventory_ui.visible == false:
+		if checklist.visible == true:
+			checklist.visible = false
+			
+
+func _on_my_checklist_button_pressed():
+	checklist.visible = !checklist.visible

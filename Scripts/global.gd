@@ -124,7 +124,7 @@ var red := false
 
 
 func _ready():
-	inventory.resize(30) #set inventory cap
+	inventory.resize(20) #set inventory cap
 	#connect signals
 	Events.checklist_status_update.connect(_on_checklist_status_update)
 	
@@ -187,6 +187,7 @@ func drop_item(_item_data, drop_position):
 	get_tree().current_scene.add_child(item_instance)
 	find_current_aisle().append(item_data)
 	update_scene_items()
+	
 	
 
 func update_scene_items():
@@ -426,4 +427,3 @@ func main_scene_return():
 	
 func roll_credits():
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
-

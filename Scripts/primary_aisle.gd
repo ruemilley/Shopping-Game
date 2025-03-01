@@ -7,9 +7,6 @@ extends Node2D
 @onready var checkout_area = $CheckoutArea
 
 func _ready():
-	#spawn item in global item array
-	spawn_aisle_items()
-	
 	#set player position if reentering scene
 	if Global.last_main_position != Vector2(0,0): #make sure it's not the default value
 		$Player.position = Global.last_main_position
@@ -23,6 +20,11 @@ func _ready():
 	$Player/Camera2D.limit_right = camera_limit_right
 	$Player/Camera2D.limit_top = camera_limit_top
 	$Player/Camera2D.limit_bottom = camera_limit_bottom
+	await get_tree().create_timer(0.5).timeout
+	$Player/Camera2D.position_smoothing_enabled = true
+			
+	#spawn item in global item array
+	spawn_aisle_items()
 	
 func _process(_delta):
 	Global.player_pos = $Player.position

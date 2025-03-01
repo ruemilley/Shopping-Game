@@ -20,12 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://ddesy07glaob3" path="res://Assets/characters/player/run/player_run-7.png" id="10_oqefw"]
 [ext_resource type="Texture2D" uid="uid://c7xjk422i23jm" path="res://Assets/characters/player/walk/player_walk-8.png" id="10_p0inn"]
 [ext_resource type="Texture2D" uid="uid://bgle3mdxlwv21" path="res://Assets/characters/player/run/player_run-8.png" id="11_ip66r"]
-[ext_resource type="PackedScene" uid="uid://v8hilwrpuc2j" path="res://Scenes/checklist.tscn" id="12_eq5hj"]
 [ext_resource type="Texture2D" uid="uid://cqucrme3qga6p" path="res://Assets/characters/player/run/player_run-9.png" id="12_uejls"]
 [ext_resource type="AudioStream" uid="uid://c5y2dy3d3tcjr" path="res://Assets/Sound/SFX/step.ogg" id="13_cda77"]
 [ext_resource type="Texture2D" uid="uid://carbwq0nxe8k4" path="res://Assets/characters/player/run/player_run-10.png" id="13_t1x7f"]
 [ext_resource type="Texture2D" uid="uid://dksfryf0tuy4y" path="res://Assets/characters/player/run/player_run-11.png" id="14_utsli"]
 [ext_resource type="Theme" uid="uid://cna443aml1fu" path="res://Themes/aisle_label.tres" id="23_wt7cf"]
+[ext_resource type="PackedScene" uid="uid://v8hilwrpuc2j" path="res://Scenes/checklist.tscn" id="25_1h04p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5oui"]
 animations = [{
@@ -168,6 +168,7 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -160)
 zoom = Vector2(0.9, 0.9)
+process_callback = 0
 position_smoothing_speed = 3.0
 drag_left_margin = 0.15
 drag_top_margin = 0.01
@@ -177,34 +178,19 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="Inventory" type="CanvasLayer" parent="."]
+layer = 2
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="Inventory"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0784314, 0.254902, 0.211765, 0.596078)
+[node name="InventoryUI" parent="Inventory" instance=ExtResource("3_8u3og")]
+size_flags_horizontal = 1
 
-[node name="Label" type="Label" parent="Inventory/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.5
-offset_top = 20.0
-offset_right = 37.5
-offset_bottom = 43.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-text = "Inventory"
-horizontal_alignment = 1
-
-[node name="InventoryUI" parent="Inventory/ColorRect" instance=ExtResource("3_8u3og")]
-layout_mode = 1
-
-[node name="Checklist" parent="Inventory" instance=ExtResource("12_eq5hj")]
+[node name="Checklist" parent="Inventory" instance=ExtResource("25_1h04p")]
+visible = false
+offset_left = 300.0
+offset_top = 150.0
+offset_right = -880.0
+offset_bottom = 270.0
+rotation = 0.15708
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_cda77")

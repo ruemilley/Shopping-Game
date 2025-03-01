@@ -1,25 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://068afqqop6qd"]
+[gd_scene load_steps=3 format=3 uid="uid://068afqqop6qd"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_qpwgp"]
+[ext_resource type="Theme" uid="uid://cna443aml1fu" path="res://Themes/aisle_label.tres" id="2_bghq5"]
 
 [node name="HUD" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource("1_qpwgp")
 
 [node name="MoneyCounter" type="RichTextLabel" parent="."]
+clip_contents = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -52.0
+offset_left = -148.0
+offset_right = -8.0
 offset_bottom = 40.0
 grow_horizontal = 0
+theme = ExtResource("2_bghq5")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
 text = "$30.00"
 
 [node name="CartCounter" type="RichTextLabel" parent="."]
+clip_contents = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -52.0
-offset_top = 20.0
-offset_bottom = 60.0
+offset_left = -148.0
+offset_top = 39.0
+offset_right = -8.0
+offset_bottom = 79.0
 grow_horizontal = 0
+theme = ExtResource("2_bghq5")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
 text = "$0.00"

@@ -19,6 +19,8 @@ func _ready():
 	$Player/Camera2D.limit_right = camera_limit_right
 	$Player/Camera2D.limit_top = camera_limit_top
 	$Player/Camera2D.limit_bottom = camera_limit_bottom
+	await get_tree().create_timer(0.01).timeout
+	$Player/Camera2D.position_smoothing_enabled = true
 	
 	
 func spawn_aisle_items():

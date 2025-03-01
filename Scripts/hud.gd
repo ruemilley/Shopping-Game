@@ -12,7 +12,7 @@ func _ready():
 
 func update_money_counter_text(value):
 	if value == Global.budget_value:
-		money_counter.text = "$" + str("%5.2f" % value)
+		money_counter.text = "[right]$" + str("%5.2f" % value)
 	if value == Global.cart_value:
-		cart_counter.text = "$" + str("%5.2f" % value)
+		cart_counter.text = "[right]$" + str("%4.2f" % value)
 	#the string details are string formatting. Pad to a minimum length of 5, round to two decimal places

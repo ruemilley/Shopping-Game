@@ -1,10 +1,18 @@
 extends Control
 
-@onready var grid_container = $GridContainer
+@onready var grid_container = $HBoxContainer/MarginContainer/GridContainer
+@onready var item_name = %ItemName
+@onready var item_price = %ItemPrice
+@onready var item_description = %ItemDescription
+@onready var checklist_button = %ChecklistButton
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.inventory_updated.connect(_on_inventory_updated)
+	Events.inventory_focus.connect(_on_inventory_focus)
+	Events.inventory_focus_exit.connect(_on_inventory_focus_exit)
+	Events.my_checklist_button_pressed.connect(_on_my_checklist_button_pressed)
 	_on_inventory_updated()
 
 func _on_inventory_updated():
@@ -23,3 +31,24 @@ func clear_grid_container():
 		var child = grid_container.get_child(0)
 		grid_container.remove_child(child)
 		child.queue_free()
+
+func _on_inventory_focus(iname,cost):
+	item_name.text = "[center][b]" + iname
+	item_price.text = "[center]$" + str("%4.2f" % cost)
+	
+func _on_inventory_focus_exit():
+	item_name.text = ""
+	item_price.text = ""
+
+
+func _on_close_button_pressed():
+	Events.inventory_close_button_pressed.emit()
+
+func _on_checklist_button_pressed():
+	Events.my_checklist_button_pressed.emit()
+
+func _on_my_checklist_button_pressed():
+	if checklist_button.button_pressed == true:
+		checklist_button.button_pressed = false
+	else:
+		pass

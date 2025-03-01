@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cnijpvvboopqv"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://cnijpvvboopqv"]
 
 [ext_resource type="FontFile" uid="uid://6o3x53dr3mqq" path="res://Assets/Nunito/Nunito-VariableFont_wght.ttf" id="1_lq5bl"]
 [ext_resource type="FontFile" uid="uid://bn448tgacoyyr" path="res://Assets/Nunito/Nunito-Italic-VariableFont_wght.ttf" id="2_7q8pi"]
@@ -13,6 +13,8 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65bwy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
 content_margin_left = 8.0
@@ -32,7 +34,17 @@ content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
 bg_color = Color(0.988235, 0.984314, 0.941176, 1)
-border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkvvx"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.970696, 0.960353, 0.854222, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -76,10 +88,14 @@ Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 0.705882)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
-Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/focus = SubResource("StyleBoxEmpty_65bwy")
 Button/styles/hover = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_ri4m3")
 Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+Button/styles/pressed = SubResource("StyleBoxFlat_bkvvx")
 MarginContainer/constants/margin_bottom = 60
 MarginContainer/constants/margin_left = 100
 MarginContainer/constants/margin_right = 100
