@@ -16,3 +16,5 @@ signal inventory_focus_exit
 signal inventory_close_button_pressed
 @warning_ignore("unused_signal")
 signal my_checklist_button_pressed
+@warning_ignore("unused_signal")
+signal checklist_hidden

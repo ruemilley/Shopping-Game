@@ -164,7 +164,6 @@ func _on_inventory_close_button_pressed():
 	if inventory_ui.visible == false:
 		if checklist.visible == true:
 			checklist.visible = false
-			
 
 func _on_my_checklist_button_pressed():
-	checklist.visible = !checklist.visible
+	checklist.visible = !checklist.visible	

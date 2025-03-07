@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://cnijpvvboopqv"]
 
-[ext_resource type="FontFile" uid="uid://6o3x53dr3mqq" path="res://Assets/Nunito/Nunito-VariableFont_wght.ttf" id="1_lq5bl"]
-[ext_resource type="FontFile" uid="uid://bn448tgacoyyr" path="res://Assets/Nunito/Nunito-Italic-VariableFont_wght.ttf" id="2_7q8pi"]
+[ext_resource type="FontFile" uid="uid://6o3x53dr3mqq" path="res://Assets/ui/fonts/Nunito/Nunito-VariableFont_wght.ttf" id="1_lq5bl"]
+[ext_resource type="FontFile" uid="uid://bn448tgacoyyr" path="res://Assets/ui/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf" id="2_7q8pi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 8.0

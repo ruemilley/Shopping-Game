@@ -2,19 +2,20 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dlwwru1tiqk3d"
-path="res://.godot/imported/Nunito-MediumItalic.ttf-2047b28bf2035a369e5d8e281f5fe9cc.fontdata"
+uid="uid://qatwgegjpl4p"
+path="res://.godot/imported/Nunito-Light.ttf-847b26fcacc5af6fd265d0d3b74e3fa7.fontdata"
 
 [deps]
 
-source_file="res://Assets/Nunito/static/Nunito-MediumItalic.ttf"
-dest_files=["res://.godot/imported/Nunito-MediumItalic.ttf-2047b28bf2035a369e5d8e281f5fe9cc.fontdata"]
+source_file="res://Assets/ui/fonts/Nunito/static/Nunito-Light.ttf"
+dest_files=["res://.godot/imported/Nunito-Light.ttf-847b26fcacc5af6fd265d0d3b74e3fa7.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

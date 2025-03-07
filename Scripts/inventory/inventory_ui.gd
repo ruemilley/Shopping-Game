@@ -13,6 +13,7 @@ func _ready():
 	Events.inventory_focus.connect(_on_inventory_focus)
 	Events.inventory_focus_exit.connect(_on_inventory_focus_exit)
 	Events.my_checklist_button_pressed.connect(_on_my_checklist_button_pressed)
+	Events.checklist_hidden.connect(_on_checklist_hidden)
 	_on_inventory_updated()
 
 func _on_inventory_updated():
@@ -39,6 +40,7 @@ func _on_inventory_focus(iname,cost):
 func _on_inventory_focus_exit():
 	item_name.text = ""
 	item_price.text = ""
+	item_description.text = ""
 
 
 func _on_close_button_pressed():
@@ -46,9 +48,10 @@ func _on_close_button_pressed():
 
 func _on_checklist_button_pressed():
 	Events.my_checklist_button_pressed.emit()
+	checklist_button.disabled = true
 
 func _on_my_checklist_button_pressed():
-	if checklist_button.button_pressed == true:
-		checklist_button.button_pressed = false
-	else:
-		pass
+	checklist_button.button_pressed = !checklist_button.button_pressed
+
+func _on_checklist_hidden():
+	checklist_button.disabled = false

@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7bd503h2tedl"]
+[gd_scene load_steps=4 format=3 uid="uid://c7bd503h2tedl"]
 
 [ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="1_4sgy1"]
 [ext_resource type="Script" path="res://Scripts/inventory/inventory_slot.gd" id="1_xmjry"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k04ya"]
+bg_color = Color(0.710535, 0.808732, 0.89535, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="InventorySlot" type="Control"]
 custom_minimum_size = Vector2(150, 150)
@@ -15,6 +22,15 @@ size_flags_vertical = 3
 theme = ExtResource("1_4sgy1")
 script = ExtResource("1_xmjry")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k04ya")
+
 [node name="InnerBorder" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 1
@@ -24,6 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+color = Color(0.576471, 0.713726, 0.835294, 0)
 
 [node name="ItemIcon" type="TextureRect" parent="InnerBorder"]
 layout_mode = 1

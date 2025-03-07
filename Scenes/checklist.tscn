@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v8hilwrpuc2j"]
+[gd_scene load_steps=4 format=3 uid="uid://v8hilwrpuc2j"]
 
 [ext_resource type="PackedScene" uid="uid://dgyyy34dqtob8" path="res://Scenes/checklist_item.tscn" id="1_clrvb"]
 [ext_resource type="Script" path="res://Scripts/checklist.gd" id="1_h2nq1"]
+[ext_resource type="Texture2D" uid="uid://c3g1k5xcsbrnw" path="res://Assets/ui/list_paper.png" id="2_ceavr"]
 
 [node name="Checklist" type="Control"]
 layout_mode = 3
@@ -12,29 +13,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h2nq1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1980.0
+offset_bottom = 2570.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_ceavr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_left = 220
+theme_override_constants/margin_top = 221
 theme_override_constants/margin_right = 20
 
 [node name="ChecklistTextContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 2
 
 [node name="ChecklistItem" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
@@ -70,4 +70,7 @@ text = "Pasta"
 
 [node name="ChecklistItem8" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
-text = "Treat for meeeeee"
+text = "Treat!!!"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

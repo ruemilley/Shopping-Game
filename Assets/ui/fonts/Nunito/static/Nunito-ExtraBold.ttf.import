@@ -2,19 +2,20 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cbwantjimf734"
-path="res://.godot/imported/Nunito-Medium.ttf-9f1e8819904bdac22b58d02d96344840.fontdata"
+uid="uid://dh76yl6cung8x"
+path="res://.godot/imported/Nunito-ExtraBold.ttf-ee0c39debedde0758022044574dd8156.fontdata"
 
 [deps]
 
-source_file="res://Assets/Nunito/static/Nunito-Medium.ttf"
-dest_files=["res://.godot/imported/Nunito-Medium.ttf-9f1e8819904bdac22b58d02d96344840.fontdata"]
+source_file="res://Assets/ui/fonts/Nunito/static/Nunito-ExtraBold.ttf"
+dest_files=["res://.godot/imported/Nunito-ExtraBold.ttf-ee0c39debedde0758022044574dd8156.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

@@ -1,6 +1,7 @@
 extends RichTextLabel
 
 @onready var crossout = $Crossout
+@onready var checklist_item = $"."
 
 func _ready():
 	Global.update_checklist_items(self)

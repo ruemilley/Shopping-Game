@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpsm4c7dfob44"]
+[gd_scene load_steps=11 format=3 uid="uid://cpsm4c7dfob44"]
 
 [ext_resource type="Script" path="res://Scripts/inventory/inventory_ui.gd" id="1_7l5o7"]
 [ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_cdx23"]
@@ -38,7 +38,18 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbylj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcu2f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frjad"]
+content_margin_left = 8.0
+content_margin_top = 12.0
+content_margin_right = 8.0
+content_margin_bottom = 12.0
+bg_color = Color(0.215686, 0.368627, 0.537255, 0.764706)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2tff"]
 content_margin_left = 8.0
 content_margin_top = 12.0
 content_margin_right = 8.0
@@ -55,6 +66,17 @@ content_margin_top = 12.0
 content_margin_right = 8.0
 content_margin_bottom = 12.0
 bg_color = Color(0.432832, 0.613979, 0.819242, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcu2f"]
+content_margin_left = 8.0
+content_margin_top = 12.0
+content_margin_right = 8.0
+content_margin_bottom = 12.0
+bg_color = Color(0.213755, 0.366672, 0.536385, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -180,17 +202,18 @@ text = "Close"
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_cdx23")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fbylj")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rcu2f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frjad")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n2tff")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5pjae")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5pjae")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rcu2f")
-toggle_mode = true
 text = "My Checklist"
 
 [connection signal="pressed" from="HBoxContainer/ItemInformation/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

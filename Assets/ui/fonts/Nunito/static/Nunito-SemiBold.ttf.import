@@ -2,19 +2,20 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c6d1jkw4h3l8c"
-path="res://.godot/imported/Nunito-ExtraLight.ttf-ce374efc12a6f8482265cd4f768ef92f.fontdata"
+uid="uid://chdt0lk5s0ajq"
+path="res://.godot/imported/Nunito-SemiBold.ttf-69a1a8544fe570703a5dba95a9d912db.fontdata"
 
 [deps]
 
-source_file="res://Assets/Nunito/static/Nunito-ExtraLight.ttf"
-dest_files=["res://.godot/imported/Nunito-ExtraLight.ttf-ce374efc12a6f8482265cd4f768ef92f.fontdata"]
+source_file="res://Assets/ui/fonts/Nunito/static/Nunito-SemiBold.ttf"
+dest_files=["res://.godot/imported/Nunito-SemiBold.ttf-69a1a8544fe570703a5dba95a9d912db.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

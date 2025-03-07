@@ -2,19 +2,20 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cpgdm5ricqtsx"
-path="res://.godot/imported/Nunito-ExtraBoldItalic.ttf-2fb2d7bfe701938e6ab21a8c401661a2.fontdata"
+uid="uid://ht4i8sxpk25a"
+path="res://.godot/imported/Nunito-LightItalic.ttf-265a23f107aafa643bc0c2baa80d07fb.fontdata"
 
 [deps]
 
-source_file="res://Assets/Nunito/static/Nunito-ExtraBoldItalic.ttf"
-dest_files=["res://.godot/imported/Nunito-ExtraBoldItalic.ttf-2fb2d7bfe701938e6ab21a8c401661a2.fontdata"]
+source_file="res://Assets/ui/fonts/Nunito/static/Nunito-LightItalic.ttf"
+dest_files=["res://.godot/imported/Nunito-LightItalic.ttf-265a23f107aafa643bc0c2baa80d07fb.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

@@ -8,7 +8,7 @@ func _ready():
 	Events.finished_talking.connect(_on_finished_talking)
 	
 	
-func _process(delta):
+func _process(_delta):
 	if Global.player_pos.x < -1135:
 		cashier.flip_h = true
 	else:
