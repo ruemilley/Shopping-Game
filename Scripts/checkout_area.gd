@@ -20,9 +20,10 @@ func _on_blink_timer_timeout():
 
 #function that is called when dialogue is triggered, need to figure out how to implement this
 
-func _on_started_talking():
-	blink_timer.paused = true
-	cashier.play("talk")
+func _on_started_talking(talker):
+	if talker == "Shop Clerk":
+		blink_timer.paused = true
+		cashier.play("talk")
 	
 func _on_finished_talking():
 	await cashier.animation_looped

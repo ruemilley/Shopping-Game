@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var mom = $Mom
-@onready var player_sprite = $Player/AnimatedSprite2d
+@onready var player_sprite = $PlayerSpriteOnly
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,4 +10,3 @@ func _ready():
 		DialogueManager.show_dialogue_balloon(resource, Global.ending_state)
 	else:
 		DialogueManager.show_dialogue_balloon(resource, "rating_parse")
-

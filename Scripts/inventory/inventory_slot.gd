@@ -1,7 +1,7 @@
 extends Control
 
-@onready var icon = $InnerBorder/ItemIcon
-@onready var drop_button = $DropButton
+@onready var icon = %ItemIcon
+@onready var drop_button = %DropButton
 
 #Slot Icon
 var item = null

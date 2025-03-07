@@ -43,6 +43,7 @@ mouse_filter = 2
 color = Color(0.576471, 0.713726, 0.835294, 0)
 
 [node name="ItemIcon" type="TextureRect" parent="InnerBorder"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,6 +62,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 
 [node name="DropButton" type="Button" parent="."]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 12

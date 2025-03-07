@@ -60,7 +60,7 @@ var dialogue_line: DialogueLine:
 
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
-			Events.started_talking.emit()
+			Events.started_talking.emit(character_label.text)
 			dialogue_label.type_out()
 			await dialogue_label.finished_typing
 			Events.finished_talking.emit()
