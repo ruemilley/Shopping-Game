@@ -9,6 +9,7 @@ extends Node2D
 @export var item_texture: Texture
 @export var item_position: Vector2
 @export var item_paid: bool
+@export var item_desc: String
 
 var scene_path: String = "res://Scenes/inventory/inventory_item.tscn"
 var tween
@@ -35,6 +36,7 @@ func pickup_item():
 		"cost" : item_cost,
 		"scene_path" : scene_path,
 		"iposition" : item_position,
+		"item_desc" : item_desc,
 	}
 	if Global.player_node:
 		Global.add_item(item)
@@ -59,14 +61,17 @@ func set_item_data(data):
 	item_paid = data["paid"]
 	item_cost = data["cost"]
 	item_position = data["iposition"]
+	item_desc = data["item_desc"]
 
-func initiate_items(type, iname, texture, iposition, paid, cost):
+
+func initiate_items(type, iname, texture, iposition, paid, cost, desc):
 	item_type = type
 	item_name = iname
 	item_texture = texture
 	item_position = iposition
 	item_paid = paid
 	item_cost = cost
+	item_desc = desc
 
 func spin():
 	tween = create_tween()

@@ -32,7 +32,7 @@ func _on_drop_button_pressed():
 
 func _on_mouse_entered():
 	if item != null:
-		Events.inventory_focus.emit(item["iname"],item["cost"])
+		Events.inventory_focus.emit(item["iname"],item["cost"],item["item_desc"])
 
 
 func _on_mouse_exited():

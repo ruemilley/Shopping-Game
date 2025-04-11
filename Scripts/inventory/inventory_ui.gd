@@ -33,9 +33,10 @@ func clear_grid_container():
 		grid_container.remove_child(child)
 		child.queue_free()
 
-func _on_inventory_focus(iname,cost):
+func _on_inventory_focus(iname,cost, desc):
 	item_name.text = "[center][b]" + iname
 	item_price.text = "[center]$" + str("%4.2f" % cost)
+	item_description.text = "[center]" + desc
 	
 func _on_inventory_focus_exit():
 	item_name.text = ""
