@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://of68ttytcpud"]
+
+[ext_resource type="Texture2D" uid="uid://4kctc78mj1dp" path="res://Assets/environment items/shopping_cart.png" id="1_axe42"]
+
+[node name="ShoppingCart" type="RigidBody2D"]
+z_index = 100
+collision_layer = 5
+collision_mask = 5
+lock_rotation = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("1_axe42")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-70, -137, -78, -137, -115, -62, -156, -61, -168, -115, -180, -114, -138, 101, 133, 102, 170, -78, 162, -78, 129, 97, -130, 95, -155, -48, -107, -52)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-181, -113, -142, 105, 133, 108, 171, -74, 119, 233, -168, 234, -186, -112)

@@ -23,6 +23,7 @@ camera_limit_top = -1000.0
 [node name="BGScene" parent="." instance=ExtResource("2_wosag")]
 offset_left = -2372.0
 offset_right = 502.0
+metadata/_edit_lock_ = true
 
 [node name="FluorescentLight2" type="Sprite2D" parent="."]
 position = Vector2(2070, -800.25)
@@ -56,17 +57,18 @@ texture_scale = 6.5
 position = Vector2(1349, -239)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("4_538xi")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("8_uhrls")]
 position = Vector2(-25, 0)
 
 [node name="HUD" parent="." instance=ExtResource("9_o5aod")]
 
-[node name="Floor" parent="." instance=ExtResource("10_wujbi")]
-position = Vector2(0, -6)
-
 [node name="AisleEnd2" parent="." instance=ExtResource("10_asgwp")]
 position = Vector2(3114, -272)
+
+[node name="Floor" parent="." instance=ExtResource("10_wujbi")]
+position = Vector2(0, -6)
 
 [node name="AisleEntrance" parent="." instance=ExtResource("6_x45mt")]
 position = Vector2(-688, -803)
