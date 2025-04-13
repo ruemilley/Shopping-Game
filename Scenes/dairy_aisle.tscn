@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wn27g2kejfqb"]
+[gd_scene load_steps=14 format=3 uid="uid://wn27g2kejfqb"]
 
 [ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_bcke4"]
 [ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="2_hts8i"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="9_o5aod"]
 [ext_resource type="PackedScene" uid="uid://dctruws6sjnf6" path="res://Scenes/aisle_end.tscn" id="10_asgwp"]
 [ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="10_wujbi"]
+[ext_resource type="PackedScene" uid="uid://of68ttytcpud" path="res://Scenes/shopping_cart.tscn" id="12_u2f4s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhtbs"]
 size = Vector2(182, 366)
@@ -84,3 +85,6 @@ auto_interaction = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrance/InteractionArea"]
 position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_yhtbs")
+
+[node name="ShoppingCart" parent="." instance=ExtResource("12_u2f4s")]
+position = Vector2(814, -40)

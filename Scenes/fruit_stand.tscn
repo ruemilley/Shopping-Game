@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbrlpj77wkuvu"]
+
+[ext_resource type="Texture2D" uid="uid://cjwxm1baf2ptr" path="res://Assets/environment items/fruit_stand.png" id="1_pc3hv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh03g"]
+size = Vector2(1774, 855)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ren4a"]
+radius = 461.0
+height = 922.0
+
+[node name="FruitStand" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_pc3hv")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 344.5)
+shape = SubResource("RectangleShape2D_mh03g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-419, 251)
+shape = SubResource("CapsuleShape2D_ren4a")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-119, 297)
+shape = SubResource("CapsuleShape2D_ren4a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(437, 267)
+shape = SubResource("CapsuleShape2D_ren4a")

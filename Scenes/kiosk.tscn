@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2218r2st5h0y"]
+
+[ext_resource type="Texture2D" uid="uid://dn62jyb0nni0g" path="res://Assets/environment items/kiosk.png" id="1_1bfve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fphfs"]
+size = Vector2(778, 1613)
+
+[node name="Kiosk" type="StaticBody2D"]
+
+[node name="KioskSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_1bfve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-53, 82.5)
+shape = SubResource("RectangleShape2D_fphfs")
+one_way_collision = true

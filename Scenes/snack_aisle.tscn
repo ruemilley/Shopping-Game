@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ewhg4lxk13rw"]
+[gd_scene load_steps=14 format=3 uid="uid://ewhg4lxk13rw"]
 
 [ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_6wxrm"]
 [ext_resource type="PackedScene" uid="uid://3y8yk7mnwus3" path="res://Scenes/bg_scene.tscn" id="2_6wqlp"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="9_inl28"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="9_n5d0i"]
 [ext_resource type="PackedScene" uid="uid://dctruws6sjnf6" path="res://Scenes/aisle_end.tscn" id="10_pxvtg"]
+[ext_resource type="PackedScene" uid="uid://d2218r2st5h0y" path="res://Scenes/kiosk.tscn" id="12_an3v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfyoi"]
 size = Vector2(182, 366)
@@ -71,6 +72,14 @@ auto_interaction = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AisleEntrance/InteractionArea"]
 position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_yfyoi")
+
+[node name="Kiosk2" parent="." instance=ExtResource("12_an3v7")]
+position = Vector2(1974, -27)
+scale = Vector2(0.25, 0.25)
+
+[node name="Kiosk" parent="." instance=ExtResource("12_an3v7")]
+position = Vector2(559, -26)
+scale = Vector2(0.25, 0.25)
 
 [node name="Player" parent="." instance=ExtResource("8_j72st")]
 

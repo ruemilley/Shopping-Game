@@ -53,8 +53,8 @@ var dairy_aisle_items := [
 
 #produce aisle
 var produce_aisle_items := [
-	{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(0,0), "desc": "You're always a little worried there will be a worm inside. There hasn't been... Yet.",},
-	{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(0,0), "desc": "Surprisingly a lot of work to eat.",},
+	{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(1550,-150), "desc": "You're always a little worried there will be a worm inside. There hasn't been before, but like... maybe...",},
+	{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(1200,-180), "desc": "Surprisingly a lot of work to eat.",},
 	{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":0.75, "iposition": Vector2(500,0), "desc": "This one makes your eyes water like crazy when Mom cuts it up.",},
 	{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":4.00, "iposition": Vector2(2600,-150), "desc": "It's spinch.",},
 	{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":0.89, "iposition": Vector2(700,0), "desc": "Mom just said onion... So it's probably this one, right?",},
@@ -79,7 +79,7 @@ var frozen_aisle_items := [
 var snack_aisle_items := [
 	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "desc": "What's the point of a chip if it's not exploding with flavor?",},
 	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
-	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-420), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
+	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
 	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
 ]
 
@@ -354,8 +354,8 @@ func reset_game_state():
 
 	#produce aisle
 	produce_aisle_items = [
-		{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(0,0), "desc": "You're always a little worried there will be a worm inside. There hasn't been... Yet.",},
-		{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(0,0), "desc": "Surprisingly a lot of work to eat.",},
+		{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(1550,-150), "desc": "You're always a little worried there will be a worm inside. There hasn't been before, but like... maybe...",},
+		{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(1200,-180), "desc": "Surprisingly a lot of work to eat.",},
 		{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":0.75, "iposition": Vector2(500,0), "desc": "This one makes your eyes water like crazy when Mom cuts it up.",},
 		{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":4.00, "iposition": Vector2(2600,-150), "desc": "It's spinch.",},
 		{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":0.89, "iposition": Vector2(700,0), "desc": "Mom just said onion... So it's probably this one, right?",},
@@ -380,7 +380,7 @@ func reset_game_state():
 	snack_aisle_items = [
 		{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "desc": "What's the point of a chip if it's not exploding with flavor?",},
 		{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
-		{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-420), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
+		{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
 		{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
 	]
 

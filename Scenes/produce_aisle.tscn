@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4ua1ydq6048t"]
+[gd_scene load_steps=14 format=3 uid="uid://c4ua1ydq6048t"]
 
 [ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_ffs3l"]
 [ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="2_r3kx6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu3h74ewh3ve6" path="res://Assets/background/Produce Aisle.png" id="4_o4q05"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="6_s1icn"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="7_cd511"]
+[ext_resource type="PackedScene" uid="uid://dbrlpj77wkuvu" path="res://Scenes/fruit_stand.tscn" id="8_ibc8h"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="8_qbfnm"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="9_f7i8q"]
 [ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="9_y3v3h"]
@@ -39,7 +40,7 @@ texture = ExtResource("3_2jso8")
 texture_scale = 6.5
 
 [node name="FluorescentLight" type="Sprite2D" parent="."]
-position = Vector2(630, -803.25)
+position = Vector2(631, -803.25)
 scale = Vector2(1.32051, 1.32051)
 texture = ExtResource("2_r3kx6")
 metadata/_edit_group_ = true
@@ -60,6 +61,10 @@ texture = ExtResource("4_o4q05")
 [node name="Player" parent="." instance=ExtResource("8_qbfnm")]
 
 [node name="HUD" parent="." instance=ExtResource("9_f7i8q")]
+
+[node name="FruitStand" parent="." instance=ExtResource("8_ibc8h")]
+position = Vector2(1371, -42)
+scale = Vector2(0.4, 0.4)
 
 [node name="Floor" parent="." instance=ExtResource("9_y3v3h")]
 position = Vector2(0, -6)
