@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://2edgk3lyx13t"]
+
+[ext_resource type="Script" path="res://Scripts/primary_aisle_transition.gd" id="1_8pghy"]
+[ext_resource type="PackedScene" uid="uid://yyrbetd7ic33" path="res://Scenes/primary_aisle.tscn" id="1_86akt"]
+[ext_resource type="PackedScene" uid="uid://b2unm6r4katvb" path="res://Scenes/scene_transition.tscn" id="2_nn0gp"]
+
+[node name="PrimaryAisleTransition" type="Node2D"]
+script = ExtResource("1_8pghy")
+
+[node name="PrimaryAisle" parent="." instance=ExtResource("1_86akt")]
+
+[node name="SceneTransition" parent="." instance=ExtResource("2_nn0gp")]
+is_black = true

@@ -24,7 +24,7 @@ const INTERACT_TEXT := "E to "
 @onready var checklist = $Inventory/Checklist
 
 #other misc variables
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite = $PlayerSprite
 @onready var walk_sound = $WalkSound
 @onready var error_label = $InteractionComponents/ErrorLabel
 

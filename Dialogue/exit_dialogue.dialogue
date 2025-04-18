@@ -2,6 +2,7 @@
 
 Ready to leave?
 - Yes
+	do scene_transition.fade_to_black()
 	do Global.init_ending()
 - No
 

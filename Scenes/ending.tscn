@@ -39,3 +39,4 @@ texture = ExtResource("5_vkxjh")
 texture_scale = 11.81
 
 [node name="SceneTransition" parent="." instance=ExtResource("6_5kbom")]
+is_black = true

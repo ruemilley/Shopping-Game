@@ -5,6 +5,7 @@ extends Node2D
 @export var camera_limit_top = -10000000.0
 @export var camera_limit_bottom = 400.0
 @onready var checkout_area = $CheckoutArea
+@onready var scene_transition = $SceneTransition
 
 func _ready():
 	#set player position if reentering scene
@@ -12,9 +13,9 @@ func _ready():
 		$Player.position = Global.last_main_position
 		$Player.position.y = Global.player_height
 		if Global.player_direction == true:
-			$Player/AnimatedSprite2D.flip_h = true
+			$Player/PlayerSprite.flip_h = true
 		else:
-			$Player/AnimatedSprite2D.flip_h = false
+			$Player/PlayerSprite.flip_h = false
 	
 	$Player/Camera2D.limit_left = camera_limit_left
 	$Player/Camera2D.limit_right = camera_limit_right

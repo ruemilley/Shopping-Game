@@ -11,9 +11,9 @@ func _ready():
 		
 	$Player.position.y = Global.player_height
 	if Global.player_direction == true:
-		$Player/AnimatedSprite2D.flip_h = true
+		$Player/PlayerSprite.flip_h = true
 	else:
-		$Player/AnimatedSprite2D.flip_h = false
+		$Player/PlayerSprite.flip_h = false
 	
 	$Player/Camera2D.limit_left = camera_limit_left
 	$Player/Camera2D.limit_right = camera_limit_right

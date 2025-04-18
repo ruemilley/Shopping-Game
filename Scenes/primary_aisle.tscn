@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://yyrbetd7ic33"]
+[gd_scene load_steps=30 format=3 uid="uid://yyrbetd7ic33"]
 
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://3y8yk7mnwus3" path="res://Scenes/bg_scene.tscn" id="15_tgynj"]
 [ext_resource type="PackedScene" uid="uid://dw131la14lxbo" path="res://Scenes/ceiling.tscn" id="16_mcrok"]
 [ext_resource type="PackedScene" uid="uid://dkl2ivh1a0b7g" path="res://Scenes/grocery_shadow.tscn" id="17_pkfbt"]
+[ext_resource type="PackedScene" uid="uid://b2unm6r4katvb" path="res://Scenes/scene_transition.tscn" id="27_lg0su"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
@@ -118,9 +119,9 @@ position = Vector2(3104, 29)
 texture = ExtResource("4_53816")
 
 [node name="BGScene" parent="." instance=ExtResource("15_tgynj")]
-offset_left = -1856.0
-offset_right = 1018.0
-metadata/_edit_lock_ = true
+offset_left = -4689.0
+offset_right = -1815.0
+offset_bottom = 10407.0
 
 [node name="BGSky" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -268,3 +269,5 @@ z_index = 1
 position = Vector2(-1088, -8)
 
 [node name="HUD" parent="." instance=ExtResource("6_rtgsx")]
+
+[node name="SceneTransition" parent="." instance=ExtResource("27_lg0su")]

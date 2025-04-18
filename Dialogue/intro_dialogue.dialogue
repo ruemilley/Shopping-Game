@@ -18,7 +18,7 @@ Mom: You know how stores work, right? Do you need some advice? Like a tutorial o
 	Mom: Suit yourself, kiddo. Just don't come crying to me if you don't know what to do when you get there.
 	- Actually I lied. I know nothing about stores. Please help me. => tutorial
 	- Crying is for babies which I am not.
-		Mom: All right, All right. Just get outta here already. Don't forget to check the list. => END
+		Mom: All right, All right. Just get outta here already. Don't forget to check the list. => load_game
 	
 ~ tutorial
 
@@ -35,9 +35,16 @@ Mom: ...I'm gonna assume you know how money works and not get into that. It's ma
 Mom: Once you're all done you can hit the road and I'll tell ya how you did.
 Mom: You got all that?
 - I got all of it.
-	Mom: All right, good stuff. Make me proud. => END
+	Mom: All right, good stuff. Make me proud. 
+	=> load_game
 - I got none of it.
 	Mom: Geez, kiddo. Try to listen this time. => tutorial
 
 
-=> END
+~ load_game
+
+do scene_transition.fade_to_black()
+do call_deferred("enter_store")
+
+~ END
+

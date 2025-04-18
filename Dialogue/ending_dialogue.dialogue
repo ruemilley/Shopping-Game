@@ -143,8 +143,8 @@ Mom: I guess I could send you back there... Give it another try? What do you thi
 - Yeah
 	Mom: That's the spirit. Get back at it, kiddo.
 	do reset_game_state()
-	do scene_transition.fade_to_normal()
-	do call_deferred("main_scene_return")
+	do scene_transition.fade_to_black()
+	do call_deferred("enter_store")
 - Nah
 	Mom: Nah?
 	Mom: NAH????
@@ -232,8 +232,8 @@ Mom: What do you say?
 - Yeah
 	Mom: Thanks, kid. I believe in you. You got this this time.
 	do reset_game_state()
-	do scene_transition.fade_to_normal()
-	do call_deferred("main_scene_return")
+	do scene_transition.fade_to_black()
+	do call_deferred("enter_store")
 - Nah
 	Mom: Okay so you're grounded now.
 	Mom: Grounded is what happens now.
@@ -245,6 +245,7 @@ Mom: What do you say?
 
 ~ theft
 
+do scene_transition.fade_to_normal()
 You did it. The big crime.
 You can never go home again.
 Or else Mom would kick your ass.
@@ -279,15 +280,15 @@ Mom: Do you have anything to say for yourself?
 	- Yes
 		Mom: That's the spirit. Get back out there, kiddo.
 		do reset_game_state()
-		do scene_transition.fade_to_normal()
-		do call_deferred("main_scene_return")
+		do scene_transition.fade_to_black()
+		do call_deferred("enter_store")
 	- No
 		Mom: That's fair. Can't conquer everything in one go.
 		Mom: ...
 		Mom: Not sure how to proceed now.
 		Mom: ...
 		Mom: Well, whatever. Roll credits!
-		do call_deferred("roll_credits")
+		do call_deferred("enter_store")
 - The store was out of every single item.
 	Mom: That seems... Unlikely.
 	Mom: Maybe not impossible.
@@ -297,22 +298,22 @@ Mom: Do you have anything to say for yourself?
 		Mom: Yeah I know it was a lie. 
 		Mom: Go back there.
 		do reset_game_state()
-		do scene_transition.fade_to_normal()
-		do call_deferred("main_scene_return")
+		do scene_transition.fade_to_black()
+		do call_deferred("enter_store")
 	- It was a wasteland in there. The apocalypse might be happening.
 		Mom: Wow. The apocalypse, huh.
 		Mom: Well, if the apocalypse is happening then I think it's even more important we stock up on essentials.
 		Mom: So you're gonna go to a different grocery store.
 		Mom: Scram.
 		do reset_game_state()
-		do scene_transition.fade_to_normal()
-		do call_deferred("main_scene_return")
+		do scene_transition.fade_to_black()
+		do call_deferred("enter_store")
 - Just kinda wanted to see what you would do, honestly.
 	Mom: Well, this will shock you. But I am going to send you back to the store.
 	Mom: Scram.
 	do reset_game_state()
 	do scene_transition.fade_to_black()
-	do call_deferred("main_scene_return")
+	do call_deferred("enter_store")
 
 
 => END

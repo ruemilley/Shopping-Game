@@ -11,6 +11,7 @@ var player_pos
 var is_running := false
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
 
+var transition_primary_aisle := false
 
 #inventory signals
 signal inventory_updated
@@ -213,6 +214,8 @@ func find_current_aisle():
 	match get_tree().current_scene.name:
 		"PrimaryAisle":
 			return primary_aisle_items
+		"PrimaryAisleTransition":
+			return primary_aisle_items
 		"BakeryAisle":
 			return bakery_aisle_items
 		"DairyAisle":
@@ -317,13 +320,17 @@ func init_ending():
 	for i in ending_checklist.values():
 		if i == true:
 			ending_balance += 1
-	if ending_balance <= ending_balance_cap / 2:
+	if ending_state == "theft":
+		get_tree().change_scene_to_file("res://Scenes/theft_ending.tscn")
+	elif ending_balance <= ending_balance_cap / 2:
 		ending_state = "bad"
-	if ending_balance < ending_balance_cap and ending_balance > ending_balance_cap / 2 :
+		get_tree().change_scene_to_file("res://Scenes/ending.tscn")
+	elif ending_balance < ending_balance_cap and ending_balance > ending_balance_cap / 2 :
 		ending_state = "okay"
-	if ending_balance >= ending_balance_cap:
+		get_tree().change_scene_to_file("res://Scenes/ending.tscn")
+	elif ending_balance >= ending_balance_cap:
 		ending_state = "good"
-	get_tree().change_scene_to_file("res://Scenes/ending.tscn")
+		get_tree().change_scene_to_file("res://Scenes/ending.tscn")
 
 func return_inventory_val(i):
 	return i == null
@@ -432,5 +439,9 @@ func reset_game_state():
 func main_scene_return():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	
+func enter_store():
+	transition_primary_aisle = true
+	get_tree().change_scene_to_file("res://Scenes/primary_aisle_transition.tscn")
+
 func roll_credits():
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://gk5gy81m1l3e"]
+
+[ext_resource type="PackedScene" uid="uid://du4uwea7otpw6" path="res://Scenes/player_sprite.tscn" id="1_1ch2o"]
+[ext_resource type="Script" path="res://theft_ending.gd" id="1_1gj5l"]
+[ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="1_djcp2"]
+[ext_resource type="PackedScene" uid="uid://b2unm6r4katvb" path="res://Scenes/scene_transition.tscn" id="2_yjxwr"]
+
+[node name="TheftEnding" type="Node2D"]
+script = ExtResource("1_1gj5l")
+
+[node name="SceneTransition" parent="." instance=ExtResource("2_yjxwr")]
+is_black = true
+
+[node name="PlayerSprite" parent="." instance=ExtResource("1_1ch2o")]
+z_index = 100
+position = Vector2(953, 603)
+scale = Vector2(0.7, 0.7)
+animation = &"run"
+frame_progress = 0.299236
+flip_h = true
+
+[node name="Floor" parent="." instance=ExtResource("1_djcp2")]
+position = Vector2(851, 672)
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BGSky" type="ColorRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.757805, 0.940105, 0.973832, 1)
+metadata/_edit_lock_ = true

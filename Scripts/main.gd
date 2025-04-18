@@ -1,6 +1,6 @@
 extends Node
 
-@onready var first_scene = "res://Scenes/primary_aisle.tscn"
+@onready var first_scene = "res://Scenes/opening.tscn"
 
 
 func _on_start_button_pressed():
