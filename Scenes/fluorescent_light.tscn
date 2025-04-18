@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdlur41j68nrm"]
+
+[ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="1_373tq"]
+[ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="2_537w8"]
+
+[node name="FluorescentLight" type="Sprite2D"]
+position = Vector2(630, -803.25)
+scale = Vector2(2, 2)
+texture = ExtResource("1_373tq")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -4.73303)
+scale = Vector2(1, 0.545851)
+color = Color(0.780392, 1, 1, 0.290196)
+energy = 1.65
+shadow_enabled = true
+texture = ExtResource("2_537w8")
+texture_scale = 7.14
+height = 400.0

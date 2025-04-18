@@ -26,6 +26,7 @@ const INTERACT_TEXT := "E to "
 #other misc variables
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var walk_sound = $WalkSound
+@onready var error_label = $InteractionComponents/ErrorLabel
 
 
 
@@ -152,14 +153,25 @@ func execute_interaction():
 				$Camera2D.position_smoothing_enabled = false
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
 			"item_pickup":
-				get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
-				Global.update_scene_items()
+				if Global.inventory_count == Global.inventory_cap:
+					show_error_message("You can't carry all this home! You need to put something back.")
+				else:
+					get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
+					Global.update_scene_items()
 			"dialogue":
 				var resource = load(cur_interaction.dialogue_resource)
 				Global.dialogue_active = true
 				DialogueManager.show_dialogue_balloon(resource, cur_interaction.interact_value)
 			_:
 				print("no matching interact value found.")
+				
+
+func show_error_message(message):
+	error_label.text = message
+	
+	await get_tree().create_timer(5.0).timeout
+	error_label.text = ""
+
 			
 func _input(event):
 	if event.is_action_pressed("ui_inventory"):

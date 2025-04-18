@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://3p8qdlew4fhi"]
 
 [ext_resource type="Script" path="res://Scripts/aisle.gd" id="1_1r7hk"]
-[ext_resource type="Texture2D" uid="uid://b8oy1vuonol17" path="res://Assets/Lighting/Flourescent Light 1.png" id="2_1hu3e"]
 [ext_resource type="PackedScene" uid="uid://3y8yk7mnwus3" path="res://Scenes/bg_scene.tscn" id="2_4hrbo"]
-[ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="3_xk30i"]
 [ext_resource type="Texture2D" uid="uid://7h6ofpqo2we" path="res://Assets/background/Bakery Aisle.png" id="4_0mdjd"]
 [ext_resource type="PackedScene" uid="uid://b5pcvphqr82sg" path="res://Scenes/aisle_entrance.tscn" id="6_n47da"]
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="7_tdr38"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="8_ggvjv"]
 [ext_resource type="PackedScene" uid="uid://068afqqop6qd" path="res://Scenes/hud.tscn" id="9_i0c5c"]
+[ext_resource type="PackedScene" uid="uid://dw131la14lxbo" path="res://Scenes/ceiling.tscn" id="9_rcc6s"]
 [ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="10_g06ss"]
+[ext_resource type="PackedScene" uid="uid://dkl2ivh1a0b7g" path="res://Scenes/grocery_shadow.tscn" id="10_y7ybm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctydo"]
 size = Vector2(182, 366)
@@ -23,38 +23,14 @@ camera_limit_top = -1000.0
 offset_left = -2372.0
 offset_right = 502.0
 
-[node name="FluorescentLight2" type="Sprite2D" parent="."]
-position = Vector2(2070, -800.25)
-scale = Vector2(1.32051, 1.32051)
-texture = ExtResource("2_1hu3e")
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="FluorescentLight2"]
-position = Vector2(0, -4.73303)
-scale = Vector2(1, 0.545851)
-color = Color(0.780392, 1, 1, 0.290196)
-shadow_enabled = true
-texture = ExtResource("3_xk30i")
-texture_scale = 6.5
-
-[node name="FluorescentLight" type="Sprite2D" parent="."]
-position = Vector2(630, -803.25)
-scale = Vector2(1.32051, 1.32051)
-texture = ExtResource("2_1hu3e")
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="FluorescentLight"]
-position = Vector2(0, -4.73303)
-scale = Vector2(1, 0.545851)
-color = Color(0.780392, 1, 1, 0.290196)
-shadow_enabled = true
-texture = ExtResource("3_xk30i")
-texture_scale = 6.5
-
 [node name="BakeryAisle" type="Sprite2D" parent="."]
 position = Vector2(1349, -239)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("4_0mdjd")
+
+[node name="Ceiling" parent="." instance=ExtResource("9_rcc6s")]
+
+[node name="GroceryShadow" parent="." instance=ExtResource("10_y7ybm")]
 
 [node name="Player" parent="." instance=ExtResource("8_ggvjv")]
 position = Vector2(-48, 0)

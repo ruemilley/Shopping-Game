@@ -18,6 +18,8 @@ signal inventory_updated
 #inventory management
 
 var inventory := []
+var inventory_count := 0
+var inventory_cap := 20
 
 #array updating checklist status. starts empty because it will append the item
 
@@ -139,10 +141,12 @@ func add_item(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["iname"] == item["iname"]:
 			inventory[i]["quantity"] += item["quantity"]
+			inventory_count += 1
 			inventory_updated.emit()
 			return true
 		elif inventory[i] == null:
 			inventory[i] = item
+			inventory_count += 1
 			inventory_updated.emit()
 			return true
 	return false
@@ -151,10 +155,12 @@ func remove_item(item_name, item_type):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["type"] == item_type and inventory[i]["iname"] == item_name:
 			inventory[i]["quantity"] -= 1
+			inventory_count -= 1
 			cart_value -= inventory[i]["cost"]
 			get_tree().call_group("HUD", "update_money_counter_text", Global.cart_value)
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
+				inventory_count += 1
 				inventory_updated.emit()
 			inventory_updated.emit()
 			return true

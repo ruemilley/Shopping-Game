@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvcf4t3i73je5"]
+[gd_scene load_steps=7 format=3 uid="uid://dvcf4t3i73je5"]
 
 [ext_resource type="Script" path="res://Scripts/ending.gd" id="1_mdny7"]
 [ext_resource type="Texture2D" uid="uid://dkf83xyh08rq4" path="res://Assets/background/Mom House BG.jpg" id="2_1l714"]
 [ext_resource type="PackedScene" uid="uid://igy5pu53qsr3" path="res://Scenes/mom.tscn" id="2_j3r4o"]
 [ext_resource type="Texture2D" uid="uid://ykn5n1h02o03" path="res://Assets/characters/player/idle/player_idle.png" id="4_57vat"]
+[ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="5_vkxjh"]
+[ext_resource type="PackedScene" uid="uid://b2unm6r4katvb" path="res://Scenes/scene_transition.tscn" id="6_5kbom"]
 
 [node name="Ending" type="Node2D"]
 script = ExtResource("1_mdny7")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(992, 491)
+texture = ExtResource("2_1l714")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(992, 547)
@@ -21,3 +27,15 @@ position = Vector2(1528, 765)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_57vat")
 flip_h = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.883219, 0.869134, 0.776412, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(978, 19)
+color = Color(1, 1, 1, 0.545098)
+energy = 0.61
+texture = ExtResource("5_vkxjh")
+texture_scale = 11.81
+
+[node name="SceneTransition" parent="." instance=ExtResource("6_5kbom")]

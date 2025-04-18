@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dkl2ivh1a0b7g"]
+
+[node name="GroceryShadow" type="CanvasModulate"]
+color = Color(0.818742, 0.814586, 0.811825, 1)

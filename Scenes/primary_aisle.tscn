@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://yyrbetd7ic33"]
+[gd_scene load_steps=29 format=3 uid="uid://yyrbetd7ic33"]
 
 [ext_resource type="Script" path="res://Scripts/primary_aisle.gd" id="1_fkw2g"]
 [ext_resource type="PackedScene" uid="uid://ckwc0dqifo68w" path="res://Scenes/player.tscn" id="1_h51un"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://c0ay71l2teksx" path="res://Assets/background/main aisle elements/entrance front.png" id="13_qrse5"]
 [ext_resource type="Texture2D" uid="uid://cmfc2iol8aeca" path="res://Assets/background/main aisle elements/entrance back.png" id="14_5kye1"]
 [ext_resource type="PackedScene" uid="uid://3y8yk7mnwus3" path="res://Scenes/bg_scene.tscn" id="15_tgynj"]
+[ext_resource type="PackedScene" uid="uid://dw131la14lxbo" path="res://Scenes/ceiling.tscn" id="16_mcrok"]
+[ext_resource type="PackedScene" uid="uid://dkl2ivh1a0b7g" path="res://Scenes/grocery_shadow.tscn" id="17_pkfbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie211"]
 size = Vector2(182, 366)
@@ -35,7 +37,7 @@ size = Vector2(424, 1203)
 script = ExtResource("1_fkw2g")
 camera_limit_left = -1980.0
 camera_limit_right = 3330.0
-camera_limit_top = -5000.0
+camera_limit_top = -1000.0
 
 [node name="BGElements" type="Node" parent="."]
 
@@ -127,6 +129,19 @@ offset_top = -672.0
 offset_right = -1328.0
 offset_bottom = 206.0
 color = Color(0.757805, 0.940105, 0.973832, 1)
+
+[node name="Ceiling" parent="." instance=ExtResource("16_mcrok")]
+offset_left = 392.0
+offset_right = 4585.0
+
+[node name="Ceiling" parent="Ceiling" instance=ExtResource("16_mcrok")]
+layout_mode = 0
+offset_left = -3992.0
+offset_top = -1.0
+offset_right = 201.0
+offset_bottom = 719.0
+
+[node name="GroceryShadow" parent="." instance=ExtResource("17_pkfbt")]
 
 [node name="AisleEntrances" type="Node2D" parent="."]
 position = Vector2(0, 214)

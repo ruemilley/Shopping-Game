@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmt11npnmihow"]
+
+[ext_resource type="Texture2D" uid="uid://dkf83xyh08rq4" path="res://Assets/background/Mom House BG.jpg" id="1_u7kjh"]
+[ext_resource type="Script" path="res://Scripts/opening.gd" id="1_vo27e"]
+[ext_resource type="PackedScene" uid="uid://igy5pu53qsr3" path="res://Scenes/mom.tscn" id="2_4vc3p"]
+[ext_resource type="Texture2D" uid="uid://ykn5n1h02o03" path="res://Assets/characters/player/idle/player_idle.png" id="3_t5o0c"]
+[ext_resource type="Texture2D" uid="uid://0xjvnwhhbvgu" path="res://Assets/Lighting/2d_lights_and_shadows_neutral_point_light.webp" id="4_otl3v"]
+[ext_resource type="PackedScene" uid="uid://b2unm6r4katvb" path="res://Scenes/scene_transition.tscn" id="6_a0ngj"]
+
+[node name="Opening" type="Node2D"]
+script = ExtResource("1_vo27e")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(996, 454)
+texture = ExtResource("1_u7kjh")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(992, 547)
+texture = ExtResource("1_u7kjh")
+
+[node name="Mom" parent="." instance=ExtResource("2_4vc3p")]
+position = Vector2(357, 748)
+scale = Vector2(0.65, 0.65)
+
+[node name="PlayerSpriteOnly" type="Sprite2D" parent="."]
+position = Vector2(1528, 765)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_t5o0c")
+flip_h = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.883219, 0.869134, 0.776412, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(978, 19)
+color = Color(1, 1, 1, 0.545098)
+energy = 0.61
+texture = ExtResource("4_otl3v")
+texture_scale = 11.81
+
+[node name="SceneTransition" parent="." instance=ExtResource("6_a0ngj")]

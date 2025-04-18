@@ -1,4 +1,5 @@
 ~ intro
+do scene_transition.fade_to_normal()
 do mom.look_up()
 Mom: Kiddo. I need you to go to the store for me.
 - Aw man. Do I gotta?

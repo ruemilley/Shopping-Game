@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw131la14lxbo"]
+
+[ext_resource type="PackedScene" uid="uid://bdlur41j68nrm" path="res://Scenes/fluorescent_light.tscn" id="1_b3iup"]
+
+[node name="Ceiling" type="ColorRect"]
+offset_left = -700.0
+offset_top = -1471.0
+offset_right = 3493.0
+offset_bottom = -751.0
+color = Color(0.618461, 0.648561, 0.613468, 1)
+
+[node name="FluorescentLight" parent="." instance=ExtResource("1_b3iup")]
+position = Vector2(1111, 602)
+
+[node name="FluorescentLight2" parent="." instance=ExtResource("1_b3iup")]
+position = Vector2(2960, 602)
+flip_h = true
