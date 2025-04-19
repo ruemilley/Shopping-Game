@@ -247,7 +247,7 @@ texture = ExtResource("14_5kye1")
 
 [node name="InteractionArea" parent="EntranceBack" instance=ExtResource("3_gckcc")]
 position = Vector2(-317, -729)
-interact_label = "to exit store"
+interact_label = "exit store"
 interact_type = "dialogue"
 interact_value = "start"
 dialogue_resource = "res://Dialogue/exit_dialogue.dialogue"

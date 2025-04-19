@@ -161,7 +161,7 @@ func remove_item(item_name, item_type):
 			get_tree().call_group("HUD", "update_money_counter_text", Global.cart_value)
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
-				inventory_count += 1
+				inventory_count -= 1
 				inventory_updated.emit()
 			inventory_updated.emit()
 			return true
@@ -195,6 +195,7 @@ func drop_item(_item_data, drop_position):
 	get_tree().current_scene.add_child(item_instance)
 	find_current_aisle().append(item_data)
 	update_scene_items()
+	SoundManager.play_confirm_sound()
 	
 	
 
@@ -435,6 +436,7 @@ func reset_game_state():
 	spinach = false
 	white = false
 	red = false
+	
 
 func main_scene_return():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
@@ -442,6 +444,7 @@ func main_scene_return():
 func enter_store():
 	transition_primary_aisle = true
 	get_tree().change_scene_to_file("res://Scenes/primary_aisle_transition.tscn")
+	SoundManager.play_grocery_sound()
 
 func roll_credits():
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")

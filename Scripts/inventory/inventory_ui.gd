@@ -5,6 +5,7 @@ extends Control
 @onready var item_price = %ItemPrice
 @onready var item_description = %ItemDescription
 @onready var checklist_button = %ChecklistButton
+@onready var checklist_sound = $ChecklistSound
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,10 +50,13 @@ func _on_close_button_pressed():
 
 func _on_checklist_button_pressed():
 	Events.my_checklist_button_pressed.emit()
+	checklist_sound.playing = true
 	checklist_button.disabled = true
 
 func _on_my_checklist_button_pressed():
+	checklist_sound.playing = true
 	checklist_button.button_pressed = !checklist_button.button_pressed
 
 func _on_checklist_hidden():
+	checklist_sound.playing = true
 	checklist_button.disabled = false

@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://of68ttytcpud"]
+[gd_scene load_steps=5 format=3 uid="uid://of68ttytcpud"]
 
+[ext_resource type="Script" path="res://Scripts/shopping_cart.gd" id="1_1q86m"]
 [ext_resource type="Texture2D" uid="uid://4kctc78mj1dp" path="res://Assets/environment items/shopping_cart.png" id="1_axe42"]
+[ext_resource type="AudioStream" uid="uid://ukp08617upsc" path="res://Assets/Sound/SFX/781716__yannsauvin__shopping-cart-rolling.ogg" id="3_fae43"]
+[ext_resource type="AudioStream" uid="uid://cc5fkevw83aw1" path="res://Assets/Sound/SFX/151238__owlstorm__hard-female-footstep-2.ogg" id="4_hkjfe"]
 
 [node name="ShoppingCart" type="RigidBody2D"]
 z_index = 100
 collision_layer = 5
 collision_mask = 5
 lock_rotation = true
+script = ExtResource("1_1q86m")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.32, 0.32)
@@ -20,3 +24,10 @@ polygon = PackedVector2Array(-70, -137, -78, -137, -115, -62, -156, -61, -168, -
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-181, -113, -142, 105, 133, 108, 171, -74, 119, 233, -168, 234, -186, -112)
+
+[node name="RollingSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fae43")
+parameters/looping = true
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hkjfe")

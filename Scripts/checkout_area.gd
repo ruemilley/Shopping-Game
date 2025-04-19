@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var cashier = $Cashier
 @onready var blink_timer = $BlinkTimer
+@onready var checkout_sound = $CheckoutSound
 
 func _ready():
 	Events.started_talking.connect(_on_started_talking)
@@ -18,7 +19,9 @@ func _on_blink_timer_timeout():
 	cashier.play("blink")
 	blink_timer.wait_time = randi_range(3,10)
 
-#function that is called when dialogue is triggered, need to figure out how to implement this
+
+func play_checkout_sound():
+	checkout_sound.play()
 
 func _on_started_talking(talker):
 	if talker == "Shop Clerk":

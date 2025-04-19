@@ -23,6 +23,6 @@ texture = ExtResource("1_riokd")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1690.25, 304.75)
+position = Vector2(1690.25, 321.75)
 scale = Vector2(200, 200)
 shape = SubResource("RectangleShape2D_i0qsw")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpsm4c7dfob44"]
+[gd_scene load_steps=13 format=3 uid="uid://cpsm4c7dfob44"]
 
 [ext_resource type="Script" path="res://Scripts/inventory/inventory_ui.gd" id="1_7l5o7"]
 [ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_cdx23"]
+[ext_resource type="AudioStream" uid="uid://flxjhm2te1rd" path="res://Assets/Sound/SFX/367681__funwithsound__paper-crumble-throw-away-1.ogg" id="3_3l72n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cu4hn"]
 bg_color = Color(0.963495, 0.950513, 0.821626, 1)
@@ -233,6 +234,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5pjae")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5pjae")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rcu2f")
 text = "My Checklist"
+
+[node name="ChecklistSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3l72n")
 
 [connection signal="pressed" from="HBoxContainer/ItemInformation/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ItemInformation/MarginContainer/VBoxContainer/ChecklistButton" to="." method="_on_checklist_button_pressed"]

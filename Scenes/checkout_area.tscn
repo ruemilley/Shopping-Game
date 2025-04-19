@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7i5gdov1iwru"]
+[gd_scene load_steps=17 format=3 uid="uid://c7i5gdov1iwru"]
 
 [ext_resource type="PackedScene" uid="uid://cbpmov857d16t" path="res://Scenes/interaction_area.tscn" id="1_0r4mv"]
 [ext_resource type="Texture2D" uid="uid://721r7ciigm2k" path="res://Assets/characters/cashier/idle/cashier_idle-1.png" id="1_fpgg6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dnnt100j2rgnc" path="res://Assets/characters/cashier/talk/cashier_talk-3.png" id="9_tsswp"]
 [ext_resource type="Texture2D" uid="uid://b3c4jaqm2380a" path="res://Assets/characters/cashier/talk/cashier_talk-4.png" id="10_2ncg6"]
 [ext_resource type="Texture2D" uid="uid://bsoit1ifljnjw" path="res://Assets/background/background item assets/cash register.png" id="11_o3vg1"]
+[ext_resource type="AudioStream" uid="uid://bsfqg4cbm04xx" path="res://Assets/Sound/SFX/144418__zerolagtime__store-scanner-beep.ogg" id="14_pt23q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pu5eh"]
 animations = [{
@@ -101,7 +102,7 @@ position = Vector2(437, -169)
 texture = ExtResource("11_o3vg1")
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_0r4mv")]
-interact_label = "to talk"
+interact_label = "talk"
 interact_type = "dialogue"
 interact_value = "start"
 dialogue_resource = "res://Dialogue/checkout_dialogue.dialogue"
@@ -114,5 +115,8 @@ shape = SubResource("CapsuleShape2D_tk8x6")
 [node name="BlinkTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="CheckoutSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_pt23q")
 
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]

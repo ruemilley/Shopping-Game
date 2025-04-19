@@ -22,11 +22,14 @@ const INTERACT_TEXT := "E to "
 #inventory
 @onready var inventory_ui = $Inventory
 @onready var checklist = $Inventory/Checklist
+@onready var open_inventory_sound = $Inventory/OpenInventorySound
+@onready var close_inventory_sound = $Inventory/CloseInventorySound
 
 #other misc variables
 @onready var animated_sprite = $PlayerSprite
-@onready var walk_sound = $WalkSound
 @onready var error_label = $InteractionComponents/ErrorLabel
+@onready var pickup_item_sound = $PickupItemSound
+@onready var error_sound = $ErrorSound
 
 
 
@@ -44,12 +47,8 @@ func _physics_process(delta):
 		if Input.is_action_pressed("run") and is_on_floor():
 			velocity.x = direction * RUN_SPEED
 			Global.is_running = true
-		if is_on_floor() and !walk_sound.playing:
-			walk_sound.pitch_scale = randf_range(.9, 1.1)
-			#walk_sound.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		walk_sound.stop()
 	# Add the gravity.
 	
 	#control animation
@@ -156,6 +155,7 @@ func execute_interaction():
 				if Global.inventory_count == Global.inventory_cap:
 					show_error_message("You can't carry all this home! You need to put something back.")
 				else:
+					pickup_item_sound.play()
 					get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
 					Global.update_scene_items()
 			"dialogue":
@@ -167,6 +167,7 @@ func execute_interaction():
 				
 
 func show_error_message(message):
+	error_sound.play()
 	error_label.text = message
 	
 	await get_tree().create_timer(5.0).timeout
@@ -176,10 +177,15 @@ func show_error_message(message):
 func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !inventory_ui.visible
+		if inventory_ui.visible == true:
+			open_inventory_sound.playing = true
+		else:
+			close_inventory_sound.playing = true
 		get_tree().paused = !get_tree().paused
 	
 func _on_inventory_close_button_pressed():
 	inventory_ui.visible = !inventory_ui.visible
+	close_inventory_sound.playing = true
 	get_tree().paused = !get_tree().paused
 	if inventory_ui.visible == false:
 		if checklist.visible == true:
@@ -187,3 +193,22 @@ func _on_inventory_close_button_pressed():
 
 func _on_my_checklist_button_pressed():
 	checklist.visible = !checklist.visible	
+
+
+func _on_player_sprite_frame_changed():
+	if animated_sprite.animation == "run":
+		match animated_sprite.frame:
+			1,7:
+				SoundManager.play_walk_sound()
+			_:
+				pass
+	elif animated_sprite.animation == "walk":
+			match animated_sprite.frame:
+				1,5:
+					SoundManager.play_walk_sound()
+				_:
+					pass
+	elif animated_sprite.animation == "jump":
+		SoundManager.play_jump_sound()
+	else:
+		pass

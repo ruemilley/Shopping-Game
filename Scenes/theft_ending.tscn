@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://gk5gy81m1l3e"]
 
 [ext_resource type="PackedScene" uid="uid://du4uwea7otpw6" path="res://Scenes/player_sprite.tscn" id="1_1ch2o"]
-[ext_resource type="Script" path="res://theft_ending.gd" id="1_1gj5l"]
+[ext_resource type="Script" path="res://Scenes/theft_ending.gd" id="1_1gj5l"]
 [ext_resource type="PackedScene" uid="uid://cf15xs4qmhal7" path="res://Scenes/floor.tscn" id="1_djcp2"]
 [ext_resource type="PackedScene" uid="uid://b2unm6r4katvb" path="res://Scenes/scene_transition.tscn" id="2_yjxwr"]
 

@@ -2,6 +2,7 @@
 
 Ready to leave?
 - Yes
+	do fade_grocery_sound()
 	do scene_transition.fade_to_black()
 	do Global.init_ending()
 - No

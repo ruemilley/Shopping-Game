@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bp0gg4jwneabb"
+path="res://.godot/imported/Shopping w_ Paranoid.ogg-671c85eb43233de31ce42c9fd2627e41.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/music/Shopping w_ Paranoid.ogg"
+dest_files=["res://.godot/imported/Shopping w_ Paranoid.ogg-671c85eb43233de31ce42c9fd2627e41.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

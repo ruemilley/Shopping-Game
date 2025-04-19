@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cqnff6vsvyj4j"
+path="res://.godot/imported/475099__ecfike__freezer-section-in-a-small-grocery-store.ogg-8a9b03a38e266d2f0453f7285bae553d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/Ambient Noise/475099__ecfike__freezer-section-in-a-small-grocery-store.ogg"
+dest_files=["res://.godot/imported/475099__ecfike__freezer-section-in-a-small-grocery-store.ogg-8a9b03a38e266d2f0453f7285bae553d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

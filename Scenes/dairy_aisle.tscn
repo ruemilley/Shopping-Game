@@ -63,4 +63,4 @@ position = Vector2(90, 182)
 shape = SubResource("RectangleShape2D_yhtbs")
 
 [node name="ShoppingCart" parent="." instance=ExtResource("12_u2f4s")]
-position = Vector2(814, -40)
+position = Vector2(814, -22)

@@ -7,6 +7,8 @@ if has_checked_out == false:
 		set has_checked_out = true
 		set budget_value -= cart_value
 		do cart_checkout()
+		do checkout_area.play_checkout_sound()
+		Shop Clerk: Have a good day!
 	else:
 		Shop Clerk: It looks like you don't have enough money.. You'll have to put some things back.
 - 	No

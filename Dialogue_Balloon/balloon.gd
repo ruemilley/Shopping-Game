@@ -154,6 +154,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+	SoundManager.play_confirm_sound()
 	next(response.next_id)
 
 

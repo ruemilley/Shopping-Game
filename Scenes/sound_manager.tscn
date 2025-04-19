@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://cuj3t3yy2ljcu"]
+
+[ext_resource type="Script" path="res://Scripts/sound_manager.gd" id="1_1eljh"]
+[ext_resource type="AudioStream" uid="uid://cc5fkevw83aw1" path="res://Assets/Sound/SFX/151238__owlstorm__hard-female-footstep-2.ogg" id="1_5im2w"]
+[ext_resource type="AudioStream" uid="uid://bp0gg4jwneabb" path="res://Assets/Sound/music/Shopping w_ Paranoid.ogg" id="3_6t7dn"]
+[ext_resource type="AudioStream" uid="uid://cqnff6vsvyj4j" path="res://Assets/Sound/SFX/Ambient Noise/475099__ecfike__freezer-section-in-a-small-grocery-store.ogg" id="4_abpvv"]
+[ext_resource type="AudioStream" uid="uid://tppnj31mwmwh" path="res://Assets/Sound/SFX/30_Jump_03.ogg" id="5_f2k3m"]
+[ext_resource type="AudioStream" uid="uid://8ubdquenxgso" path="res://Assets/Sound/SFX/switch_006.ogg" id="6_7g25o"]
+[ext_resource type="AudioStream" uid="uid://cesndjwe77h8d" path="res://Assets/Sound/SFX/761662__jellydaisies__pencil-scribble-6.ogg" id="6_um0gx"]
+
+[sub_resource type="Animation" id="Animation_gvjbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GroceryAmbience:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GroceryMusic:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ul6ac"]
+resource_name = "fade_grocery_sound"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GroceryAmbience:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -15.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GroceryMusic:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -50.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohaj4"]
+_data = {
+"RESET": SubResource("Animation_gvjbo"),
+"fade_grocery_sound": SubResource("Animation_ul6ac")
+}
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_1eljh")
+
+[node name="FadeMusicManager" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ohaj4")
+}
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5im2w")
+
+[node name="GroceryMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_6t7dn")
+parameters/looping = true
+
+[node name="GroceryAmbience" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_abpvv")
+parameters/looping = true
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f2k3m")
+
+[node name="ChecklistSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_um0gx")
+volume_db = 5.407
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7g25o")
+
+[connection signal="animation_finished" from="FadeMusicManager" to="." method="_on_fade_music_manager_animation_finished"]

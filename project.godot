@@ -20,11 +20,12 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Events="*res://Scripts/events.gd"
+SoundManager="*res://Scenes/sound_manager.tscn"
 
 [dialogue_manager]
 
 general/balloon_path="res://Dialogue_Balloon/balloon.tscn"
-general/states=["Global"]
+general/states=["Global", "SoundManager"]
 
 [display]
 

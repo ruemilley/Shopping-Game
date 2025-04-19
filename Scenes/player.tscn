@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckwc0dqifo68w"]
+[gd_scene load_steps=12 format=3 uid="uid://ckwc0dqifo68w"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bwngf"]
 [ext_resource type="PackedScene" uid="uid://du4uwea7otpw6" path="res://Scenes/player_sprite.tscn" id="2_rw0oo"]
 [ext_resource type="PackedScene" uid="uid://cpsm4c7dfob44" path="res://Scenes/inventory/inventory_ui.tscn" id="3_8u3og"]
-[ext_resource type="AudioStream" uid="uid://c5y2dy3d3tcjr" path="res://Assets/Sound/SFX/step.ogg" id="13_cda77"]
+[ext_resource type="AudioStream" uid="uid://c0bbnc8p8bmgn" path="res://Assets/Sound/SFX/open.ogg" id="6_nf2kl"]
+[ext_resource type="AudioStream" uid="uid://ciwcfdu5lqx5g" path="res://Assets/Sound/SFX/close.ogg" id="7_72xvd"]
+[ext_resource type="AudioStream" uid="uid://wirsm05bl7rh" path="res://Assets/Sound/SFX/click_002_forpickup.ogg" id="8_22wtk"]
+[ext_resource type="AudioStream" uid="uid://6t2sde10tbtd" path="res://Assets/Sound/SFX/error_006.ogg" id="9_usvy8"]
 [ext_resource type="Theme" uid="uid://cna443aml1fu" path="res://Themes/aisle_label.tres" id="23_wt7cf"]
 [ext_resource type="PackedScene" uid="uid://v8hilwrpuc2j" path="res://Scenes/checklist.tscn" id="25_1h04p"]
 
@@ -106,8 +109,19 @@ scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_cda77")
+[node name="OpenInventorySound" type="AudioStreamPlayer" parent="Inventory"]
+stream = ExtResource("6_nf2kl")
 
+[node name="CloseInventorySound" type="AudioStreamPlayer" parent="Inventory"]
+stream = ExtResource("7_72xvd")
+
+[node name="PickupItemSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_22wtk")
+volume_db = 9.86
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_usvy8")
+
+[connection signal="frame_changed" from="PlayerSprite" to="." method="_on_player_sprite_frame_changed"]
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
