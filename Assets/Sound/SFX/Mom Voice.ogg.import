@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgui7l1t1rm3d"
+path="res://.godot/imported/Mom Voice.ogg-eec45c7b087625e8c711d62e28629161.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/Mom Voice.ogg"
+dest_files=["res://.godot/imported/Mom Voice.ogg-eec45c7b087625e8c711d62e28629161.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

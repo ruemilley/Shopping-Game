@@ -29,3 +29,5 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997315, 1.01187)
 color = Color(0, 0, 0, 1)
+
+[connection signal="gui_input" from="Crossout" to="." method="_on_crossout_gui_input"]

@@ -7,6 +7,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.entered_other_areas = true
 	spawn_aisle_items()
 		
 	$Player.position.y = Global.player_height

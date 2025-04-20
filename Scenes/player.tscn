@@ -64,20 +64,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -322.0
-offset_right = 421.0
-offset_bottom = -256.0
+offset_left = -330.0
+offset_top = -356.0
+offset_right = 332.0
+offset_bottom = -221.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("23_wt7cf")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 48
-text = "
-"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -160)
@@ -92,7 +92,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="Inventory" type="CanvasLayer" parent="."]
-layer = 2
+layer = 10
 visible = false
 
 [node name="InventoryUI" parent="Inventory" instance=ExtResource("3_8u3og")]

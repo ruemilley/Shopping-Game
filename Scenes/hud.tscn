@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://068afqqop6qd"]
+[gd_scene load_steps=5 format=3 uid="uid://068afqqop6qd"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_qpwgp"]
 [ext_resource type="Theme" uid="uid://cna443aml1fu" path="res://Themes/aisle_label.tres" id="2_bghq5"]
+[ext_resource type="FontFile" uid="uid://6o3x53dr3mqq" path="res://Assets/ui/fonts/Nunito/Nunito-VariableFont_wght.ttf" id="3_osp2v"]
+
+[sub_resource type="FontVariation" id="FontVariation_r2f0b"]
+base_font = ExtResource("3_osp2v")
+variation_opentype = {
+2003265652: 400
+}
 
 [node name="HUD" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource("1_qpwgp")
@@ -34,5 +41,6 @@ grow_horizontal = 0
 theme = ExtResource("2_bghq5")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_r2f0b")
 bbcode_enabled = true
 text = "$0.00"

@@ -12,6 +12,7 @@ var is_running := false
 @onready var inventory_slot_scene = preload("res://Scenes/inventory/inventory_slot.tscn")
 
 var transition_primary_aisle := false
+var entered_other_areas := false
 
 #inventory signals
 signal inventory_updated
@@ -21,6 +22,7 @@ signal inventory_updated
 var inventory := []
 var inventory_count := 0
 var inventory_cap := 20
+var mouse_position_inside = false
 
 #array updating checklist status. starts empty because it will append the item
 
@@ -91,7 +93,7 @@ var snack_aisle_items := [
 
 #HUD management
 var budget_value := 30.00
-var cart_value := 00.00
+var cart_value := 0.00
 
 #variables for checking out/endings/dialogue
 
@@ -339,6 +341,8 @@ func return_inventory_val(i):
 func reset_game_state():
 	#inventory management
 	inventory = []
+	inventory.resize(20) #set inventory cap
+	inventory_updated.emit()
 #array updating checklist status. starts empty because it will append the item
 	checklist_items = [
 	]
@@ -436,6 +440,8 @@ func reset_game_state():
 	spinach = false
 	white = false
 	red = false
+	
+	entered_other_areas = false
 	
 
 func main_scene_return():

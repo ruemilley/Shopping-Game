@@ -158,6 +158,8 @@ func execute_interaction():
 					pickup_item_sound.play()
 					get_parent().get_node(str(cur_interaction.interact_value)).pickup_item()
 					Global.update_scene_items()
+					if Global.cart_value > Global.budget_value:
+						show_error_message("You're over budget!")
 			"dialogue":
 				var resource = load(cur_interaction.dialogue_resource)
 				Global.dialogue_active = true

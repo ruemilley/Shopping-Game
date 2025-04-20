@@ -44,6 +44,7 @@ Mom: You got all that?
 ~ load_game
 
 do scene_transition.fade_to_black()
+do fade_general_theme_music()
 do call_deferred("enter_store")
 
 ~ END

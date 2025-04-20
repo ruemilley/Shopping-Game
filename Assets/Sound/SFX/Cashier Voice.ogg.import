@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7he3v6mdr8vf"
+path="res://.godot/imported/Cashier Voice.ogg-70a500f03d6ee40af47e1a9844a28496.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/Cashier Voice.ogg"
+dest_files=["res://.godot/imported/Cashier Voice.ogg-70a500f03d6ee40af47e1a9844a28496.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

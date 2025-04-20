@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var talk_sound := $TalkSound
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -47,6 +48,10 @@ var dialogue_line: DialogueLine:
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
+		if character_label.text == "Shop Clerk":
+			talk_sound.stream = load("res://Assets/Sound/SFX/Cashier Voice.ogg")
+		else:
+			talk_sound.stream = load("res://Assets/Sound/SFX/Mom Voice.ogg")
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
@@ -159,3 +164,9 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter, letter_index, speed):
+	if not letter in ["."," "]:
+		talk_sound.pitch_scale = randf_range(0.9,1.1)
+		talk_sound.play()

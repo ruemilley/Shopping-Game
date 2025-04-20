@@ -1,5 +1,6 @@
 ~ rating_parse
 
+do play_general_theme_music()
 do scene_transition.fade_to_normal()
 Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
 do mom.look_up()
@@ -232,6 +233,7 @@ Mom: What do you say?
 - Yeah
 	Mom: Thanks, kid. I believe in you. You got this this time.
 	do reset_game_state()
+	do fade_general_theme_music()
 	do scene_transition.fade_to_black()
 	do call_deferred("enter_store")
 - Nah
@@ -245,6 +247,7 @@ Mom: What do you say?
 
 ~ theft
 
+do play_run_music()
 do scene_transition.fade_to_normal()
 You did it. The big crime.
 You can never go home again.
@@ -261,6 +264,7 @@ do call_deferred("roll_credits")
 
 ~ empty
 
+do play_general_theme_music()
 do scene_transition.fade_to_normal()
 Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
 do mom.look_up()
@@ -280,6 +284,7 @@ Mom: Do you have anything to say for yourself?
 	- Yes
 		Mom: That's the spirit. Get back out there, kiddo.
 		do reset_game_state()
+		do fade_general_theme_music()
 		do scene_transition.fade_to_black()
 		do call_deferred("enter_store")
 	- No
@@ -288,7 +293,7 @@ Mom: Do you have anything to say for yourself?
 		Mom: Not sure how to proceed now.
 		Mom: ...
 		Mom: Well, whatever. Roll credits!
-		do call_deferred("enter_store")
+		do call_deferred("roll_credits")
 - The store was out of every single item.
 	Mom: That seems... Unlikely.
 	Mom: Maybe not impossible.
@@ -298,6 +303,7 @@ Mom: Do you have anything to say for yourself?
 		Mom: Yeah I know it was a lie. 
 		Mom: Go back there.
 		do reset_game_state()
+		do fade_general_theme_music()
 		do scene_transition.fade_to_black()
 		do call_deferred("enter_store")
 	- It was a wasteland in there. The apocalypse might be happening.
@@ -306,12 +312,14 @@ Mom: Do you have anything to say for yourself?
 		Mom: So you're gonna go to a different grocery store.
 		Mom: Scram.
 		do reset_game_state()
+		do fade_general_theme_music()
 		do scene_transition.fade_to_black()
 		do call_deferred("enter_store")
 - Just kinda wanted to see what you would do, honestly.
 	Mom: Well, this will shock you. But I am going to send you back to the store.
 	Mom: Scram.
 	do reset_game_state()
+	do fade_general_theme_music()
 	do scene_transition.fade_to_black()
 	do call_deferred("enter_store")
 

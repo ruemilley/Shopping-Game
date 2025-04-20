@@ -14,7 +14,6 @@ shader_parameter/line_thickness = 20.0
 [node name="InventoryItem" type="Node2D" groups=["items"]]
 z_index = 2
 script = ExtResource("1_soumo")
-item_desc = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_wqv4p")

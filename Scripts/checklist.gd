@@ -2,7 +2,6 @@ extends Control
 
 @onready var checklist_text_container = $MarginContainer/ChecklistTextContainer
 @onready var checklist = $"."
-var mouse_position_inside = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,14 +10,14 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_released("select"):
-		if checklist.visible == true and mouse_position_inside == false:
+		if checklist.visible == true and Global.mouse_position_inside == false:
 			checklist.visible = !checklist.visible
 			Events.checklist_hidden.emit()
-				
+
+
 
 func _on_mouse_entered():
-	mouse_position_inside = true
-	print("mouse entered")
-
+	Global.mouse_position_inside = true
+	
 func _on_mouse_exited():
-	mouse_position_inside = false
+	Global.mouse_position_inside = false
