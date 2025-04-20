@@ -5,7 +5,7 @@ extends Node2D
 @onready var talk_animation = $Talk
 @onready var look_up_animation = $LookUpAnimation
 
-
+var pause_anim := false
 var current_blink
 var current_talk
 
@@ -33,12 +33,16 @@ func _on_blink_timer_timeout():
 	blink_timer.wait_time = randi_range(3,10)
 	
 func _on_started_talking(talker):
-	talk_animation.play(current_talk)
+	if pause_anim != true:
+		talk_animation.play(current_talk)
 
 func _on_finished_talking():
 	await talk_animation.animation_looped
 	talk_animation.pause()
 
+func force_up_anim():
+	talk_animation.set_animation("talk_lu")
+	
 
 func _on_look_up_animation_animation_finished():
 	$Base.texture = load("res://Assets/characters/mom/look up/mom_look_up_base.png")

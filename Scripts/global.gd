@@ -37,55 +37,55 @@ var checklist_items := [
 var primary_aisle_items := []
 
 var bakery_aisle_items := [
-	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":6.50, "iposition": Vector2(200,-435), "desc": "This is The Best cereal because it has colors.",},
-	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":2.79, "iposition": Vector2(2200,60), "desc": "They're shaped like little bowties!",},
-	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.25, "iposition": Vector2(2100,60), "desc": "This just looks like wide spaghetti. But it's on sale.",},
-	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":5.50, "iposition": Vector2(550,-435), "desc": "This is The Worst cereal because it has nuts. Mom likes it though.",},
-	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":2.79, "iposition": Vector2(1950,60), "desc": "A normal pasta.",},
-	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":2.29, "iposition": Vector2(700,-130), "desc": "Unnaturally soft and pillowy, but in a good way.",},
-	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":2.50, "iposition": Vector2(1400,-130), "desc": "This is good if you put a lot of other stuff on top of it.",},
-	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":4.50, "iposition": Vector2(920,-300), "desc": "The slices are really thick and they have the little nuts and oats on top.",},
+	{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":6.50, "iposition": Vector2(200,-435), "item_desc": "This is The Best cereal because it has colors.",},
+	{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":2.79, "iposition": Vector2(2200,60), "item_desc": "They're shaped like little bowties!",},
+	{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.25, "iposition": Vector2(2100,60), "item_desc": "This just looks like wide spaghetti. But it's on sale.",},
+	{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":5.50, "iposition": Vector2(550,-435), "item_desc": "This is The Worst cereal because it has nuts. Mom likes it though.",},
+	{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":2.79, "iposition": Vector2(1950,60), "item_desc": "A normal pasta.",},
+	{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":2.29, "iposition": Vector2(700,-130), "item_desc": "Unnaturally soft and pillowy, but in a good way.",},
+	{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":2.50, "iposition": Vector2(1400,-130), "item_desc": "This is good if you put a lot of other stuff on top of it.",},
+	{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":4.50, "iposition": Vector2(920,-300), "item_desc": "The slices are really thick and they have the little nuts and oats on top.",},
 ]
 
 #dairy aisle
 var dairy_aisle_items := [
-	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":3.00, "iposition": Vector2(2250,-120), "desc": "You checked to make sure they're not cracked.",},
-	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":5.00, "iposition": Vector2(2300,-620), "desc": "These ones are brown which I think means they're better somehow?",},
-	{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(400,-300), "desc": "Mom puts oat milk in her coffee sometimes. But only at the coffee shop.",},
-	{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(0,50), "desc": "Whoa, the cow looks happier on this one. That probably means something.",},
-	{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":2.00, "iposition": Vector2(0,-290), "desc": "You don't really like drinking milk but it's good for cereal and stuff.",},
+	{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":3.00, "iposition": Vector2(2250,-120), "item_desc": "You checked to make sure they're not cracked.",},
+	{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":5.00, "iposition": Vector2(2300,-620), "item_desc": "These ones are brown which I think means they're better somehow?",},
+	{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(400,-300), "item_desc": "Mom puts oat milk in her coffee sometimes. But only at the coffee shop.",},
+	{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(0,50), "item_desc": "Whoa, the cow looks happier on this one. That probably means something.",},
+	{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":2.00, "iposition": Vector2(0,-290), "item_desc": "You don't really like drinking milk but it's good for cereal and stuff.",},
 ]
 
 #produce aisle
 var produce_aisle_items := [
-	{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(1550,-150), "desc": "You're always a little worried there will be a worm inside. There hasn't been before, but like... maybe...",},
-	{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(1200,-180), "desc": "Surprisingly a lot of work to eat.",},
-	{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":0.75, "iposition": Vector2(500,0), "desc": "This one makes your eyes water like crazy when Mom cuts it up.",},
-	{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":4.00, "iposition": Vector2(2600,-150), "desc": "It's spinch.",},
-	{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":0.89, "iposition": Vector2(700,0), "desc": "Mom just said onion... So it's probably this one, right?",},
+	{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(1550,-150), "item_desc": "You're always a little worried there will be a worm inside. There hasn't been before, but like... maybe...",},
+	{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(1200,-180), "item_desc": "Surprisingly a lot of work to eat.",},
+	{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":0.75, "iposition": Vector2(500,0), "item_desc": "This one makes your eyes water like crazy when Mom cuts it up.",},
+	{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":4.00, "iposition": Vector2(2600,-150), "item_desc": "It's spinch.",},
+	{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":0.89, "iposition": Vector2(700,0), "item_desc": "Mom just said onion... So it's probably this one, right?",},
 ]
 
 #meat
 var meat_aisle_items := [
-	{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":11.99, "iposition": Vector2(1500,-280), "desc": "Ew, why does it have the little white veins?",},
-	{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":13.00, "iposition": Vector2(300,-280), "desc": "It looks kinda gross like this but it's really good in spaghetti and stuff.",},
-	{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":14.99, "iposition": Vector2(2150,-280), "desc": "Delicious fishes.",},
-	{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":3.49, "iposition": Vector2(2700,-580), "desc": "Why was this in the meat aisle?",},
+	{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":11.99, "iposition": Vector2(1500,-280), "item_desc": "Ew, why does it have the little white veins?",},
+	{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":13.00, "iposition": Vector2(300,-280), "item_desc": "It looks kinda gross like this but it's really good in spaghetti and stuff.",},
+	{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":14.99, "iposition": Vector2(2150,-280), "item_desc": "Delicious fishes.",},
+	{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":3.49, "iposition": Vector2(2700,-580), "item_desc": "Why was this in the meat aisle?",},
 ]
 
 #frozen
 var frozen_aisle_items := [
-	{"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":11.50, "iposition": Vector2(1400,70), "desc": "Way better than plain old chicken.",},
-	{"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":10.00, "iposition": Vector2(1100,70), "desc": "An economical choice.",},
-	{"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":5.00, "iposition": Vector2(2000,-140), "desc": "Try saying vanilla bean ice cream five times fast. ...Not that it's hard or anything, it's just fun that it rhymes.",},
+	{"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":11.50, "iposition": Vector2(1400,70), "item_desc": "Way better than plain old chicken.",},
+	{"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":10.00, "iposition": Vector2(1100,70), "item_desc": "An economical choice.",},
+	{"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":5.00, "iposition": Vector2(2000,-140), "item_desc": "Try saying vanilla bean ice cream five times fast. ...Not that it's hard or anything, it's just fun that it rhymes.",},
 ]
 
 #snack aisle
 var snack_aisle_items := [
-	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "desc": "What's the point of a chip if it's not exploding with flavor?",},
-	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
-	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
-	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
+	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "item_desc": "What's the point of a chip if it's not exploding with flavor?",},
+	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "item_desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
+	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "item_desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
+	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "item_desc": "Delicious carbonation.",},
 ]
 
 
@@ -208,7 +208,7 @@ func update_scene_items():
 func spawn_item(data):
 	var item_scene = preload("res://Scenes/inventory/inventory_item.tscn")
 	var item_instance = item_scene.instantiate()
-	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"], data["paid"], data["cost"], data["desc"])
+	item_instance.initiate_items(data["type"], data["iname"], data["texture"], data["iposition"], data["paid"], data["cost"], data["item_desc"])
 	get_tree().current_scene.add_child(item_instance)
 	item_instance.global_position = data["iposition"]
 	update_scene_items()
@@ -351,55 +351,55 @@ func reset_game_state():
 	]
 
 	bakery_aisle_items = [
-		{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":6.50, "iposition": Vector2(200,-435), "desc": "This is The Best cereal because it has colors.",},
-		{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":2.79, "iposition": Vector2(2200,60), "desc": "They're shaped like little bowties!",},
-		{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.25, "iposition": Vector2(2100,60), "desc": "This just looks like wide spaghetti. But it's on sale.",},
-		{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":5.50, "iposition": Vector2(550,-435), "desc": "This is The Worst cereal because it has nuts. Mom likes it though.",},
-		{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":2.79, "iposition": Vector2(1950,60), "desc": "A normal pasta.",},
-		{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":2.29, "iposition": Vector2(700,-130), "desc": "Unnaturally soft and pillowy, but in a good way.",},
-		{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":2.50, "iposition": Vector2(1400,-130), "desc": "This is good if you put a lot of other stuff on top of it.",},
-		{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":4.50, "iposition": Vector2(920,-300), "desc": "The slices are really thick and they have the little nuts and oats on top.",},
+		{"iname": "Color-O's Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/color-os cereal.png"), "paid": false, "cost":6.50, "iposition": Vector2(200,-435), "item_desc": "This is The Best cereal because it has colors.",},
+		{"iname": "Farfalle", "type": "grain", "texture": preload("res://Assets/items/grains/farfalle.png"), "paid": false, "cost":2.79, "iposition": Vector2(2200,60), "item_desc": "They're shaped like little bowties!",},
+		{"iname": "Fettuccine", "type": "grain", "texture": preload("res://Assets/items/grains/fettuccine.png"), "paid": false, "cost":1.25, "iposition": Vector2(2100,60), "item_desc": "This just looks like wide spaghetti. But it's on sale.",},
+		{"iname": "Health Nuts Cereal", "type": "grain", "texture": preload("res://Assets/items/grains/health nuts cereal.png"), "paid": false, "cost":5.50, "iposition": Vector2(550,-435), "item_desc": "This is The Worst cereal because it has nuts. Mom likes it though.",},
+		{"iname": "Spaghetti", "type": "grain", "texture": preload("res://Assets/items/grains/spaghetti.png"), "paid": false, "cost":2.79, "iposition": Vector2(1950,60), "item_desc": "A normal pasta.",},
+		{"iname": "White Bread", "type": "grain", "texture": preload("res://Assets/items/grains/white bread.png"), "paid": false, "cost":2.29, "iposition": Vector2(700,-130), "item_desc": "Unnaturally soft and pillowy, but in a good way.",},
+		{"iname": "White Rice", "type": "grain", "texture": preload("res://Assets/items/grains/white rice.png"), "paid": false, "cost":2.50, "iposition": Vector2(1400,-130), "item_desc": "This is good if you put a lot of other stuff on top of it.",},
+		{"iname": "Whole Wheat Bread", "type": "grain", "texture": preload("res://Assets/items/grains/whole wheat bread.png"), "paid": false, "cost":4.50, "iposition": Vector2(920,-300), "item_desc": "The slices are really thick and they have the little nuts and oats on top.",},
 	]
 
 	#dairy aisle
 	dairy_aisle_items = [
-		{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":3.00, "iposition": Vector2(2250,-120), "desc": "You checked to make sure they're not cracked.",},
-		{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":5.00, "iposition": Vector2(2300,-620), "desc": "These ones are brown which I think means they're better somehow?",},
-		{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(400,-300), "desc": "Mom puts oat milk in her coffee sometimes. But only at the coffee shop.",},
-		{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(0,50), "desc": "Whoa, the cow looks happier on this one. That probably means something.",},
-		{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":2.00, "iposition": Vector2(0,-290), "desc": "You don't really like drinking milk but it's good for cereal and stuff.",},
+		{"iname": "Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/eggs.png"), "paid": false, "cost":3.00, "iposition": Vector2(2250,-120), "item_desc": "You checked to make sure they're not cracked.",},
+		{"iname": "Fancy Eggs", "type": "dairy", "texture": preload("res://Assets/items/dairy/fancy eggs.png"), "paid": false, "cost":5.00, "iposition": Vector2(2300,-620), "item_desc": "These ones are brown which I think means they're better somehow?",},
+		{"iname": "Oat Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/oat milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(400,-300), "item_desc": "Mom puts oat milk in her coffee sometimes. But only at the coffee shop.",},
+		{"iname": "Organic Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/organic milk.png"), "paid": false, "cost":4.00, "iposition": Vector2(0,50), "item_desc": "Whoa, the cow looks happier on this one. That probably means something.",},
+		{"iname": "Whole Milk", "type": "dairy", "texture": preload("res://Assets/items/dairy/whole milk.png"), "paid": false, "cost":2.00, "iposition": Vector2(0,-290), "item_desc": "You don't really like drinking milk but it's good for cereal and stuff.",},
 	]
 
 	#produce aisle
 	produce_aisle_items = [
-		{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(1550,-150), "desc": "You're always a little worried there will be a worm inside. There hasn't been before, but like... maybe...",},
-		{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(1200,-180), "desc": "Surprisingly a lot of work to eat.",},
-		{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":0.75, "iposition": Vector2(500,0), "desc": "This one makes your eyes water like crazy when Mom cuts it up.",},
-		{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":4.00, "iposition": Vector2(2600,-150), "desc": "It's spinch.",},
-		{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":0.89, "iposition": Vector2(700,0), "desc": "Mom just said onion... So it's probably this one, right?",},
+		{"iname": "Apple", "type": "produce", "texture": preload("res://Assets/items/produce/apple.png"), "paid": false, "cost":1.00, "iposition": Vector2(1550,-150), "item_desc": "You're always a little worried there will be a worm inside. There hasn't been before, but like... maybe...",},
+		{"iname": "Orange", "type": "produce", "texture": preload("res://Assets/items/produce/orange.png"), "paid": false, "cost":1.49, "iposition": Vector2(1200,-180), "item_desc": "Surprisingly a lot of work to eat.",},
+		{"iname": "Red Onion", "type": "produce", "texture": preload("res://Assets/items/produce/red onion.png"), "paid": false, "cost":0.75, "iposition": Vector2(500,0), "item_desc": "This one makes your eyes water like crazy when Mom cuts it up.",},
+		{"iname": "Spinach", "type": "produce", "texture": preload("res://Assets/items/produce/spinach.png"), "paid": false, "cost":4.00, "iposition": Vector2(2600,-150), "item_desc": "It's spinch.",},
+		{"iname": "White Onion", "type": "produce", "texture": preload("res://Assets/items/produce/white onion.png"), "paid": false, "cost":0.89, "iposition": Vector2(700,0), "item_desc": "Mom just said onion... So it's probably this one, right?",},
 	]
 
 	#meat
 	meat_aisle_items = [
-		{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":11.99, "iposition": Vector2(1500,-280), "desc": "Ew, why does it have the little white veins?",},
-		{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":13.00, "iposition": Vector2(300,-280), "desc": "It looks kinda gross like this but it's really good in spaghetti and stuff.",},
-		{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":14.99, "iposition": Vector2(2150,-280), "desc": "Delicious fishes.",},
-		{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":3.49, "iposition": Vector2(2700,-580), "desc": "Why was this in the meat aisle?",},
+		{"iname": "Chicken Breasts", "type": "meat", "texture": preload("res://Assets/items/meat/chicken breasts.png"), "paid": false, "cost":11.99, "iposition": Vector2(1500,-280), "item_desc": "Ew, why does it have the little white veins?",},
+		{"iname": "Ground Beef", "type": "meat", "texture": preload("res://Assets/items/meat/ground beef.png"), "paid": false, "cost":13.00, "iposition": Vector2(300,-280), "item_desc": "It looks kinda gross like this but it's really good in spaghetti and stuff.",},
+		{"iname": "Salmon Filet", "type": "meat", "texture": preload("res://Assets/items/meat/salmon filet.png"), "paid": false, "cost":14.99, "iposition": Vector2(2150,-280), "item_desc": "Delicious fishes.",},
+		{"iname": "Tofu", "type": "meat", "texture": preload("res://Assets/items/meat/tofu.png"), "paid": false, "cost":3.49, "iposition": Vector2(2700,-580), "item_desc": "Why was this in the meat aisle?",},
 	]
 
 	#frozen
 	frozen_aisle_items = [
-		{"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":11.50, "iposition": Vector2(1400,70), "desc": "Way better than plain old chicken.",},
-		{"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":10.00, "iposition": Vector2(1100,70), "desc": "An economical choice.",},
-		{"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":5.00, "iposition": Vector2(2000,-140), "desc": "Try saying vanilla bean ice cream five times fast. ...Not that it's hard or anything, it's just fun that it rhymes.",},
+		{"iname": "Frozen Chicken Nuggets", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken nuggets.png"), "paid": false, "cost":11.50, "iposition": Vector2(1400,70), "item_desc": "Way better than plain old chicken.",},
+		{"iname": "Frozen Chicken", "type": "frozen", "texture": preload("res://Assets/items/frozen/frozen chicken.png"), "paid": false, "cost":10.00, "iposition": Vector2(1100,70), "item_desc": "An economical choice.",},
+		{"iname": "Vanilla Ice Cream", "type": "frozen", "texture": preload("res://Assets/items/frozen/vanilla ice cream.png"), "paid": false, "cost":5.00, "iposition": Vector2(2000,-140), "item_desc": "Try saying vanilla bean ice cream five times fast. ...Not that it's hard or anything, it's just fun that it rhymes.",},
 	]
 
 	#snack aisle
 	snack_aisle_items = [
-		{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "desc": "What's the point of a chip if it's not exploding with flavor?",},
-		{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
-		{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
-		{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
+		{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "item_desc": "What's the point of a chip if it's not exploding with flavor?",},
+		{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "item_desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
+		{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "item_desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
+		{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "item_desc": "Delicious carbonation.",},
 	]
 
 

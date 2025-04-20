@@ -64,14 +64,14 @@ func set_item_data(data):
 	item_desc = data["item_desc"]
 
 
-func initiate_items(type, iname, texture, iposition, paid, cost, desc):
+func initiate_items(type, iname, texture, iposition, paid, cost, item_desc):
 	item_type = type
 	item_name = iname
 	item_texture = texture
 	item_position = iposition
 	item_paid = paid
 	item_cost = cost
-	item_desc = desc
+	item_desc = item_desc
 
 func spin():
 	tween = create_tween()

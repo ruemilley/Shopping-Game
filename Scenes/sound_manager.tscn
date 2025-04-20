@@ -61,6 +61,21 @@ tracks/3/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_wjih4"]
+resource_name = "fade_general_theme_music"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GeneralThemeMusic:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -56.0]
+}
+
 [sub_resource type="Animation" id="Animation_ul6ac"]
 resource_name = "fade_grocery_sound"
 tracks/0/type = "value"
@@ -86,21 +101,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -50.0]
-}
-
-[sub_resource type="Animation" id="Animation_wjih4"]
-resource_name = "fade_general_theme_music"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GeneralThemeMusic:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -56.0]
 }
 
 [sub_resource type="Animation" id="Animation_5cl0w"]

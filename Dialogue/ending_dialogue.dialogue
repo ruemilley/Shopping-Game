@@ -149,7 +149,9 @@ Mom: I guess I could send you back there... Give it another try? What do you thi
 - Nah
 	Mom: Nah?
 	Mom: NAH????
+	set mom.pause_anim = true
 	Mom: ...
+	set mom.pause_anim = false
 	Mom: Well I raised you too leniently. But we'll figure that out later.
 	Mom: Thanks for the okay job.
 	Mom: Roll credits!
@@ -268,9 +270,12 @@ do play_general_theme_music()
 do scene_transition.fade_to_normal()
 Mom: Okay, kiddo. All done grocery shopping? Let's see what you got.
 do mom.look_up()
+do mom.force_up_anim()
+set mom.pause_anim = true
 Mom: ...
 Mom: ......
 Mom: .............
+set mom.pause_anim = false
 Mom: So.
 Mom: You just didn't get... Anything?
 Mom: I'm honestly shocked.
@@ -289,9 +294,13 @@ Mom: Do you have anything to say for yourself?
 		do call_deferred("enter_store")
 	- No
 		Mom: That's fair. Can't conquer everything in one go.
+		set mom.pause_anim = true
 		Mom: ...
+		set mom.pause_anim = false
 		Mom: Not sure how to proceed now.
+		set mom.pause_anim = true
 		Mom: ...
+		set mom.pause_anim = false
 		Mom: Well, whatever. Roll credits!
 		do call_deferred("roll_credits")
 - The store was out of every single item.
