@@ -1,41 +1,201 @@
-[gd_scene format=3 uid="uid://dkeahhhwfmdrx"]
+[gd_scene load_steps=7 format=3 uid="uid://dkeahhhwfmdrx"]
 
-[node name="Credits" type="Node2D"]
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_3nq87"]
+[ext_resource type="Theme" uid="uid://48w76fa0tqr8" path="res://Themes/handwritten_font.tres" id="1_idlc6"]
+[ext_resource type="Texture2D" uid="uid://dwsihlxfj830u" path="res://Assets/items/produce/apple.png" id="1_jnnlw"]
+[ext_resource type="PackedScene" uid="uid://bbcojjkl30e5b" path="res://Scenes/credit_item.tscn" id="2_45x3f"]
+[ext_resource type="Theme" uid="uid://c4jnvk4wq57g1" path="res://Themes/credit_item_styles.tres" id="4_hmsqr"]
 
-[node name="Control" type="Control" parent="."]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr31y"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.188649, 0.25724, 0.330763, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1980.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_3nq87")
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.262745, 0.337255, 0.454902, 1)
+color = Color(0.141032, 0.192323, 0.24933, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -247.0
-offset_top = -20.0
-offset_right = 247.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-bbcode_enabled = true
-text = "[center]YAY THIS IS THE CREDITS[/center]"
-fit_content = true
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+
+[node name="ColumnOne" type="VBoxContainer" parent="MarginContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TopRow/ColumnOne"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/TopRow/ColumnOne/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_idlc6")
+text = "Thanks for playing!"
+
+[node name="CreditItem" parent="MarginContainer/TopRow/ColumnOne/VBoxContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+size_flags_vertical = 1
+item_label = "Code, Art and Writing"
+author_label = "ruemilley"
+link_title_1 = "ruemilley.bsky.social"
+link_URI_1 = "https://bsky.app/profile/ruemilley.bsky.social"
+link_title_2 = "ruemilley.tumblr.com"
+link_URI_2 = "http://ruemilley.tumblr.com"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TopRow/ColumnOne"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sr31y")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="CreditItem2" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "Godot Engine"
+author_label = "Godot Engine Contributors"
+link_title_1 = "License"
+link_URI_1 = "godotengine.org/license"
+link_title_2 = ""
+
+[node name="CreditItem3" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "Dialogue Manager"
+author_label = "Nathan Hoad"
+link_title_1 = "GitHub"
+link_URI_1 = "https://github.com/nathanhoad/godot_dialogue_manager"
+link_title_2 = ""
+
+[node name="CreditItem4" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "SFX (footstep)"
+author_label = "Owlish Media"
+link_title_1 = "freesound.org"
+link_URI_1 = "https://freesound.org/people/OwlStorm/sounds/151238/"
+link_title_2 = ""
+
+[node name="CreditItem5" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "SFX (jump)"
+author_label = "leopaz"
+link_title_1 = "opengameart.org"
+link_URI_1 = "https://opengameart.org/content/12-player-movement-sfx"
+link_title_2 = ""
+
+[node name="CreditItem6" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "SFX (bag open)"
+author_label = "Lukeo135"
+link_title_1 = "freesound.org"
+link_URI_1 = "https://freesound.org/people/Lukeo135/sounds/561000/"
+link_title_2 = ""
+
+[node name="CreditItem7" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "SFX (paper)"
+author_label = "FunWithSound"
+link_title_1 = "freesound.org"
+link_URI_1 = "https://freesound.org/people/FunWithSound/sounds/367681/"
+link_title_2 = ""
+
+[node name="CreditItem8" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "SFX (scribble)"
+author_label = "JellyDaisies"
+link_title_1 = "freesound.org"
+link_URI_1 = "https://freesound.org/people/JellyDaisies/sounds/761662/"
+link_title_2 = ""
+
+[node name="CreditItem9" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "SFX (interface)"
+author_label = "Kenney.NL"
+link_title_1 = "kenney.nl"
+link_URI_1 = "https://www.kenney.nl/assets/interface-sounds"
+link_title_2 = ""
+
+[node name="CreditItem10" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "Music (Main Theme)"
+author_label = "Migfus20"
+link_title_1 = "freesound.org"
+link_URI_1 = "https://freesound.org/s/609562/"
+link_title_2 = ""
+
+[node name="CreditItem11" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "Music (Grocery)"
+author_label = "Paranoid"
+link_title_1 = "Soundcloud"
+link_URI_1 = "https://soundcloud.com/prtrblnd"
+link_title_2 = ""
+
+[node name="CreditItem12" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "Music (Alt Ending)"
+author_label = "yubatake"
+link_title_1 = "opengameart.org"
+link_URI_1 = "https://opengameart.org/content/caine"
+link_title_2 = ""
+
+[node name="ColumnTwo" type="VBoxContainer" parent="MarginContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TopRow/ColumnTwo"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_jnnlw")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="MarginContainer/TopRow/ColumnTwo"]
+layout_mode = 2
+theme = ExtResource("4_hmsqr")
+text = "Back to Main Menu"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="MarginContainer/TopRow/ColumnTwo/Button" to="." method="_on_button_pressed"]

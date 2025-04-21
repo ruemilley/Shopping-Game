@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhv1617vt81px"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_gxrhw"]
-[ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_d5siv"]
+[ext_resource type="Theme" uid="uid://c4jnvk4wq57g1" path="res://Themes/credit_item_styles.tres" id="2_wm05m"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gxrhw")
@@ -25,7 +25,7 @@ offset_right = 48.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_d5siv")
+theme = ExtResource("2_wm05m")
 theme_override_font_sizes/font_size = 33
 text = "Start Game"
 

@@ -1,0 +1,144 @@
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c4jnvk4wq57g1"]
+
+[ext_resource type="FontFile" uid="uid://6o3x53dr3mqq" path="res://Assets/ui/fonts/Nunito/Nunito-VariableFont_wght.ttf" id="1_yt26d"]
+[ext_resource type="FontFile" uid="uid://bn448tgacoyyr" path="res://Assets/ui/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf" id="2_xmpnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.988235, 0.984314, 0.941176, 0.705882)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65bwy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.956374, 0.940646, 0.788318, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.988235, 0.984314, 0.941176, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkvvx"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.970696, 0.960353, 0.854222, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="FontVariation" id="FontVariation_ouvbj"]
+base_font = ExtResource("1_yt26d")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="FontVariation" id="FontVariation_rlk6o"]
+base_font = ExtResource("1_yt26d")
+variation_opentype = {
+2003265652: 800
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dy3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
+bg_color = Color(0.988235, 0.984314, 0.941176, 1)
+corner_radius_top_left = 140
+corner_radius_top_right = 140
+corner_radius_bottom_right = 140
+corner_radius_bottom_left = 140
+
+[sub_resource type="FontVariation" id="FontVariation_7fklh"]
+base_font = ExtResource("1_yt26d")
+variation_opentype = {
+2003265652: 800
+}
+
+[sub_resource type="FontVariation" id="FontVariation_bf0gd"]
+base_font = ExtResource("2_xmpnf")
+variation_opentype = {
+2003265652: 800
+}
+
+[sub_resource type="FontVariation" id="FontVariation_plgoh"]
+base_font = ExtResource("2_xmpnf")
+variation_opentype = {
+2003265652: 600
+}
+
+[sub_resource type="FontVariation" id="FontVariation_4d32n"]
+base_font = ExtResource("1_yt26d")
+variation_opentype = {
+2003265652: 600
+}
+
+[resource]
+default_font = SubResource("FontVariation_4d32n")
+default_font_size = 28
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.705882)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxEmpty_65bwy")
+Button/styles/hover = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+Button/styles/pressed = SubResource("StyleBoxFlat_bkvvx")
+CreditAuthor/base_type = &"RichTextLabel"
+CreditAuthor/colors/default_color = Color(1, 1, 1, 1)
+CreditAuthor/font_sizes/normal_font_size = 30
+CreditAuthor/fonts/normal_font = SubResource("FontVariation_ouvbj")
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.956374, 0.940646, 0.788318, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_selected_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 1)
+LineEdit/colors/selection_color = Color(0, 0, 0, 1)
+LineEdit/constants/caret_width = 0
+LineEdit/constants/minimum_character_width = 0
+LineEdit/constants/outline_size = 0
+LineEdit/font_sizes/font_size = 40
+LineEdit/fonts/font = SubResource("FontVariation_rlk6o")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_0dy3u")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_0dy3u")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_0dy3u")
+LinkButton/colors/font_color = Color(0.71476, 0.86202, 0.949454, 1)
+LinkButton/font_sizes/font_size = 24
+MarginContainer/constants/margin_bottom = 60
+MarginContainer/constants/margin_left = 100
+MarginContainer/constants/margin_right = 100
+MarginContainer/constants/margin_top = 60
+Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_7fklh")
+RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_bf0gd")
+RichTextLabel/fonts/italics_font = SubResource("FontVariation_plgoh")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbcojjkl30e5b"]
+
+[ext_resource type="Theme" uid="uid://c4jnvk4wq57g1" path="res://Themes/credit_item_styles.tres" id="1_8kogr"]
+[ext_resource type="Script" path="res://Scripts/credit_item.gd" id="2_lkgqa"]
+
+[node name="CreditItem" type="VBoxContainer"]
+offset_right = 532.0
+offset_bottom = 291.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_8kogr")
+theme_override_constants/separation = 20
+script = ExtResource("2_lkgqa")
+link_title_1 = "test"
+link_title_2 = "test"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="Item" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+text = "Code, Art and Writing"
+
+[node name="Author" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_type_variation = &"CreditAuthor"
+bbcode_enabled = true
+text = "ruemilley"
+fit_content = true
+
+[node name="Links" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LinkButton1" type="LinkButton" parent="Links"]
+layout_mode = 2
+text = "ruemilley.bsky.social"
+uri = "https://bsky.app/profile/ruemilley.bsky.social"
+
+[node name="LinkButton2" type="LinkButton" parent="Links"]
+layout_mode = 2
+text = "ruemilley.tumblr.com"
+uri = "http://ruemilley.tumblr.com"
