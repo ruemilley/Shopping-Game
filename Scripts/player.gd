@@ -152,7 +152,7 @@ func execute_interaction():
 				$Camera2D.position_smoothing_enabled = false
 				get_tree().change_scene_to_file(cur_interaction.interact_value)
 			"item_pickup":
-				if Global.inventory_count == Global.inventory_cap:
+				if Global.inventory_count >= Global.inventory_cap:
 					show_error_message("You can't carry all this home! You need to put something back.")
 				else:
 					pickup_item_sound.play()

@@ -36,7 +36,7 @@ func pickup_item():
 		"cost" : item_cost,
 		"scene_path" : scene_path,
 		"iposition" : item_position,
-		"item_desc" : item_desc,
+		"desc" : item_desc,
 	}
 	if Global.player_node:
 		Global.add_item(item)
@@ -61,17 +61,17 @@ func set_item_data(data):
 	item_paid = data["paid"]
 	item_cost = data["cost"]
 	item_position = data["iposition"]
-	item_desc = data["item_desc"]
+	item_desc = data["desc"]
 
 
-func initiate_items(type, iname, texture, iposition, paid, cost, item_desc):
+func initiate_items(type, iname, texture, iposition, paid, cost, desc):
 	item_type = type
 	item_name = iname
 	item_texture = texture
 	item_position = iposition
 	item_paid = paid
 	item_cost = cost
-	item_desc = item_desc
+	item_desc = desc
 
 func spin():
 	tween = create_tween()
