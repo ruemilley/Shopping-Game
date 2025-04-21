@@ -17,8 +17,11 @@ func play_walk_sound():
 func play_grocery_sound():
 	if general_theme_music.playing == true:
 		fade_general_theme_music()
-	grocery_ambience.play()
-	grocery_music.play()
+	if grocery_music.playing == true:
+		pass
+	else:
+		grocery_ambience.play()
+		grocery_music.play()
 	
 func play_jump_sound():
 	jump_sound.play()
@@ -30,12 +33,20 @@ func play_checklist_sound():
 	checklist_sound.play()
 	
 func play_run_music():
-	run_music.play()
+	if grocery_music.playing == true:
+		fade_grocery_sound()
+	if general_theme_music.playing == true:
+		fade_general_theme_music()
+	if run_music.playing != true:
+		run_music.play()
 	
 func play_general_theme_music():
 	if grocery_music.playing == true:
 		fade_grocery_sound()
-	general_theme_music.play()
+	if general_theme_music.playing != true:
+		general_theme_music.play()
+	else:
+		pass
 	
 func fade_general_theme_music():
 	fade_music_manager.play("fade_general_theme_music")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhv1617vt81px"]
+[gd_scene load_steps=5 format=3 uid="uid://bhv1617vt81px"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_gxrhw"]
-[ext_resource type="Theme" uid="uid://c4jnvk4wq57g1" path="res://Themes/credit_item_styles.tres" id="2_wm05m"]
+[ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_aqtkd"]
+[ext_resource type="Texture2D" uid="uid://djd1lkff3ll0c" path="res://Assets/ui/Title Art.png" id="3_wbn22"]
+[ext_resource type="PackedScene" uid="uid://ft8chuoouuvw" path="res://volume_slider.tscn" id="4_xqexv"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gxrhw")
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.368627, 0.52549, 0.658824, 1)
 
 [node name="StartButton" type="Button" parent="."]
 anchors_preset = 8
@@ -19,14 +22,42 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = -94.0
+offset_top = 365.0
+offset_right = 94.0
+offset_bottom = 419.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_wm05m")
+theme = ExtResource("2_aqtkd")
 theme_override_font_sizes/font_size = 33
 text = "Start Game"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(964, 479)
+scale = Vector2(0.670096, 0.670096)
+texture = ExtResource("3_wbn22")
+
+[node name="CreditButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = 443.0
+offset_right = 94.0
+offset_bottom = 497.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_aqtkd")
+theme_override_font_sizes/font_size = 33
+text = "Credits"
+
+[node name="VolumeSlider" parent="." instance=ExtResource("4_xqexv")]
+offset_left = 1808.0
+offset_top = 29.0
+offset_right = 1958.0
+offset_bottom = 45.0
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CreditButton" to="." method="_on_credit_button_pressed"]

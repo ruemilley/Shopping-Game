@@ -442,7 +442,7 @@ func reset_game_state():
 	red = false
 	
 	entered_other_areas = false
-	
+	last_main_position = Vector2(-1088, -8)
 
 func main_scene_return():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")

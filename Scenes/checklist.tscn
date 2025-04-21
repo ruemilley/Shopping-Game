@@ -51,7 +51,7 @@ text = "Cereal"
 
 [node name="ChecklistItem4" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2
-text = "Chicken"
+text = "Some kinda protein"
 
 [node name="ChecklistItem5" parent="MarginContainer/ChecklistTextContainer" instance=ExtResource("1_clrvb")]
 layout_mode = 2

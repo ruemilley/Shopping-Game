@@ -32,7 +32,7 @@ func _on_blink_timer_timeout():
 	blink_animation.play(current_blink)
 	blink_timer.wait_time = randi_range(3,10)
 	
-func _on_started_talking(talker):
+func _on_started_talking(_talker):
 	if pause_anim != true:
 		talk_animation.play(current_talk)
 

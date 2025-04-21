@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ft8chuoouuvw"]
+
+[ext_resource type="Script" path="res://Scripts/volume_slider.gd" id="1_5wh5j"]
+[ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_uc3i5"]
+
+[node name="VolumeSlider" type="HSlider"]
+custom_minimum_size = Vector2(150, 0)
+offset_right = 8.0
+offset_bottom = 16.0
+max_value = 3.0
+script = ExtResource("1_5wh5j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = -26.0
+offset_right = 150.0
+offset_bottom = 3.0
+theme = ExtResource("2_uc3i5")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Volume[/center]"
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

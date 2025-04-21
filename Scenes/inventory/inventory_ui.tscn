@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpsm4c7dfob44"]
+[gd_scene load_steps=14 format=3 uid="uid://cpsm4c7dfob44"]
 
 [ext_resource type="Script" path="res://Scripts/inventory/inventory_ui.gd" id="1_7l5o7"]
 [ext_resource type="Theme" uid="uid://cnijpvvboopqv" path="res://Themes/base_font_styles.tres" id="2_cdx23"]
 [ext_resource type="AudioStream" uid="uid://flxjhm2te1rd" path="res://Assets/Sound/SFX/367681__funwithsound__paper-crumble-throw-away-1.ogg" id="3_3l72n"]
+[ext_resource type="PackedScene" uid="uid://ft8chuoouuvw" path="res://volume_slider.tscn" id="3_ryk35"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cu4hn"]
 bg_color = Color(0.963495, 0.950513, 0.821626, 1)
@@ -201,6 +202,10 @@ theme = ExtResource("2_cdx23")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]"
+
+[node name="VolumeSlider" parent="HBoxContainer/ItemInformation/MarginContainer/VBoxContainer" instance=ExtResource("3_ryk35")]
+layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="CloseButton" type="Button" parent="HBoxContainer/ItemInformation/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

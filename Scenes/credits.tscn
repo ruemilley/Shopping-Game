@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/credits.gd" id="1_3nq87"]
 [ext_resource type="Theme" uid="uid://48w76fa0tqr8" path="res://Themes/handwritten_font.tres" id="1_idlc6"]
-[ext_resource type="Texture2D" uid="uid://dwsihlxfj830u" path="res://Assets/items/produce/apple.png" id="1_jnnlw"]
 [ext_resource type="PackedScene" uid="uid://bbcojjkl30e5b" path="res://Scenes/credit_item.tscn" id="2_45x3f"]
+[ext_resource type="Texture2D" uid="uid://by2wjl50e3en2" path="res://Assets/characters/cashier/cashier_end_art.png" id="4_hjc0c"]
 [ext_resource type="Theme" uid="uid://c4jnvk4wq57g1" path="res://Themes/credit_item_styles.tres" id="4_hmsqr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr31y"]
@@ -101,6 +101,14 @@ link_title_1 = "License"
 link_URI_1 = "godotengine.org/license"
 link_title_2 = ""
 
+[node name="CreditItem13" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
+layout_mode = 2
+item_label = "White Outline Shader"
+author_label = "GDQuest"
+link_title_1 = "GitHub"
+link_URI_1 = "https://github.com/gdquest-demos/godot-shaders"
+link_title_2 = ""
+
 [node name="CreditItem3" parent="MarginContainer/TopRow/ColumnOne/ScrollContainer/GridContainer" instance=ExtResource("2_45x3f")]
 layout_mode = 2
 item_label = "Dialogue Manager"
@@ -184,12 +192,13 @@ link_title_2 = ""
 [node name="ColumnTwo" type="VBoxContainer" parent="MarginContainer/TopRow"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 40
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/TopRow/ColumnTwo"]
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_jnnlw")
-expand_mode = 5
+texture = ExtResource("4_hjc0c")
+expand_mode = 4
+stretch_mode = 3
 
 [node name="Button" type="Button" parent="MarginContainer/TopRow/ColumnTwo"]
 layout_mode = 2
