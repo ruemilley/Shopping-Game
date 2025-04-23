@@ -85,14 +85,14 @@ var snack_aisle_items := [
 	{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "desc": "What's the point of a chip if it's not exploding with flavor?",},
 	{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
 	{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
-	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
+	{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":3.00, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
 ]
 
 
 
 
 #HUD management
-var budget_value := 30.00
+var budget_value := 40.00
 var cart_value := 0.00
 
 #variables for checking out/endings/dialogue
@@ -152,7 +152,6 @@ func add_item(item):
 			inventory_count += 1
 			inventory_updated.emit()
 			return true
-			print(inventory_count)
 	return false
 
 func remove_item(item_name, item_type):
@@ -399,12 +398,12 @@ func reset_game_state():
 		{"iname": "Boring Chips", "type": "snack", "texture": preload("res://Assets/items/snack/boring chips.png"), "paid": false, "cost":4.00, "iposition": Vector2(750,-280), "desc": "What's the point of a chip if it's not exploding with flavor?",},
 		{"iname": "Chipz", "type": "snack", "texture": preload("res://Assets/items/snack/chipz.png"), "paid": false, "cost":3.00, "iposition": Vector2(380,50), "desc": "Chipz is the best and coolest chip, because there's a z at the end. That's what all the ads say at least.",},
 		{"iname": "Choco Bar", "type": "snack", "texture": preload("res://Assets/items/snack/choco bar.png"), "paid": false, "cost":2.00, "iposition": Vector2(1900,-550), "desc": "Mom always says cats aren't supposed to eat chocolate... But cats also aren't supposed to wear clothes and go to the grocery store.",},
-		{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":1.50, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
+		{"iname": "Soda", "type": "snack", "texture": preload("res://Assets/items/snack/soda.png"), "paid": false, "cost":3.00, "iposition": Vector2(2250,70), "desc": "Delicious carbonation.",},
 	]
 
 
 #HUD management
-	budget_value = 30.00
+	budget_value = 40.00
 	cart_value = 00.00
 
 #variables for checking out/endings/dialogue

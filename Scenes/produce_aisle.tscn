@@ -34,8 +34,6 @@ position = Vector2(1349, -239)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("4_o4q05")
 
-[node name="Player" parent="." instance=ExtResource("8_qbfnm")]
-
 [node name="HUD" parent="." instance=ExtResource("9_f7i8q")]
 
 [node name="FruitStand" parent="." instance=ExtResource("8_ibc8h")]
@@ -44,6 +42,8 @@ scale = Vector2(0.4, 0.4)
 
 [node name="Floor" parent="." instance=ExtResource("9_y3v3h")]
 position = Vector2(0, -6)
+
+[node name="Player" parent="." instance=ExtResource("8_qbfnm")]
 
 [node name="AisleEnd2" parent="." instance=ExtResource("10_0kgfj")]
 position = Vector2(3043, -263)

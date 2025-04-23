@@ -36,9 +36,6 @@ metadata/_edit_lock_ = true
 
 [node name="GroceryShadow" parent="." instance=ExtResource("5_buhxr")]
 
-[node name="Player" parent="." instance=ExtResource("8_uhrls")]
-position = Vector2(-25, 0)
-
 [node name="HUD" parent="." instance=ExtResource("9_o5aod")]
 
 [node name="AisleEnd2" parent="." instance=ExtResource("10_asgwp")]
@@ -46,6 +43,9 @@ position = Vector2(3114, -272)
 
 [node name="Floor" parent="." instance=ExtResource("10_wujbi")]
 position = Vector2(0, -6)
+
+[node name="Player" parent="." instance=ExtResource("8_uhrls")]
+position = Vector2(-25, 0)
 
 [node name="AisleEntrance" parent="." instance=ExtResource("6_x45mt")]
 position = Vector2(-688, -803)

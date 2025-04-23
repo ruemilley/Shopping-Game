@@ -33,12 +33,12 @@ texture = ExtResource("4_77s5s")
 
 [node name="GroceryShadow" parent="." instance=ExtResource("5_hs1r4")]
 
-[node name="Player" parent="." instance=ExtResource("8_mk3kx")]
-
 [node name="HUD" parent="." instance=ExtResource("9_6enst")]
 
 [node name="Floor" parent="." instance=ExtResource("9_rykms")]
 position = Vector2(0, -6)
+
+[node name="Player" parent="." instance=ExtResource("8_mk3kx")]
 
 [node name="AisleEnd2" parent="." instance=ExtResource("10_77pvt")]
 position = Vector2(3103, -281)
