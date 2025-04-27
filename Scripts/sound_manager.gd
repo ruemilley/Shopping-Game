@@ -21,7 +21,9 @@ func play_grocery_sound():
 		pass
 	else:
 		grocery_ambience.play()
+		grocery_ambience.stream.loop = true
 		grocery_music.play()
+		grocery_music.stream.loop = true
 	
 func play_jump_sound():
 	jump_sound.play()
@@ -39,12 +41,14 @@ func play_run_music():
 		fade_general_theme_music()
 	if run_music.playing != true:
 		run_music.play()
+		run_music.stream.loop = true
 	
 func play_general_theme_music():
 	if grocery_music.playing == true:
 		fade_grocery_sound()
 	if general_theme_music.playing != true:
 		general_theme_music.play()
+		general_theme_music.stream.loop = true
 	else:
 		pass
 	

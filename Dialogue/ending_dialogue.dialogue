@@ -75,6 +75,7 @@ Mom: Well, guess that's everything. Guess I'll start making dinner.
 Mom: Unless you want to help me with that? No, I'll leave you alone for now.
 Mom: Thanks again, kiddo.
 Mom: Roll credits!
+do reset_game_state()
 do call_deferred("roll_credits")
 
 => END
@@ -106,7 +107,7 @@ if ending_checklist["protein"] == true:
 	if nuggy == true and ending_checklist_count["protein"] == 1:
 		Mom: ...Kind of wish it was something more nutritious than chicken nuggets, but, well. You did it.
 else:
-	Mom: Aaand nothing for dinner tonight either. 
+	Mom: Aaand nothing for dinner tonight. 
 	Mom: We will not be ordering pizza. We will be eating... Something else I have not figured out yet.
 if ending_checklist["grain"] == true and ending_checklist["protein"] == true:
 	Mom: And you got a carb to go with the thing to cook for dinner. We won't starve tonight. Good work.
@@ -144,6 +145,7 @@ Mom: I guess I could send you back there... Give it another try? What do you thi
 - Yeah
 	Mom: That's the spirit. Get back at it, kiddo.
 	do reset_game_state()
+	do fade_general_theme_music()
 	do scene_transition.fade_to_black()
 	do call_deferred("enter_store")
 - Nah
@@ -155,6 +157,7 @@ Mom: I guess I could send you back there... Give it another try? What do you thi
 	Mom: Well I raised you too leniently. But we'll figure that out later.
 	Mom: Thanks for the okay job.
 	Mom: Roll credits!
+	do reset_game_state()
 	do call_deferred("roll_credits")
 
 => END
@@ -243,6 +246,7 @@ Mom: What do you say?
 	Mom: Grounded is what happens now.
 	Mom: SIGH.
 	Mom: Roll credits.
+	do reset_game_state()
 	do call_deferred("roll_credits")
 
 => END
@@ -261,6 +265,7 @@ With the random groceries that you stole.
 Yeah this was worth it for sure.
 Enjoy your new life on the lam. It's all you have now.
 ROLL CREDITS.
+do reset_game_state()
 do call_deferred("roll_credits")
 
 => END
@@ -303,6 +308,7 @@ Mom: Do you have anything to say for yourself?
 		Mom: ...
 		set mom.pause_anim = false
 		Mom: Well, whatever. Roll credits!
+		do reset_game_state()
 		do call_deferred("roll_credits")
 - The store was out of every single item.
 	Mom: That seems... Unlikely.
